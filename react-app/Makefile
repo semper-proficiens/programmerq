@@ -6,4 +6,4 @@ app-build: ## builds the app in docker
 	docker build --no-cache -t programmerq .
 
 app-run: ## runs docker build in port 3000
-	docker run -p 3000:3000 --rm programmerq
+	docker run -it -p 3000:3000 --rm programmerq

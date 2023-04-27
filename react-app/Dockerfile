@@ -13,5 +13,11 @@ RUN npm install
 # Copy the contents of the build directory to /app/build
 COPY ./build /app/build
 
+# Copy the public directory to /app/public
+COPY public /app/public
+
+# Copy the contents of the src directory to /app/src
+COPY ./src /app/src
+
 # Start the app when the container starts
 CMD ["npm", "start"]
