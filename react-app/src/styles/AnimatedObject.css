@@ -1,23 +1,22 @@
-.animated-object {
+.animated-object-wrapper {
     position: relative;
-    top: 0;
-    right: 0;
+    z-index: 1;
+}
+
+.animated-object {
+    position: absolute;
     width: 100px;
     height: 100px;
-    background-color: #f9a03f;
+    background-color: #F9A03F;
     animation: float 5s ease-in-out infinite;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: white;
+    border-radius: 10px;
 }
-
-.animated-object .message {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: #fff;
-    font-size: 16px;
-    text-align: center;
-}
-
 
 @keyframes float {
     0% {
