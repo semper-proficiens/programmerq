@@ -2,6 +2,7 @@ import React from 'react';
 import { Nav, Navbar, Container, NavDropdown, Button } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './styles/navbar.css';
+import AnimatedObject from './components/AnimatedObject';
 
 function ProgrammerQ() {
     return (
@@ -30,13 +31,14 @@ function ProgrammerQ() {
                 </Container>
             </Navbar>
             <Container>
-                <h1>Welcome to ProgrammerQ!</h1>
-                <p>Here's some content for the home page.</p>
+                    <h1>Welcome to ProgrammerQ!</h1>
+                    <p>Here's some content for the home page.</p>
             </Container>
             <Container id="projects">
                 <h2>Projects</h2>
                 <p>Here's some content for the projects page.</p>
             </Container>
+            <AnimatedObject />
             <Container id="blog">
                 <h2>Blog</h2>
                 <p>Here's some content for the blog page.</p>
