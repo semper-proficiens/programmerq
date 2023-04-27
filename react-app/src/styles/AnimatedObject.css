@@ -4,9 +4,20 @@
     right: 0;
     width: 100px;
     height: 100px;
-    background-color: #F9A03F;
+    background-color: #f9a03f;
     animation: float 5s ease-in-out infinite;
 }
+
+.animated-object .message {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    font-size: 16px;
+    text-align: center;
+}
+
 
 @keyframes float {
     0% {

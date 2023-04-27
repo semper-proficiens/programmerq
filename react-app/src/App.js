@@ -38,7 +38,7 @@ function ProgrammerQ() {
                 <h2>Projects</h2>
                 <p>Here's some content for the projects page.</p>
             </Container>
-            <AnimatedObject />
+            <AnimatedObject width={20} height={20} color="#ff0000" speed={1} zIndex={1} />
             <Container id="blog">
                 <h2>Blog</h2>
                 <p>Here's some content for the blog page.</p>
