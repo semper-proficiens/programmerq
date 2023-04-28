@@ -1,5 +1,4 @@
 import React from 'react';
-import { Nav, Navbar, NavDropdown, Button, Container } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './styles/navbar.css';
 import Home from './components/Home';
