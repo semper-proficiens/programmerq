@@ -14,7 +14,7 @@ function QueuedSquares() {
     }
 
     return (
-        <div className="animated-object-wrapper">
+        <div className="animated-object-wrapper" style={{ top: '-100px' }}>
             {squares}
         </div>
     );
