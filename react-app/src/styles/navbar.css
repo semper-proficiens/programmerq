@@ -19,6 +19,10 @@
     font-size: 1.5rem;
 }
 
+.first-letter-color {
+    color: #f0a500; /* Replace with the color of your choice */
+}
+
 .dropdown-more {
     margin-right: 10px;
 }
