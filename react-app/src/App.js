@@ -2,7 +2,7 @@ import React from 'react';
 import { Nav, Navbar, Container, NavDropdown, Button } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './styles/navbar.css';
-import AnimatedObject from './components/AnimatedObject';
+import QueuedSquares from './components/QueuedSquares';
 
 function ProgrammerQ() {
     return (
@@ -38,7 +38,7 @@ function ProgrammerQ() {
                 <h2>Projects</h2>
                 <p>Here's some content for the projects page.</p>
             </Container>
-            <AnimatedObject width={20} height={20} color="#ff0000" speed={1} zIndex={1} />
+            <QueuedSquares width={20} height={20} color="#ff0000" speed={1} zIndex={1} />
             <Container id="blog">
                 <h2>Blog</h2>
                 <p>Here's some content for the blog page.</p>

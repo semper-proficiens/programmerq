@@ -1,7 +1,7 @@
 import React from 'react';
-import '../styles/AnimatedObject.css';
+import '../styles/QueuedSquares.css';
 
-function AnimatedObject() {
+function QueuedSquares() {
     const numSquares = 5;
     const squares = [];
 
@@ -20,4 +20,4 @@ function AnimatedObject() {
     );
 }
 
-export default AnimatedObject;
+export default QueuedSquares;
