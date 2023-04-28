@@ -43,10 +43,6 @@ function ProgrammerQ() {
                 <h2>Blog</h2>
                 <p>Here's some content for the blog page.</p>
             </Container>
-            <Container id="about">
-                <h2>About</h2>
-                <p>Here's some content for the about page.</p>
-            </Container>
         </div>
     );
 }
