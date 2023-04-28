@@ -2,12 +2,22 @@ import React from 'react';
 import { Nav, Navbar, Container, NavDropdown, Button } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../styles/navbar.css';
+import logo from '../assets/images/logo.png';
 
 function NavbarComponent() {
     return (
         <Navbar bg="dark" variant="dark" expand="lg">
             <Container>
-                <Navbar.Brand href="#home">ProgrammerQ</Navbar.Brand>
+                <Navbar.Brand href="#home">
+                    <img
+                        alt=""
+                        src={logo}
+                        width="30"
+                        height="30"
+                        className="d-inline-block align-top mr-2"
+                    />
+                    <span className="brand-text pl-2">Programmer<span className="text-primary">Q</span></span>
+                </Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="mx-auto">
@@ -32,3 +42,4 @@ function NavbarComponent() {
 }
 
 export default NavbarComponent;
+
