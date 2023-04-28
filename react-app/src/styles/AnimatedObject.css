@@ -5,8 +5,8 @@
 
 .animated-object {
     position: absolute;
-    width: 100px;
-    height: 100px;
+    width: 150px;
+    height: 150px;
     background-color: #F9A03F;
     animation: float 5s ease-in-out infinite;
     display: flex;
@@ -17,6 +17,7 @@
     color: white;
     border-radius: 10px;
 }
+
 
 @keyframes float {
     0% {
