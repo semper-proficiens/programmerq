@@ -1,5 +1,5 @@
 import React from 'react';
-import { Nav, Navbar, NavDropdown, Button } from 'react-bootstrap';
+import { Nav, Navbar, NavDropdown, Button, Container } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './styles/navbar.css';
 import Home from './components/Home';
@@ -10,8 +10,8 @@ import NavbarComponent from "./components/NavbarComponent";
 
 function ProgrammerQ() {
     return (
-        <div>
-            <NavbarComponent/>
+        <div className="text-center">
+            <NavbarComponent className="mx-auto"/> {/* add mx-auto class */}
             <Home />
             <Projects />
             <QueuedSquares width={20} height={20} color="#ff0000" speed={1} zIndex={1} />
@@ -19,5 +19,6 @@ function ProgrammerQ() {
         </div>
     );
 }
+
 
 export default ProgrammerQ;
