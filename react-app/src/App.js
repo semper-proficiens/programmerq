@@ -14,7 +14,7 @@ function ProgrammerQ() {
             <NavbarComponent className="mx-auto"/> {/* add mx-auto class */}
             <Home />
             <Projects />
-            <QueuedSquares width={20} height={20} color="#ff0000" speed={1} zIndex={1} />
+            <QueuedSquares width={20} height={20} color="#ff0000" speed={1} zIndex={2} />
             <Blog />
             <Footer/>
         </div>
