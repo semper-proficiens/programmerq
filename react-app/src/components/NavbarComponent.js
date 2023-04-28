@@ -9,8 +9,8 @@ function NavbarComponent() {
             <Container>
                 <Navbar.Brand href="#home">ProgrammerQ</Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
-                <Navbar.Collapse id="basic-navbar-nav">
-                    <Nav className="flex-grow-1">
+                <Navbar.Collapse id="basic-navbar-nav" className="justify-content-center">
+                    <Nav className="mr-auto">
                         <Nav.Link href="#home">Home</Nav.Link>
                         <Nav.Link href="#projects">Projects</Nav.Link>
                         <Nav.Link href="#blog">Blog</Nav.Link>
