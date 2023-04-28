@@ -1,0 +1,11 @@
+footer {
+    background-color: #343a40;
+    color: #fff;
+    padding: 20px;
+    width: 100%;
+}
+
+.fixed-bottom {
+    position: fixed;
+    bottom: 0;
+}

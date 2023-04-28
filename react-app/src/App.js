@@ -6,6 +6,7 @@ import Projects from './components/Projects';
 import Blog from './components/Blog';
 import QueuedSquares from './components/QueuedSquares';
 import NavbarComponent from "./components/NavbarComponent";
+import Footer from "./components/Footer";
 
 function ProgrammerQ() {
     return (
@@ -15,6 +16,7 @@ function ProgrammerQ() {
             <Projects />
             <QueuedSquares width={20} height={20} color="#ff0000" speed={1} zIndex={1} />
             <Blog />
+            <Footer/>
         </div>
     );
 }
