@@ -1,6 +1,12 @@
 .navbar-nav {
-    width: 100%;
+    display: flex;
     justify-content: space-between;
+    width: 100%;
+}
+
+.nav-item {
+    flex-grow: 1;
+    text-align: center;
 }
 
 .navbar-nav .nav-link {
