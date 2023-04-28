@@ -6,7 +6,7 @@ import Home from './components/Home';
 import Projects from './components/Projects';
 import Blog from './components/Blog';
 import QueuedSquares from './components/QueuedSquares';
-import NavbarComponent from "./components/Navbar";
+import NavbarComponent from "./components/NavbarComponent";
 
 function ProgrammerQ() {
     return (
