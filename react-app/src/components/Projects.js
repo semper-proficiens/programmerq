@@ -48,12 +48,8 @@ function Projects() {
                 <Col md={1} className="d-flex align-items-center justify-content-end">
                     <Button className="p-0" onClick={handlePrevProject}><BsChevronLeft className="h2 text-black" /></Button>
                 </Col>
-                <Col md={10}>
-                    <Row className="justify-content-center">
-                        <Col md={4}>
-                            <ProjectCard project={projects[projectIndex]} />
-                        </Col>
-                    </Row>
+                <Col md={3}>
+                    <ProjectCard project={projects[projectIndex]} />
                 </Col>
                 <Col md={1} className="d-flex align-items-center">
                     <Button className="p-0" onClick={handleNextProject}><BsChevronRight className="h2 text-black" /></Button>
