@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { Container, Row, Col, Card, Button } from 'react-bootstrap';
+import { Container, Row, Col, Button } from 'react-bootstrap';
 import { BsChevronLeft, BsChevronRight } from 'react-icons/bs';
+import ProjectCard from './ProjectCard';
 
 function Projects() {
     const [projectIndex, setProjectIndex] = useState(0);
@@ -50,16 +51,7 @@ function Projects() {
                 <Col md={10}>
                     <Row className="justify-content-center">
                         <Col md={4}>
-                            <Card>
-                                <Card.Img variant="top" src={projects[projectIndex].imageUrl} />
-                                <Card.Body>
-                                    <Card.Title>{projects[projectIndex].title}</Card.Title>
-                                    <Card.Text>
-                                        {projects[projectIndex].description}
-                                    </Card.Text>
-                                    <Button href={projects[projectIndex].link} variant="primary">Learn More</Button>
-                                </Card.Body>
-                            </Card>
+                            <ProjectCard project={projects[projectIndex]} />
                         </Col>
                     </Row>
                 </Col>
