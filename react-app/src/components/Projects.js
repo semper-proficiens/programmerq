@@ -43,8 +43,8 @@ function Projects() {
     return (
         <Container id="projects">
             <h2>Projects</h2>
-            <Row className="justify-content-center">
-                <Col md={1} className="d-flex align-items-center">
+            <Row className="justify-content-center align-items-center">
+                <Col md={1} className="d-flex align-items-center justify-content-end">
                     <Button className="p-0" onClick={handlePrevProject}><BsChevronLeft className="h2 text-black" /></Button>
                 </Col>
                 <Col md={10}>
@@ -63,7 +63,7 @@ function Projects() {
                         </Col>
                     </Row>
                 </Col>
-                <Col md={1} className="d-flex align-items-center justify-content-end">
+                <Col md={1} className="d-flex align-items-center">
                     <Button className="p-0" onClick={handleNextProject}><BsChevronRight className="h2 text-black" /></Button>
                 </Col>
             </Row>
