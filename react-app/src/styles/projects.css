@@ -1,0 +1,18 @@
+/* Add this CSS to your projects.css file */
+.Card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.Card-header span {
+    font-weight: bold;
+}
+
+.FaAngleDown {
+    transition: all 0.3s ease-in-out;
+}
+
+.FaAngleDown.active {
+    transform: rotate(180deg);
+}
