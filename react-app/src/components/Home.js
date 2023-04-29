@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Container } from 'react-bootstrap';
 import Typing from 'react-typing-animation';
 
@@ -11,11 +11,24 @@ function Home() {
         lineHeight: '48px',
     };
 
+    const [key, setKey] = useState(0);
+
+    const handleTypingComplete = () => {
+        setKey(0);
+    };
+
+    useEffect(() => {
+        const intervalId = setInterval(() => {
+            setKey(key => key + 1);
+        }, 3000);
+        return () => clearInterval(intervalId);
+    }, []);
+
     return (
         <Container>
-            <Typing speed={300}>
+            <Typing key={key} speed={300} onFinishedTyping={handleTypingComplete}>
                 <h1 style={fontStyles}>
-                    {Array.from("Welcome to ProgrammerQ!").map((letter, index) => (
+                    {Array.from('Welcome to ProgrammerQ!').map((letter, index) => (
                         <span
                             key={index}
                             style={{
