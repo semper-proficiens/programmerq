@@ -26,14 +26,6 @@ function Home() {
                     ))}
                 </h1>
             </Typing>
-            <p style={{
-                fontSize: '24px',
-                fontWeight: 'bold',
-                color: '#6c757d',
-                marginTop: '20px',
-                textAlign: 'center'
-            }}>Programmer's Buffet</p>
-
         </Container>
     );
 }

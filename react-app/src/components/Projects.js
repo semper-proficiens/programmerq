@@ -1,69 +1,70 @@
 import React, { useState } from 'react';
 import { Container, Row, Col, Card, Button } from 'react-bootstrap';
-import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
+import { BsChevronLeft, BsChevronRight } from 'react-icons/bs';
 
 function Projects() {
-    const [cardIndex, setCardIndex] = useState(0);
-    const projectCards = [
+    const [projectIndex, setProjectIndex] = useState(0);
+
+    const projects = [
         {
             title: "Project 1",
-            imgSrc: "https://via.placeholder.com/350x200",
             description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed commodo, lectus nec ullamcorper convallis, velit velit maximus quam, ut eleifend leo arcu sit amet elit.",
-            link: "#"
+            imageUrl: "https://via.placeholder.com/350x200",
+            link: "#",
         },
         {
             title: "Project 2",
-            imgSrc: "https://via.placeholder.com/350x200",
             description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed commodo, lectus nec ullamcorper convallis, velit velit maximus quam, ut eleifend leo arcu sit amet elit.",
-            link: "#"
+            imageUrl: "https://via.placeholder.com/350x200",
+            link: "#",
         },
         {
             title: "Project 3",
-            imgSrc: "https://via.placeholder.com/350x200",
             description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed commodo, lectus nec ullamcorper convallis, velit velit maximus quam, ut eleifend leo arcu sit amet elit.",
-            link: "#"
+            imageUrl: "https://via.placeholder.com/350x200",
+            link: "#",
         },
         {
             title: "Project 4",
-            imgSrc: "https://via.placeholder.com/350x200",
             description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed commodo, lectus nec ullamcorper convallis, velit velit maximus quam, ut eleifend leo arcu sit amet elit.",
-            link: "#"
+            imageUrl: "https://via.placeholder.com/350x200",
+            link: "#",
         }
     ];
 
-    const handleArrowClick = (direction) => {
-        if (direction === "left") {
-            setCardIndex((prevIndex) => (prevIndex === 0 ? projectCards.length - 1 : prevIndex - 1));
-        } else if (direction === "right") {
-            setCardIndex((prevIndex) => (prevIndex === projectCards.length - 1 ? 0 : prevIndex + 1));
-        }
-    };
+    const handlePrevProject = () => {
+        setProjectIndex((projectIndex - 1 + projects.length) % projects.length);
+    }
+
+    const handleNextProject = () => {
+        setProjectIndex((projectIndex + 1) % projects.length);
+    }
 
     return (
         <Container id="projects">
             <h2>Projects</h2>
-            <Row>
-                <Col xs={1} className="d-flex align-items-center">
-                    <FaArrowLeft className="arrow" onClick={() => handleArrowClick("left")} />
+            <Row className="justify-content-center">
+                <Col md={1} className="d-flex align-items-center">
+                    <Button className="p-0" onClick={handlePrevProject}><BsChevronLeft className="h2 text-black" /></Button>
                 </Col>
-                <Col xs={10}>
-                    <Row>
+                <Col md={10}>
+                    <Row className="justify-content-center">
                         <Col md={4}>
                             <Card>
-                                <Card.Img variant="top" src={projectCards[cardIndex].imgSrc} />
+                                <Card.Img variant="top" src={projects[projectIndex].imageUrl} />
                                 <Card.Body>
-                                    <Card.Title>{projectCards[cardIndex].title}</Card.Title>
+                                    <Card.Title>{projects[projectIndex].title}</Card.Title>
                                     <Card.Text>
-                                        {projectCards[cardIndex].description}
+                                        {projects[projectIndex].description}
                                     </Card.Text>
-                                    <Button variant="primary" href={projectCards[cardIndex].link}>Learn More</Button>
+                                    <Button href={projects[projectIndex].link} variant="primary">Learn More</Button>
                                 </Card.Body>
                             </Card>
                         </Col>
                     </Row>
                 </Col>
-                <Col xs={1} className="d-flex align-items-center justify-content-end">
-                    <FaArrowRight className="arrow" onClick={() => handleArrowClick("right")} />
+                <Col md={1} className="d-flex align-items-center justify-content-end">
+                    <Button className="p-0" onClick={handleNextProject}><BsChevronRight className="h2 text-black" /></Button>
                 </Col>
             </Row>
         </Container>
