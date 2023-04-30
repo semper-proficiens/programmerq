@@ -46,13 +46,17 @@ function Services() {
             <h2>Services</h2>
             <Row className="justify-content-center align-items-center">
                 <Col md={1} className="d-flex align-items-center justify-content-end">
-                    <Button className="p-0" onClick={handlePrevService}><BsChevronLeft className="h2 text-black" /></Button>
+                    <Button className="p-0" variant="light" onClick={handlePrevService}>
+                        <BsChevronLeft className="h2 text-black" />
+                    </Button>
                 </Col>
                 <Col md={3}>
                     <ServiceCard service={services[serviceIndex]} />
                 </Col>
                 <Col md={1} className="d-flex align-items-center">
-                    <Button className="p-0" onClick={handleNextService}><BsChevronRight className="h2 text-black" /></Button>
+                    <Button className="p-0" variant="light" onClick={handleNextService}>
+                        <BsChevronRight className="h2 text-black" />
+                    </Button>
                 </Col>
             </Row>
         </Container>
