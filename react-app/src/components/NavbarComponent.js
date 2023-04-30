@@ -3,6 +3,7 @@ import { Nav, Navbar, Container, NavDropdown, Button } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../styles/navbar.css';
 import logo from '../assets/images/logo.png';
+import { Link } from 'react-router-dom';
 
 function NavbarComponent() {
     return (
@@ -23,7 +24,7 @@ function NavbarComponent() {
                     <Nav className="mx-auto">
                         <Nav.Link href="#home"><span className="text-primary">H</span>ome</Nav.Link>
                         <Nav.Link href="#services"><span className="text-primary">S</span>ervices</Nav.Link>
-                        <Nav.Link href="#blog"><span className="text-primary">B</span>log</Nav.Link>
+                        <Nav.Link as={Link} to="/blog"><span className="text-primary">B</span>log</Nav.Link>
                         <Nav.Link href="#about"><span className="text-primary">A</span>bout</Nav.Link>
                     </Nav>
                     <Nav className="ml-auto">
