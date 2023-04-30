@@ -2,15 +2,17 @@ import React, { useState } from 'react';
 import { Container, Row, Col, Button } from 'react-bootstrap';
 import { BsChevronLeft, BsChevronRight } from 'react-icons/bs';
 import ServiceCard from './ServiceCard';
+import dashboardImage from '../assets/images/dashboard_350x200.jpeg';
+
 
 function Services() {
     const [serviceIndex, setServiceIndex] = useState(0);
 
     const services = [
         {
-            title: "Service 1",
-            description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed commodo, lectus nec ullamcorper convallis, velit velit maximus quam, ut eleifend leo arcu sit amet elit.",
-            imageUrl: "https://via.placeholder.com/350x200",
+            title: "DailyProgrammer",
+            description: "Byte-sized dashboard-style info on cyber-security topics like hacks, programming languages, and more",
+            imageUrl: dashboardImage,
             link: "#",
         },
         {
