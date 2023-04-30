@@ -22,7 +22,7 @@ function NavbarComponent() {
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="mx-auto">
                         <Nav.Link href="#home"><span className="text-primary">H</span>ome</Nav.Link>
-                        <Nav.Link href="#projects"><span className="text-primary">P</span>rojects</Nav.Link>
+                        <Nav.Link href="#services"><span className="text-primary">S</span>ervices</Nav.Link>
                         <Nav.Link href="#blog"><span className="text-primary">B</span>log</Nav.Link>
                         <Nav.Link href="#about"><span className="text-primary">A</span>bout</Nav.Link>
                     </Nav>
