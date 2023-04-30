@@ -1,4 +1,6 @@
 .blog-box {
+    max-width: 700px;
+    margin: 0 auto;
     padding: 1.5rem;
     border: 2px solid #28282B;
     border-radius: 10px;
@@ -6,6 +8,7 @@
     transition: all 0.3s ease;
     margin-bottom: 2rem;
 }
+
 
 .blog-box:hover {
     border-color: #f0a500;
