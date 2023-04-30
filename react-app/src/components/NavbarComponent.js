@@ -22,10 +22,10 @@ function NavbarComponent() {
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="mx-auto">
-                        <Nav.Link href="#home"><span className="text-primary">H</span>ome</Nav.Link>
-                        <Nav.Link href="#services"><span className="text-primary">S</span>ervices</Nav.Link>
+                        <Nav.Link as={Link} to="/"><span className="text-primary">H</span>ome</Nav.Link>
+                        <Nav.Link as={Link} to="/services"><span className="text-primary">S</span>ervices</Nav.Link>
                         <Nav.Link as={Link} to="/blog"><span className="text-primary">B</span>log</Nav.Link>
-                        <Nav.Link href="#about"><span className="text-primary">A</span>bout</Nav.Link>
+                        <Nav.Link as={Link} to="/about"><span className="text-primary">A</span>bout</Nav.Link>
                     </Nav>
                     <Nav className="ml-auto">
                         <NavDropdown title="More" id="basic-nav-dropdown" className="dropdown-more">

@@ -16,13 +16,15 @@ function MainPage() {
             <div className="text-center">
                 <NavbarComponent className="mx-auto"/>
                 <Routes>
-                    {/*<Route path="/blog" element={<BlogPage />} />*/}
+                    <Route path="/blog" element={<BlogPage />} />
+                    <Route path="/" element={<>
+                        <WelcomeMessage/>
+                        <HomeServices/>
+                        <HomeBlog/>
+                        <QueuedSquares width={20} height={20} color="#ff0000" speed={1} zIndex={2} />
+                        <Footer/>
+                    </>} />
                 </Routes>
-                <WelcomeMessage/>
-                <HomeServices/>
-                <HomeBlog/>
-                <QueuedSquares width={20} height={20} color="#ff0000" speed={1} zIndex={2} />
-                <Footer/>
             </div>
         </BrowserRouter>
     );
