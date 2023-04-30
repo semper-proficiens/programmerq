@@ -1,0 +1,19 @@
+.text-truncate {
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card-text {
+    display: inline-block;
+    vertical-align: middle;
+    text-align: justify;
+    line-height: 1.5;
+}

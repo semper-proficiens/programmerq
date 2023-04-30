@@ -11,7 +11,7 @@ function Services() {
     const services = [
         {
             title: "DailyProgrammer",
-            description: "Byte-sized dashboard-style info on cyber-security topics like hacks, programming languages, and more",
+            description: "Byte-sized Hacking dashboard info on cyber-security topics like hacks, programming languages, and more",
             imageUrl: dashboardImage,
             link: "#",
         },
