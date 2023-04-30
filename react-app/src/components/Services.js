@@ -1,62 +1,62 @@
 import React, { useState } from 'react';
 import { Container, Row, Col, Button } from 'react-bootstrap';
 import { BsChevronLeft, BsChevronRight } from 'react-icons/bs';
-import ProjectCard from './ProjectCard';
+import ServiceCard from './ServiceCard';
 
-function Projects() {
-    const [projectIndex, setProjectIndex] = useState(0);
+function Services() {
+    const [serviceIndex, setServiceIndex] = useState(0);
 
-    const projects = [
+    const services = [
         {
-            title: "Project 1",
+            title: "Service 1",
             description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed commodo, lectus nec ullamcorper convallis, velit velit maximus quam, ut eleifend leo arcu sit amet elit.",
             imageUrl: "https://via.placeholder.com/350x200",
             link: "#",
         },
         {
-            title: "Project 2",
+            title: "Service 2",
             description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed commodo, lectus nec ullamcorper convallis, velit velit maximus quam, ut eleifend leo arcu sit amet elit.",
             imageUrl: "https://via.placeholder.com/350x200",
             link: "#",
         },
         {
-            title: "Project 3",
+            title: "Service 3",
             description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed commodo, lectus nec ullamcorper convallis, velit velit maximus quam, ut eleifend leo arcu sit amet elit.",
             imageUrl: "https://via.placeholder.com/350x200",
             link: "#",
         },
         {
-            title: "Project 4",
+            title: "Service 4",
             description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed commodo, lectus nec ullamcorper convallis, velit velit maximus quam, ut eleifend leo arcu sit amet elit.",
             imageUrl: "https://via.placeholder.com/350x200",
             link: "#",
         }
     ];
 
-    const handlePrevProject = () => {
-        setProjectIndex((projectIndex - 1 + projects.length) % projects.length);
+    const handlePrevService = () => {
+        setServiceIndex((serviceIndex - 1 + services.length) % services.length);
     }
 
-    const handleNextProject = () => {
-        setProjectIndex((projectIndex + 1) % projects.length);
+    const handleNextService = () => {
+        setServiceIndex((serviceIndex + 1) % services.length);
     }
 
     return (
-        <Container id="projects">
-            <h2>Projects</h2>
+        <Container id="services">
+            <h2>Services</h2>
             <Row className="justify-content-center align-items-center">
                 <Col md={1} className="d-flex align-items-center justify-content-end">
-                    <Button className="p-0" onClick={handlePrevProject}><BsChevronLeft className="h2 text-black" /></Button>
+                    <Button className="p-0" onClick={handlePrevService}><BsChevronLeft className="h2 text-black" /></Button>
                 </Col>
                 <Col md={3}>
-                    <ProjectCard project={projects[projectIndex]} />
+                    <ServiceCard service={services[serviceIndex]} />
                 </Col>
                 <Col md={1} className="d-flex align-items-center">
-                    <Button className="p-0" onClick={handleNextProject}><BsChevronRight className="h2 text-black" /></Button>
+                    <Button className="p-0" onClick={handleNextService}><BsChevronRight className="h2 text-black" /></Button>
                 </Col>
             </Row>
         </Container>
     );
 }
 
-export default Projects;
+export default Services;

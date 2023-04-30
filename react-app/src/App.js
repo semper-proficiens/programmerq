@@ -2,7 +2,7 @@ import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './styles/navbar.css';
 import Home from './components/Home';
-import Projects from './components/Projects';
+import Services from './components/Services';
 import Blog from './components/Blog';
 import QueuedSquares from './components/QueuedSquares';
 import NavbarComponent from "./components/NavbarComponent";
@@ -13,7 +13,7 @@ function ProgrammerQ() {
         <div className="text-center">
             <NavbarComponent className="mx-auto"/> {/* add mx-auto class */}
             <Home />
-            <Projects />
+            <Services />
             <QueuedSquares width={20} height={20} color="#ff0000" speed={1} zIndex={2} />
             <Blog />
             <Footer/>
