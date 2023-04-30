@@ -2,7 +2,7 @@ import React from 'react';
 import { Container } from 'react-bootstrap';
 import Typing from 'react-typing-animation';
 
-function Home() {
+function WelcomeMessage() {
     const fontStyles = {
         fontFamily: 'Courier New',
         fontWeight: 'bold',
@@ -30,4 +30,4 @@ function Home() {
     );
 }
 
-export default Home;
+export default WelcomeMessage;

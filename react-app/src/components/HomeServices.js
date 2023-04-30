@@ -5,13 +5,13 @@ import ServiceCard from './ServiceCard';
 import dashboardImage from '../assets/images/dashboard_350x200.jpeg';
 
 
-function Services() {
+function HomeServices() {
     const [serviceIndex, setServiceIndex] = useState(0);
 
     const services = [
         {
             title: "DailyProgrammer",
-            description: "Byte-sized Hacking dashboard info on cyber-security topics like hacks, programming languages, and more",
+            description: "Byte-sized Hacking Dashboard info on cyber-security topics like hacks, programming languages, and more",
             imageUrl: dashboardImage,
             link: "#",
         },
@@ -65,4 +65,4 @@ function Services() {
     );
 }
 
-export default Services;
+export default HomeServices;
