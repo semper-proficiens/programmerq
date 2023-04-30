@@ -8,7 +8,7 @@ import QueuedSquares from './components/QueuedSquares';
 import NavbarComponent from "./components/NavbarComponent";
 import Footer from "./components/Footer";
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import BlogPage from './components/BlogPage';
+import WorkInProgress from "./components/WorkInProgress";
 
 function MainPage() {
     return (
@@ -16,7 +16,9 @@ function MainPage() {
             <div className="text-center">
                 <NavbarComponent className="mx-auto"/>
                 <Routes>
-                    <Route path="/blog" element={<BlogPage />} />
+                    <Route path="/blog" element={<WorkInProgress />} />
+                    <Route path="/services" element={<WorkInProgress />} />
+                    <Route path="/about" element={<WorkInProgress />} />
                     <Route path="/" element={<>
                         <WelcomeMessage/>
                         <HomeServices/>
