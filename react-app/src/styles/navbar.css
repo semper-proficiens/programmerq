@@ -51,10 +51,11 @@
 }
 
 .navbar-dark .navbar-nav .nav-link-dropdown .dropdown-item {
-    color: #fff;
+    color: #ffc107;
 }
 
 .navbar-dark .navbar-nav .nav-link-dropdown .dropdown-item:hover {
+    color: #f0a500; /* Replace with the color of your choice */
     background-color: #ffc107; /* warning-light color */
 }
 
