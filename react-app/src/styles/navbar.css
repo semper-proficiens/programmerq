@@ -34,3 +34,9 @@
 .dropdown-more {
     margin-right: 10px;
 }
+
+/* Dark mode NavDropdown divider */
+.nav-link-dropdown .dropdown-divider.dark {
+    border-top: 1px solid rgba(255,255,255,.2);
+}
+

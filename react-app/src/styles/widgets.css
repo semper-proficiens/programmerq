@@ -1,0 +1,59 @@
+.daily-programmer-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.widgets-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 1200px;
+}
+
+.widget {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    height: 300px;
+    margin: 10px;
+    border-radius: 20px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.widget-header {
+    display: flex;
+    justify-content: flex-end;
+    padding: 10px;
+}
+
+.widget-header button {
+    font-size: 24px;
+    font-weight: bold;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.widget-content {
+    flex: 1;
+    padding: 10px;
+}
+
+.add-widget {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+    height: 300px;
+    margin: 10px;
+    border-radius: 20px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+}
+
+.add-widget span {
+    font-size: 96px;
+    font-weight: bold;
+}
