@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import '../styles/widgets.css';
 
 function DailyProgrammerPage() {
-    const [widgets, setWidgets] = useState([{},{},{}]);
+    const [widgets, setWidgets] = useState([{ content: null }, { content: null }, { content: null }]);
     const [showOptions, setShowOptions] = useState(false);
     const [selectedOption, setSelectedOption] = useState(null);
 
@@ -18,7 +18,9 @@ function DailyProgrammerPage() {
 
     const handleSelectOption = (option) => {
         setSelectedOption(option);
-        setWidgets([...widgets, option]);
+        const newWidgets = [...widgets];
+        newWidgets.push({ content: option.content });
+        setWidgets(newWidgets);
         setShowOptions(false);
     };
 
@@ -28,12 +30,12 @@ function DailyProgrammerPage() {
                 {widgets.map((widget, index) => (
                     <div key={index} className="widget">
                         <div className="widget-header">
-                            <button onClick={() => handleRemoveWidget(index)}>{index === widgets.length - 1 ? '-' : '-'}</button>
+                            <button onClick={() => handleRemoveWidget(index)}>
+                                {index === widgets.length - 1 ? '-' : '-'}
+                            </button>
                         </div>
                         <div className="widget-content">
-                            {index === widgets.length - 1 && selectedOption && (
-                                <div>{selectedOption.content}</div>
-                            )}
+                            {widget.content && <div>{widget.content}</div>}
                         </div>
                     </div>
                 ))}
@@ -49,7 +51,11 @@ function DailyProgrammerPage() {
                         </div>
                         <div className="options-list">
                             {dummyOptions.map((option, index) => (
-                                <div key={index} className="option" onClick={() => handleSelectOption(option)}>
+                                <div
+                                    key={index}
+                                    className="option"
+                                    onClick={() => handleSelectOption(option)}
+                                >
                                     {option.title}
                                 </div>
                             ))}
@@ -59,7 +65,7 @@ function DailyProgrammerPage() {
             </div>
         </div>
     );
-};
+}
 
 export default DailyProgrammerPage;
 
