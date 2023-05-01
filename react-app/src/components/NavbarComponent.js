@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Nav, Navbar, Container, NavDropdown, Button } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../styles/navbar.css';
@@ -6,6 +6,16 @@ import logo from '../assets/images/logo.png';
 import { Link } from 'react-router-dom';
 
 function NavbarComponent() {
+    const [showLoginPage, setShowLoginPage] = useState(false);
+
+    const handleShowLoginPage = () => {
+        setShowLoginPage(true);
+    };
+
+    const handleCloseLoginPage = () => {
+        setShowLoginPage(false);
+    };
+
     return (
         <Navbar bg="dark" variant="dark" expand="lg">
             <Container>
@@ -34,7 +44,7 @@ function NavbarComponent() {
                             <NavDropdown.Item href="#action/3.2">Privacy Policy</NavDropdown.Item>
                             <NavDropdown.Item href="#action/3.3">Terms and Conditions</NavDropdown.Item>
                         </NavDropdown>
-                        <Button variant="outline-warning">Login</Button>
+                        <Button as={Link} to="/login" variant="outline-warning">Login</Button>
                     </Nav>
                 </Navbar.Collapse>
             </Container>

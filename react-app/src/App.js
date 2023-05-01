@@ -9,6 +9,7 @@ import NavbarComponent from "./components/NavbarComponent";
 import Footer from "./components/Footer";
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import WorkInProgress from "./components/WorkInProgress";
+import LoginPage from "./components/LoginPage";
 
 function MainPage() {
     return (
@@ -16,9 +17,6 @@ function MainPage() {
             <div className="text-center">
                 <NavbarComponent className="mx-auto"/>
                 <Routes>
-                    <Route path="/blog" element={<WorkInProgress />} />
-                    <Route path="/services" element={<WorkInProgress />} />
-                    <Route path="/about" element={<WorkInProgress />} />
                     <Route path="/" element={<>
                         <WelcomeMessage/>
                         <HomeServices/>
@@ -26,6 +24,10 @@ function MainPage() {
                         <QueuedSquares width={20} height={20} color="#ff0000" speed={1} zIndex={2} />
                         <Footer/>
                     </>} />
+                    <Route path="/blog" element={<WorkInProgress />} />
+                    <Route path="/services" element={<WorkInProgress />} />
+                    <Route path="/about" element={<WorkInProgress />} />
+                    <Route path="/login" element={<LoginPage />} />
                 </Routes>
             </div>
         </BrowserRouter>
