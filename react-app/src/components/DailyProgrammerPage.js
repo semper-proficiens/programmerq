@@ -1,10 +1,12 @@
-import React, { useState } from 'react';
+import React, {useContext, useState} from 'react';
 import '../styles/widgets.css';
+import { DarkModeContext } from '../contexts/DarkModeContext';
 
 function DailyProgrammerPage() {
     const [widgets, setWidgets] = useState([{ content: null }, { content: null }, { content: null }]);
     const [showOptions, setShowOptions] = useState(false);
     const [selectedOption, setSelectedOption] = useState(null);
+    const { isDarkMode } = useContext(DarkModeContext);
 
     const handleAddWidget = () => {
         setShowOptions(true);
@@ -29,27 +31,27 @@ function DailyProgrammerPage() {
             <div className="widgets-container">
                 {widgets.map((widget, index) => (
                     <div key={index} className="widget">
-                        <div className="widget-header">
+                        <div className={isDarkMode ? "widget-header-dark" : "widget-header-light"}>
                             <button onClick={() => handleRemoveWidget(index)}>
                                 {index === widgets.length - 1 ? '-' : '-'}
                             </button>
                         </div>
-                        <div className="widget-content">
+                        <div className={isDarkMode ? "widget-content-dark" : "widget-content-light"}>
                             {widget.content && <div>{widget.content}</div>}
                         </div>
                     </div>
                 ))}
                 {widgets.length < 9 && (
-                    <div className="add-widget" onClick={handleAddWidget}>
+                    <div className={isDarkMode ? "add-widget-dark" : "add-widget-light"} onClick={handleAddWidget}>
                         <span>+</span>
                     </div>
                 )}
                 {showOptions && (
-                    <div className="options-container">
-                        <div className="options-header">
+                    <div className={isDarkMode ? "options-container-dark" : "options-container-light"}>
+                        <div className={isDarkMode ? "options-header-dark" : "options-header-light"}>
                             <button onClick={() => setShowOptions(false)}>X</button>
                         </div>
-                        <div className="options-message">Select one of the options to fill your widget:</div>
+                        <div className={isDarkMode ? "options-message-dark" : "options-message-light"}>Select one of the options to fill your widget:</div>
                         <div className="options-list-container">
                             <div className="options-list">
                                 {dummyOptions.map((option, index) => (
