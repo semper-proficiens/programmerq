@@ -33,19 +33,19 @@ function LoginPage() {
                         </Form.Group>
                     )}
 
-                    <Button variant="primary" type="submit">
-                        {isSignup ? 'Sign up' : 'Log in'}
+                    <Button variant="outline-dark" type="submit" style={{backgroundColor: isSignup ? "#f0a500" : "#f0a500"}}>
+                        {isSignup ? 'SignUp' : 'Login'}
                     </Button>
 
-                    <div className="form-text">
+                    <div className="form-text" style={{color: "#fff"}}>
                         {isSignup
                             ? 'Already have an account?'
                             : 'Don\'t have an account?'
                         }
-                        <Button variant="outline-primary" size="sm" onClick={() => setIsSignup(!isSignup)}>
+                        <Button variant="outline-dark" size="sm" onClick={() => setIsSignup(!isSignup)} style={{marginLeft: "5px", color: "#f0a500", borderColor: "#f0a500"}}>
                             {isSignup
-                                ? 'Log in'
-                                : 'Sign up'
+                                ? 'Login'
+                                : 'SignUp'
                             }
                         </Button>
                     </div>

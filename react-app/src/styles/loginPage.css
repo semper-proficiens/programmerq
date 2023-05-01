@@ -7,15 +7,16 @@
 
 .form {
     width: 400px;
-    height: 400px; /* add this line */
-    display: flex; /* add this line */
-    flex-direction: column; /* add this line */
-    justify-content: center; /* add this line */
-    align-items: center; /* add this line */
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     padding: 20px;
-    background-color: #fff;
+    background-color: #343a40;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    color: #fff;
 }
 
 .form h2 {
@@ -47,7 +48,7 @@
     max-width: 300px;
     margin-top: 10px;
     padding: 10px;
-    background-color: #007bff;
+    background-color: #f0a500; /* change this */
     border: none;
     border-radius: 5px;
     color: #fff;
@@ -55,7 +56,7 @@
 }
 
 .form-group button:hover {
-    background-color: #0069d9;
+    background-color: #f0a51d; /* change this */
 }
 
 .form-text {
@@ -68,9 +69,11 @@
     width: 100%;
     max-width: 300px;
     padding: 10px;
-    border: 1px solid #ccc;
+    border: 1px solid #f0a500; /* change this */
     border-radius: 5px;
     margin-bottom: 20px;
+    background-color: #f0a500; /* change this */
+    color: #f0a500; /* add this */
 }
 
 .form-control {
@@ -87,15 +90,21 @@
     max-width: 300px;
     margin-top: 10px;
     padding: 10px;
-    background-color: #007bff;
-    border: none;
+    background-color: #f0a500; /* change this */
+    border: 2px solid #f0a51d; /* add this */
     border-radius: 5px;
-    color: #fff;
+    color: #f0a51d; /* add this */
     cursor: pointer;
     transition: all 0.3s ease-in-out;
+    margin-left: 5px; /* add this */
 }
 
 .custom-button:hover {
-    background-color: #0069d9;
+    background-color: #f0a51d; /* change this */
+    color: #fff; /* add this */
     transform: scale(1.1);
+}
+
+.form-text button {
+    color: #fff; /* add this */
 }
