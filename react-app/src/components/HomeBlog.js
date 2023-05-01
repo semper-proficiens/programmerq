@@ -13,7 +13,7 @@ function HomeBlog() {
             <h2>Blog</h2>
             <div className={isDarkMode ? "blog-box-dark" : "blog-box-light"}>
                 <p className={isDarkMode ? "typewriter-dark" : "typewriter-light"}>
-                    Check what we're cooking -> <Link to="/blog">Blog</Link>
+                    Check what's in the oven -> <Link to="/blog">Blog</Link>
                 </p>
             </div>
         </Container>
