@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Toggle } from 'react-toggle-component';
+import '../styles/toggle.css'
+
 
 function DarkLightToggle() {
     const [isDarkMode, setIsDarkMode] = useState(false);
@@ -14,20 +16,20 @@ function DarkLightToggle() {
     }, [isDarkMode]);
 
     return (
-        <div className={`toggle-container ${isDarkMode ? 'dark' : ''}`}>
+        <div className='toggle-container'>
             <Toggle
-                leftBackgroundColor="#343a40"
-                rightBackgroundColor="#fff"
-                knobColor="#343a40"
-                borderColor="#343a40"
+                leftKnobColor = "#f8f9fa"
+                leftBackgroundColor = "#343a40"
+                rightKnobColor= "#3b3b3b"
+                rightBackgroundColor="#fafafa"
+                borderColor="#0339ff"
                 name="dark-mode-toggle"
                 checked={isDarkMode}
                 onToggle={() => setIsDarkMode(!isDarkMode)}
-                className="dark-mode-toggle"
             />
-            <span className="toggle-message">
-        {isDarkMode ? 'Light Mode' : 'Dark Mode'}
-      </span>
+            <span className={isDarkMode ? "toggle-message-dark" : "toggle-message-light"}>
+                {isDarkMode ? 'Try Light Mode!' : 'Try Dark Mode!'}
+            </span>
         </div>
     );
 }

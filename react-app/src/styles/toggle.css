@@ -2,10 +2,12 @@
     display: flex;
     align-items: center;
     margin-bottom: 1rem;
+    justify-content: center;
 }
 
 .toggle-container.dark {
     background-color: #343a40;
+    margin-top: 1rem;
 }
 
 .dark-mode-toggle {
@@ -14,7 +16,14 @@
     margin-right: 1rem;
 }
 
-.toggle-message {
+.toggle-message-light {
     color: #343a40;
-    font-size: 1rem;
+    font-size: 1.2rem;
+    padding: 0.5rem;
+}
+
+.toggle-message-dark {
+    color: #f8f9fa;
+    font-size: 1.2rem;
+    padding: 0.5rem;
 }
