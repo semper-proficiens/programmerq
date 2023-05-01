@@ -36,8 +36,8 @@ function NavbarComponent() {
                             id="basic-nav-dropdown"
                             className="nav-link-dropdown"
                         >
-                            <NavDropdown.Item as={Link} to="/services/dailyprogrammer" className={isDarkMode ? "text-warning bg-secondary" : "text-primary bg-dark"}><span>DailyProgrammer</span><div className="dropdown-divider dark"></div></NavDropdown.Item>
-                            <NavDropdown.Item href="#action/3.1" className={isDarkMode ? "text-warning bg-secondary" : "text-primary bg-dark"}><span>Service2</span></NavDropdown.Item>
+                            <NavDropdown.Item as={Link} to="/services/dailyprogrammer" className={isDarkMode ? "text-warning" : "text-primary bg-dark"}><span>DailyProgrammer</span><div className="dropdown-divider dark"></div></NavDropdown.Item>
+                            <NavDropdown.Item as={Link} to="/services/service2" className={isDarkMode ? "text-warning" : "text-primary bg-dark"}><span>Service2</span></NavDropdown.Item>
                         </NavDropdown>
                         <Nav.Link as={Link} to="/blog"><span className={isDarkMode ? "text-warning" : "text-primary"}>B</span>log</Nav.Link>
                         <Nav.Link as={Link} to="/about"><span className={isDarkMode ? "text-warning" : "text-primary"}>A</span>bout</Nav.Link>
