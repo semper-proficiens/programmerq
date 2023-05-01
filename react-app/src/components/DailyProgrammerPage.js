@@ -49,6 +49,7 @@ function DailyProgrammerPage() {
                         <div className="options-header">
                             <button onClick={() => setShowOptions(false)}>X</button>
                         </div>
+                        <div className="options-message">Select one of the options to fill your widget:</div>
                         <div className="options-list-container">
                             <div className="options-list">
                                 {dummyOptions.map((option, index) => (
