@@ -49,16 +49,18 @@ function DailyProgrammerPage() {
                         <div className="options-header">
                             <button onClick={() => setShowOptions(false)}>X</button>
                         </div>
-                        <div className="options-list">
-                            {dummyOptions.map((option, index) => (
-                                <div
-                                    key={index}
-                                    className="option"
-                                    onClick={() => handleSelectOption(option)}
-                                >
-                                    {option.title}
-                                </div>
-                            ))}
+                        <div className="options-list-container">
+                            <div className="options-list">
+                                {dummyOptions.map((option, index) => (
+                                    <div
+                                        key={index}
+                                        className="option"
+                                        onClick={() => handleSelectOption(option)}
+                                    >
+                                        {option.title}
+                                    </div>
+                                ))}
+                            </div>
                         </div>
                     </div>
                 )}
