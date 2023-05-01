@@ -33,7 +33,7 @@ function LoginPage() {
                         </Form.Group>
                     )}
 
-                    <Button variant="outline-dark" type="submit" style={{backgroundColor: isSignup ? "#f0a500" : "#f0a500"}}>
+                    <Button variant="outline-dark" type="submit" style={{backgroundColor: isSignup ? "#f0a500" : "#f0a500" , marginTop: 5}}>
                         {isSignup ? 'SignUp' : 'Login'}
                     </Button>
 
