@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Nav, Navbar, Container, NavDropdown, Button } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../styles/navbar.css';
@@ -6,15 +6,6 @@ import logo from '../assets/images/logo.png';
 import { Link } from 'react-router-dom';
 
 function NavbarComponent() {
-    const [showLoginPage, setShowLoginPage] = useState(false);
-
-    const handleShowLoginPage = () => {
-        setShowLoginPage(true);
-    };
-
-    const handleCloseLoginPage = () => {
-        setShowLoginPage(false);
-    };
 
     return (
         <Navbar bg="dark" variant="dark" expand="lg">
