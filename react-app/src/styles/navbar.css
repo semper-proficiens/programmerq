@@ -35,8 +35,31 @@
     margin-right: 10px;
 }
 
+.dropdown-menu {
+    background-color: #343a40;
+    border: none;
+}
+
 /* Dark mode NavDropdown divider */
 .nav-link-dropdown .dropdown-divider.dark {
     border-top: 1px solid rgba(255,255,255,.2);
 }
+
+.navbar-dark .navbar-nav .nav-link-dropdown .dropdown-menu {
+    border: 2px solid #0275d8; /* warning-light color */
+    border-radius: 0.5rem; /* round corners */
+}
+
+.navbar-dark .navbar-nav .nav-link-dropdown .dropdown-item {
+    color: #fff;
+}
+
+.navbar-dark .navbar-nav .nav-link-dropdown .dropdown-item:hover {
+    background-color: #ffc107; /* warning-light color */
+}
+
+.dropdown-divider.dark {
+    border-top: 1px solid rgba(255, 255, 255, 0.5);
+}
+
 
