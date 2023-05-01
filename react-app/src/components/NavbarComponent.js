@@ -23,9 +23,8 @@ function NavbarComponent() {
                     />
                     <span className="brand-text pl-2">Programmer<span className={isDarkMode ? "text-warning" : "text-primary"}>Q</span></span>
                 </Navbar.Brand>
-                <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
-                    <Nav className="mx-auto">
+                    <Nav className="ml-auto m-auto">
                         <Nav.Link as={Link} to="/"><span className={isDarkMode ? "text-warning" : "text-primary"}>H</span>ome</Nav.Link>
                         <NavDropdown
                             title={
@@ -56,9 +55,9 @@ function NavbarComponent() {
                             <NavDropdown.Item href="#action/3.1" className={isDarkMode ? "text-warning" : "text-primary"}><span>Privacy Policy</span><div className="dropdown-divider dark"></div></NavDropdown.Item>
                             <NavDropdown.Item href="#action/3.1" className={isDarkMode ? "text-warning" : "text-primary"}><span>Terms and Conditions</span></NavDropdown.Item>
                         </NavDropdown>
-                        <Button as={Link} to="/login" variant="outline-warning" className="btn-login">Login</Button>
                     </Nav>
                 </Navbar.Collapse>
+                <Button as={Link} to="/login" variant={isDarkMode ? "outline-warning" : "outline-primary"} className="btn-login" >Login</Button>
             </Container>
         </Navbar>
     );
