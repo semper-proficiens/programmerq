@@ -14,7 +14,7 @@ function LoginPage() {
     return (
         <div className="login-page">
             <div className="form">
-                <h2>{isSignup ? 'Sign up' : 'Log in'}</h2>
+                <h2>{isSignup ? 'SignUp' : 'Login'}</h2>
                 <Form onSubmit={handleSubmit}>
                     <Form.Group controlId="formBasicEmail">
                         <Form.Label>Email address</Form.Label>
