@@ -12,7 +12,7 @@ function LoginPage() {
     }
 
     return (
-        <div className="login-page">
+        <div class="form-container">
             <div className="form">
                 <h2>{isSignup ? 'SignUp' : 'Login'}</h2>
                 <Form onSubmit={handleSubmit}>
