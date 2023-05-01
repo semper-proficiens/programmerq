@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Form, Button } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../styles/loginPage.css';
@@ -10,17 +10,6 @@ function LoginPage() {
         event.preventDefault();
         console.log('Form submitted');
     }
-
-    // This block is to toggle dark mode body for LoginPage only
-    useEffect(() => {
-        // Set class on mount
-        document.body.classList.add('login-page');
-
-        // Remove class on unmount
-        return () => {
-            document.body.classList.remove('login-page');
-        };
-    }, []);
 
     return (
         <div class="form-container">

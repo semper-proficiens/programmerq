@@ -1,0 +1,20 @@
+.toggle-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.toggle-container.dark {
+    background-color: #343a40;
+}
+
+.dark-mode-toggle {
+    width: 60px;
+    height: 30px;
+    margin-right: 1rem;
+}
+
+.toggle-message {
+    color: #343a40;
+    font-size: 1rem;
+}

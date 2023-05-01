@@ -10,12 +10,15 @@ import Footer from "./components/Footer";
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import WorkInProgress from "./components/WorkInProgress";
 import LoginPage from "./components/LoginPage";
+import ToggleDark from "./components/DarkLightToggle";
 
 function MainPage() {
+
     return (
         <BrowserRouter>
-            <div className="text-center">
+            <div className={"text-center"}>
                 <NavbarComponent className="mx-auto"/>
+                <ToggleDark/>
                 <Routes>
                     <Route path="/" element={<>
                         <WelcomeMessage/>
