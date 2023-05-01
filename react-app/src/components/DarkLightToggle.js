@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useContext } from 'react';
 import { Toggle } from 'react-toggle-component';
 import '../styles/toggle.css'
-
+import { DarkModeContext } from '../contexts/DarkModeContext';
 
 function DarkLightToggle() {
-    const [isDarkMode, setIsDarkMode] = useState(false);
+    const { isDarkMode, setIsDarkMode } = useContext(DarkModeContext);
 
     useEffect(() => {
         const body = document.querySelector('body');

@@ -1,4 +1,4 @@
-.blog-box {
+.blog-box-light {
     max-width: 700px;
     margin: 0 auto;
     padding: 1.5rem;
@@ -9,16 +9,47 @@
     margin-bottom: 2rem;
 }
 
+.blog-box-dark {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 1.5rem;
+    border: 2px solid #f0a500;
+    border-radius: 10px;
+    background-color: #28282B;
+    transition: all 0.3s ease;
+    margin-bottom: 2rem;
+}
 
-.blog-box:hover {
+.blog-box-light:hover {
     border-color: #f0a500;
     background-color: #28282B;
+}
+
+.blog-box-dark:hover {
+    border-color: #f0a500;
+    background-color: #343a40;
+}
+
+.blog-box-light:hover p {
     color: #FFFFFF;
 }
 
-.typewriter {
+.blog-box-dark:hover p {
+    color: #f0a500;
+}
+
+.typewriter-light {
     overflow: hidden;
     white-space: nowrap;
+    color: #343a40;
+    letter-spacing: 0.15em;
+    animation: typing 2s steps(30, end), blink-caret 0.75s step-end infinite;
+}
+
+.typewriter-dark {
+    overflow: hidden;
+    white-space: nowrap;
+    color: #f8f9fa;
     letter-spacing: 0.15em;
     animation: typing 2s steps(30, end), blink-caret 0.75s step-end infinite;
 }
