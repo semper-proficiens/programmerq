@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import '../styles/widgets.css'
 
 function DailyProgrammerPage() {
     const [widgets, setWidgets] = useState([]);

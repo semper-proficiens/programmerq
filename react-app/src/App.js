@@ -12,6 +12,7 @@ import WorkInProgress from "./components/WorkInProgress";
 import LoginPage from "./components/LoginPage";
 import DarkLightToggle from "./components/DarkLightToggle";
 import { DarkModeProvider } from "./contexts/DarkModeContext";
+import DailyProgrammerPage from "./components/DailyProgrammerPage";
 
 function MainPage() {
 
@@ -31,6 +32,7 @@ function MainPage() {
                         </>} />
                         <Route path="/blog" element={<WorkInProgress />} />
                         <Route path="/services" element={<WorkInProgress />} />
+                        <Route path="/services/dailyprogrammer" element={<DailyProgrammerPage/>} />
                         <Route path="/about" element={<WorkInProgress />} />
                         <Route path="/login" element={<LoginPage />} />
                     </Routes>
