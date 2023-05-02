@@ -9,7 +9,7 @@ const dummyOptions = [
 ];
 
 function DailyProgrammerPage() {
-    const [widgets, setWidgets] = useState([  { title: '' }]);
+    const [widgets, setWidgets] = useState([ ]);
 
 
     const [showOptions, setShowOptions] = useState(false);
@@ -18,12 +18,17 @@ function DailyProgrammerPage() {
 
     const handleAddWidget = () => {
         setShowOptions(true);
+        if (options.length === 0) {
+            alert("There are no more options to select.");
+            return;
+        }
     };
 
     const handleRemoveWidget = (index) => {
         const newWidgets = [...widgets];
         newWidgets.splice(index, 1);
         setWidgets(newWidgets);
+        setOptions([...options, { title: widgets[index].title, content: widgets[index].content }]);
     };
 
     const handleSelectOption = (option) => {
