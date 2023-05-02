@@ -22,7 +22,8 @@ function DarkLightToggle() {
                 leftBackgroundColor = "#343a40"
                 rightKnobColor= "#3b3b3b"
                 rightBackgroundColor="#fafafa"
-                borderColor="#0339ff"
+                leftBorderColor="#3B71CA"
+                rightBorderColor="#E4A11B"
                 name="dark-mode-toggle"
                 checked={isDarkMode}
                 onToggle={() => setIsDarkMode(!isDarkMode)}

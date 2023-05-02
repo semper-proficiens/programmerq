@@ -3,19 +3,16 @@ import '../styles/widgets.css';
 import { DarkModeContext } from '../contexts/DarkModeContext';
 
 const dummyOptions = [
-    { title: 'Option 1', content: 'Content for option 1' },
-    { title: 'Option 2', content: 'Content for option 2' },
-    { title: 'Option 3', content: 'Content for option 3' },
+    { title: 'HackingNews', content: 'Oh you no! X got hacked!' },
+    { title: 'HackingCode', content: 'These are top PL for hacking' },
+    { title: 'HackingTools', content: 'These are the top Tools for hacking' },
 ];
 
 function DailyProgrammerPage() {
-    const [widgets, setWidgets] = useState([
-        { content: null },
-        { content: null },
-        { content: null },
-    ]);
+    const [widgets, setWidgets] = useState([  { title: '' }]);
+
+
     const [showOptions, setShowOptions] = useState(false);
-    const [selectedOption, setSelectedOption] = useState(null);
     const { isDarkMode } = useContext(DarkModeContext);
     const [options, setOptions] = useState(dummyOptions);
 
@@ -30,10 +27,8 @@ function DailyProgrammerPage() {
     };
 
     const handleSelectOption = (option) => {
-        setSelectedOption(option);
-        const newWidgets = [...widgets];
-        newWidgets.push({ content: option.content });
-        setWidgets(newWidgets);
+        const newWidget = { title: option.title, content: option.content };
+        setWidgets([...widgets, newWidget]);
         setShowOptions(false);
         setOptions(options.filter((opt) => opt.title !== option.title));
     };
@@ -44,15 +39,16 @@ function DailyProgrammerPage() {
                 {widgets.map((widget, index) => (
                     <div key={index} className="widget">
                         <div
-                            className={isDarkMode ? "widget-header-dark" : "widget-header-light"}
+                            className={isDarkMode ? 'widget-header-dark' : 'widget-header-light'}
                         >
+                            <div className="widget-title">{widget.title}</div>
                             <button onClick={() => handleRemoveWidget(index)}>
-                                {index === widgets.length - 1 ? "-" : "-"}
+                                {index === widgets.length - 1 ? '-' : '-'}
                             </button>
                         </div>
                         <div
                             className={
-                                isDarkMode ? "widget-content-dark" : "widget-content-light"
+                                isDarkMode ? 'widget-content-dark' : 'widget-content-light'
                             }
                         >
                             {widget.content && <div>{widget.content}</div>}
