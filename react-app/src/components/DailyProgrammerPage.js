@@ -5,7 +5,7 @@ import { DarkModeContext } from '../contexts/DarkModeContext';
 function DailyProgrammerPage() {
     const [widgets, setWidgets] = useState([{ content: null }, { content: null }, { content: null }]);
     const [showOptions, setShowOptions] = useState(false);
-    const [selectedOption, setSelectedOption] = useState(null);
+    const {setSelectedOption} = useState(null);
     const { isDarkMode } = useContext(DarkModeContext);
 
     const handleAddWidget = () => {
@@ -52,12 +52,12 @@ function DailyProgrammerPage() {
                             <button onClick={() => setShowOptions(false)}>X</button>
                         </div>
                         <div className={isDarkMode ? "options-message-dark" : "options-message-light"}>Select one of the options to fill your widget:</div>
-                        <div className="options-list-container">
-                            <div className="options-list">
+                        <div className={isDarkMode ? "options-list-container-dark" : "options-list-container-light"}>
+                            <div className={isDarkMode ? "options-list-dark" : "options-list-light"}>
                                 {dummyOptions.map((option, index) => (
                                     <div
                                         key={index}
-                                        className="option"
+                                        className={isDarkMode ? "option-dark" : "option-light"}
                                         onClick={() => handleSelectOption(option)}
                                     >
                                         {option.title}
