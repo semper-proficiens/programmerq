@@ -5,7 +5,7 @@ import { DarkModeContext } from '../contexts/DarkModeContext';
 function DailyProgrammerPage() {
     const [widgets, setWidgets] = useState([{ content: null }, { content: null }, { content: null }]);
     const [showOptions, setShowOptions] = useState(false);
-    const {setSelectedOption} = useState(null);
+    const [selectedOption, setSelectedOption] = useState(null);
     const { isDarkMode } = useContext(DarkModeContext);
 
     const handleAddWidget = () => {

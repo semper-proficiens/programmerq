@@ -118,6 +118,7 @@
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
     cursor: pointer;
     transition: all 0.3s ease-in-out;
+    background-color: #cccccc;
 }
 
 .add-widget-dark {
@@ -131,6 +132,7 @@
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
     cursor: pointer;
     transition: all 0.3s ease-in-out;
+    background-color: #343a40;
 }
 
 .add-widget-light:hover {
@@ -146,13 +148,13 @@
 .add-widget-light span {
     font-size: 96px;
     font-weight: bold;
-    color: #20c997;
+    color: #14A44D;
 }
 
 .add-widget-dark span {
     font-size: 96px;
     font-weight: bold;
-    color: #20c997;
+    color: #14A44D;
 }
 
 .remove-widget span {
