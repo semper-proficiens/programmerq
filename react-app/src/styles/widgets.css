@@ -25,7 +25,7 @@
 
 .widget-header-light {
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
     padding: 10px;
     background-color: #3B71CA;
     border-radius: 10px;
@@ -33,7 +33,7 @@
 
 .widget-header-dark {
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
     padding: 10px;
     background-color: #E4A11B;
     border-radius: 10px;
@@ -41,10 +41,11 @@
 
 .widget-header-light button,
 .widget-header-dark button {
+    position: relative;
     font-size: 24px;
     font-weight: bold;
-    border: none;
-    background-color: transparent;
+    background-color: #332D2D;
+    color: #FFFFFF;
     cursor: pointer;
     transition: all 0.3s ease-in-out;
     border-radius: 50%;
@@ -56,31 +57,16 @@
     border: 2px solid #343a40;
 }
 
+
 .widget-header-light button:hover,
 .widget-header-dark button:hover {
     border-color: #fff;
     opacity: 1;
 }
 
-.widget-header-dark button.add-widget,
-.widget-header-light button.add-widget {
-    background-color: #20c997;
-    color: #fff;
-}
-
-.widget-header-dark button.remove-widget {
-    background-color: #dc3545;
-    color: #fff;
-}
-
-.widget-header-light button.remove-widget {
-    background-color: #dc3545;
-    color: #fff;
-}
-
 .widget-title {
     font-family: 'Montserrat', sans-serif;
-    font-size: 28px;
+    font-size: 25px;
     font-weight: 700;
     color: #fff;
     text-align: center;
