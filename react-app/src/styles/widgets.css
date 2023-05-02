@@ -28,7 +28,7 @@
     justify-content: center;
     padding: 10px;
     background-color: #3B71CA;
-    border-radius: 10px;
+    border-radius: 10px 10px 0 0;
 }
 
 .widget-header-dark {
@@ -36,7 +36,7 @@
     justify-content: center;
     padding: 10px;
     background-color: #E4A11B;
-    border-radius: 10px;
+    border-radius: 10px 10px 0 0;
 }
 
 .widget-header-light button,
@@ -79,14 +79,14 @@
     flex: 1;
     padding: 10px;
     background-color: #332D2D;
-    border-radius: 10px;
+    border-radius: 0px 0px 10px 10px;
 }
 
 .widget-content-dark {
     flex: 1;
     padding: 10px;
     background-color: #9FA6B2;
-    border-radius: 10px;
+    border-radius: 0px 0px 10px 10px;
 }
 
 .add-widget-light {
