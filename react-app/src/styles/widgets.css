@@ -119,6 +119,7 @@
     cursor: pointer;
     transition: all 0.3s ease-in-out;
     background-color: #cccccc;
+    border: 2px solid #3B71CA;
 }
 
 .add-widget-dark {
@@ -133,6 +134,7 @@
     cursor: pointer;
     transition: all 0.3s ease-in-out;
     background-color: #343a40;
+    border: 2px solid #E4A11B;
 }
 
 .add-widget-light:hover {
@@ -272,31 +274,21 @@
 }
 
 .options-container-light {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 400px;
-    height: 400px;
-    border-radius: 20px;
-    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
-    display: flex;
-    flex-direction: column;
-    background-color: #FFFFFF;
+    position: fixed;
+    z-index: 9999;
+    background-color: #f5f5f5;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    padding: 20px;
 }
 
-options-container-dark {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 400px;
-    height: 400px;
-    border-radius: 20px;
-    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
-    display: flex;
-    flex-direction: column;
-    background-color: #FFFFFF;
+.options-container-dark {
+    position: fixed;
+    z-index: 9999;
+    background-color: #1c1c1c;
+    border: 2px solid #777;
+    border-radius: 8px;
+    padding: 20px;
 }
 
 .options-list-dark {
