@@ -39,6 +39,7 @@
     border-radius: 10px;
 }
 
+.widget-header-light button,
 .widget-header-dark button {
     font-size: 24px;
     font-weight: bold;
@@ -50,38 +51,18 @@
     width: 40px;
     height: 40px;
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
+    border: 2px solid #343a40;
 }
 
-.widget-header-light button {
-    font-size: 24px;
-    font-weight: bold;
-    border: none;
-    background-color: transparent;
-    cursor: pointer;
-    transition: all 0.3s ease-in-out;
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
+.widget-header-light button:hover,
 .widget-header-dark button:hover {
-    box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.8);
+    border-color: #fff;
+    opacity: 1;
 }
 
-.widget-header-light button:hover {
-    box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.8);
-}
-
-.widget-header-dark button.add-widget {
-    background-color: #20c997;
-    color: #fff;
-}
-
+.widget-header-dark button.add-widget,
 .widget-header-light button.add-widget {
     background-color: #20c997;
     color: #fff;
@@ -95,6 +76,17 @@
 .widget-header-light button.remove-widget {
     background-color: #dc3545;
     color: #fff;
+}
+
+.widget-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 28px;
+    font-weight: 700;
+    color: #fff;
+    text-align: center;
+    text-transform: uppercase;
+    margin-top: 20px;
+    letter-spacing: 2px;
 }
 
 .widget-content-light{

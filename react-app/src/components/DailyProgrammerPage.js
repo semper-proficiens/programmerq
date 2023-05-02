@@ -2,10 +2,11 @@ import React, {useContext, useState} from 'react';
 import '../styles/widgets.css';
 import { DarkModeContext } from '../contexts/DarkModeContext';
 
-const dummyOptions = [
+const contentOptions = [
     { title: 'HackingNews', content: 'Oh you no! X got hacked!' },
     { title: 'HackingCode', content: 'These are top PL for hacking' },
     { title: 'HackingTools', content: 'These are the top Tools for hacking' },
+    { title: 'HackingSkills', content: 'These are the top Tools for hacking' },
 ];
 
 function DailyProgrammerPage() {
@@ -14,7 +15,7 @@ function DailyProgrammerPage() {
 
     const [showOptions, setShowOptions] = useState(false);
     const { isDarkMode } = useContext(DarkModeContext);
-    const [options, setOptions] = useState(dummyOptions);
+    const [options, setOptions] = useState(contentOptions);
 
     const handleAddWidget = () => {
         setShowOptions(true);
