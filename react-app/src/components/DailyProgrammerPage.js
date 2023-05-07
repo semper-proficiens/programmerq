@@ -3,7 +3,7 @@ import '../styles/widgets.css';
 import { DarkModeContext } from '../contexts/DarkModeContext';
 
 const contentOptions = [
-    { title: 'HackingNews', content: 'Oh no! X got hacked!' },
+    { title: 'HackingBreaches', content: 'Oh no! X got hacked!' },
     { title: 'HackingCode', content: 'These are top PL for hacking' },
     { title: 'HackingTools', content: 'These are the top Tools for hacking' },
     { title: 'HackingSkills', content: 'These are the top Tools for hacking' },
