@@ -48,7 +48,7 @@ class HIBPApi:
                 response = f"Email '{email}' not found in a breach in HIBP"
             # we're getting rate limited
             if response.status_code == 429:
-                response = f"API_KEY is being rate-limited"
+                response = f"HIBP_KEY is being rate-limited"
             elif response.status_code != 200:
                 raise ValueError(f"Error fetching data from HIBP API: {response.status_code}")
             else:
@@ -63,7 +63,7 @@ class HIBPApi:
                 
 
 if __name__ == '__main__':
-    api_key = os.environ.get('API_KEY')
+    api_key = os.environ.get('HIBP_KEY')
     if api_key is None:
         raise ValueError('API key not set in environment variable API_KEY')
 
