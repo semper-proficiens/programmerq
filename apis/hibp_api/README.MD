@@ -1,0 +1,1 @@
+This is making use of the HaveIBeenPwned API https://haveibeenpwned.com to retrieve public and verified breaches that happened this year and also check whether a desired email has been compromised or not and by which breach.
