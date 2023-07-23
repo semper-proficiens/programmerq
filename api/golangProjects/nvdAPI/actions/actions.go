@@ -1,15 +1,11 @@
-package main
+package actions
 
 import (
 	"fmt"
+	"golangProjects/nvdAPI/helpers"
+	"golangProjects/nvdAPI/httpsClient"
 	"log"
-	"nvd/helpers"
-	"nvd/httpsClient"
 	"time"
-)
-
-const (
-	nvdBaseURL = "https://services.nvd.nist.gov/rest/json/cves/2.0"
 )
 
 type CVE struct {
@@ -20,7 +16,11 @@ type CVE struct {
 	}
 }
 
-func main() {
+const (
+	nvdBaseURL = "https://services.nvd.nist.gov/rest/json/cves/2.0"
+)
+
+func GetYearlyCVES() {
 	c := httpsClient.NewClient()
 	// TODO: Include ?hasKEV , ?hasOval, ?isVulnerable
 	// Only showing golang's vulnerabilities that are CRITICAL
