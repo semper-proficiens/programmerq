@@ -10,6 +10,7 @@ import Footer from "./components/Footer";
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import WorkInProgress from "./components/WorkInProgress";
 import LoginPage from "./components/LoginPage";
+import BlogPage from "./components/BlogPage"
 import DarkLightToggle from "./components/DarkLightToggle";
 import { DarkModeProvider } from "./contexts/DarkModeContext";
 import DailyProgrammerPage from "./components/DailyProgrammerPage";
@@ -30,7 +31,7 @@ function MainPage() {
                             <QueuedSquares width={20} height={20} color="#ff0000" speed={1} zIndex={2} />
                             <Footer/>
                         </>} />
-                        <Route path="/blog" element={<WorkInProgress />} />
+                        <Route path="/blog" element={<BlogPage />} />
                         <Route path="/services" element={<WorkInProgress />} />
                         <Route path="/services/dailyprogrammer" element={<DailyProgrammerPage/>} />
                         <Route path="/about" element={<WorkInProgress />} />
