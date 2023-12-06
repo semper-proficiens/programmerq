@@ -1,19 +1,20 @@
-// components/CategorySection.js
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import BlogPost from './BlogPost';
 import '../styles/categorysection.css';
+import { DarkModeContext } from '../contexts/DarkModeContext';
 
 const CategorySection = ({ category, posts }) => {
     const [isExpanded, setIsExpanded] = useState(false);
+    const { isDarkMode } = useContext(DarkModeContext);
 
     const handleToggleExpand = () => {
         setIsExpanded((prev) => !prev);
     };
 
     return (
-        <div key={category} className={`mt-5 ${isExpanded ? 'expanded' : ''}`}>
+        <div key={category} className={`category-section ${isExpanded ? 'expanded' : ''}`}>
             <button
-                className="btn btn-primary mb-3"
+                className={`btn ${isDarkMode ? 'btn-dark' : 'btn-light'} category-button`}
                 onClick={handleToggleExpand}
                 aria-controls={`category-${category}`}
                 aria-expanded={isExpanded}
@@ -21,7 +22,7 @@ const CategorySection = ({ category, posts }) => {
                 {category}
             </button>
 
-            <div className="category-content">
+            <div className={`category-content ${isDarkMode ? 'dark-mode' : ''}`}>
                 {(posts[category] || []).map((post, index) => (
                     <BlogPost key={index} post={post} />
                 ))}
