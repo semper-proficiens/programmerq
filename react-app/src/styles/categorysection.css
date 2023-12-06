@@ -4,17 +4,6 @@
 }
 
 .btn-category-light {
-    background-color: #3B71CA;
-    color: #fff;
-    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
-}
-
-.btn-category-dark:hover {
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
-    background-color: #ffc107;
-}
-
-.btn-category-light {
     max-width: 700px;
     margin: 0 auto;
     padding: 1.5rem;
@@ -23,13 +12,13 @@
     background-color: #FFFFFF;
     transition: all 0.3s ease;
     margin-bottom: 2rem;
-    color: #28282B; /* Text color in light mode */
+    color: #28282B;
 }
 
 .btn-category-light:hover {
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
     background-color: #28282B;
-    color: #fff; /* Text color on hover in light mode */
+    color: #fff;
 }
 
 .btn-category-dark {
@@ -41,13 +30,12 @@
     background-color: #28282B;
     transition: all 0.3s ease;
     margin-bottom: 2rem;
-    color: #f0a500; /* Text color in dark mode */
+    color: #f0a500;
 }
 
 .btn-category-dark:hover {
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
-    background-color: #343a40;
-    color: #fff; /* Text color on hover in dark mode */
+    background-color: #ffc107;
 }
 
 .category-content {

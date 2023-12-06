@@ -4,6 +4,7 @@ import { Container, Button, Modal } from 'react-bootstrap';
 import { DarkModeContext } from '../contexts/DarkModeContext';
 import CreatePostForm from './CreatePostForm';
 import CategorySection from './CategorySection';
+import '../styles/createpostbutton.css'
 
 const BlogPage = () => {
     const { isDarkMode } = useContext(DarkModeContext);
@@ -38,7 +39,11 @@ const BlogPage = () => {
     return (
         <Container id="blog" className="my-5">
             <section className="mt-5">
-                <Button variant="primary" onClick={() => setShowCreateForm(true)} className="mb-3">
+                <Button
+                    variant={isDarkMode ? 'create-post-dark' : 'create-post-light'}
+                    onClick={() => setShowCreateForm(true)}
+                    className="mb-3"
+                >
                     Create Post
                 </Button>
 
