@@ -4,6 +4,37 @@ import { DarkModeContext } from '../contexts/DarkModeContext';
 import BlogPost from './BlogPost';
 import CreatePostForm from './CreatePostForm';
 
+// New Category component
+const CategorySection = ({ category, posts, isDarkMode }) => {
+    const [isExpanded, setIsExpanded] = useState(false);
+
+    const handleToggleExpand = () => {
+        setIsExpanded((prev) => !prev);
+    };
+
+    return (
+        <div key={category} className="mt-5">
+            <button
+                className="btn btn-primary mb-3"
+                onClick={handleToggleExpand}
+                aria-controls={`category-${category}`}
+                aria-expanded={isExpanded}
+            >
+                {category}
+            </button>
+
+            <div
+                id={`category-${category}`}
+                className={`category-content${isExpanded ? ' expanded' : ''}`}
+            >
+                {(posts[category] || []).map((post, index) => (
+                    <BlogPost key={index} post={post} />
+                ))}
+            </div>
+        </div>
+    );
+};
+
 const BlogPage = () => {
     const { isDarkMode } = useContext(DarkModeContext);
     const [newPost, setNewPost] = useState({ title: '', content: '', category: '' });
@@ -55,12 +86,12 @@ const BlogPage = () => {
             </section>
 
             {categories.map((category) => (
-                <div key={category} className="mt-5">
-                    <h2 className={isDarkMode ? 'h3 text-white' : 'h3 text-black'}>{category}</h2>
-                    {(posts[category] || []).map((post, index) => (
-                        <BlogPost key={index} post={post} />
-                    ))}
-                </div>
+                <CategorySection
+                    key={category}
+                    category={category}
+                    posts={posts}
+                    isDarkMode={isDarkMode}
+                />
             ))}
         </Container>
     );
