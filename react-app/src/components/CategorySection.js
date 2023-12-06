@@ -14,14 +14,13 @@ const CategorySection = ({ category, posts }) => {
     return (
         <div key={category} className={`category-section ${isExpanded ? 'expanded' : ''}`}>
             <button
-                className={`btn ${isDarkMode ? 'btn-category-dark' : 'btn-category-light'} mb-3`}
+                className={`btn ${isDarkMode ? 'btn-category-dark' : 'btn-category-light'}`}
                 onClick={handleToggleExpand}
                 aria-controls={`category-${category}`}
                 aria-expanded={isExpanded}
             >
                 {category}
             </button>
-
             <div className={`category-content ${isDarkMode ? 'dark-mode' : ''}`}>
                 {(posts[category] || []).map((post, index) => (
                     <BlogPost key={index} post={post} />

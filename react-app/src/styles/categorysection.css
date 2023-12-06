@@ -9,10 +9,45 @@
     transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
 }
 
+.btn-category-dark:hover {
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    background-color: #ffc107;
+}
+
+.btn-category-light {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 1.5rem;
+    border: 2px solid #28282B;
+    border-radius: 10px;
+    background-color: #FFFFFF;
+    transition: all 0.3s ease;
+    margin-bottom: 2rem;
+    color: #28282B; /* Text color in light mode */
+}
+
+.btn-category-light:hover {
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    background-color: #28282B;
+    color: #fff; /* Text color on hover in light mode */
+}
+
 .btn-category-dark {
-    background-color: #E4A11B;
-    color: #fff;
-    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 1.5rem;
+    border: 2px solid #f0a500;
+    border-radius: 10px;
+    background-color: #28282B;
+    transition: all 0.3s ease;
+    margin-bottom: 2rem;
+    color: #f0a500; /* Text color in dark mode */
+}
+
+.btn-category-dark:hover {
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    background-color: #343a40;
+    color: #fff; /* Text color on hover in dark mode */
 }
 
 .category-content {
@@ -30,4 +65,5 @@
 
 .dark-mode .category-content {
     background-color: #343a40; /* Background color for category content in dark mode */
+    color: #fff; /* Text color in dark mode */
 }
