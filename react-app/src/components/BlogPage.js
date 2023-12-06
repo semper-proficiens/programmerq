@@ -21,10 +21,11 @@ const BlogPage = () => {
         e.preventDefault();
         const category = newPost.category;
         setCategories((prevCategories) => [...new Set([...prevCategories, category])]);
-        setPosts((prevPosts) => ({
-            ...prevPosts,
-            [category]: [...(prevPosts[category] || []), newPost],
-        }));
+        setPosts((prevPosts) => {
+            const updatedPosts = { ...prevPosts };
+            updatedPosts[category] = [...(prevPosts[category] || []), newPost];
+            return updatedPosts;
+        });
         setNewPost({ title: '', content: '', category: '' });
         setShowCreateForm(false);
     };

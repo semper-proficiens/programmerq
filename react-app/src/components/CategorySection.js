@@ -1,6 +1,7 @@
 // components/CategorySection.js
 import React, { useState } from 'react';
 import BlogPost from './BlogPost';
+import '../styles/categorysection.css';
 
 const CategorySection = ({ category, posts }) => {
     const [isExpanded, setIsExpanded] = useState(false);
@@ -10,7 +11,7 @@ const CategorySection = ({ category, posts }) => {
     };
 
     return (
-        <div key={category} className="mt-5">
+        <div key={category} className={`mt-5 ${isExpanded ? 'expanded' : ''}`}>
             <button
                 className="btn btn-primary mb-3"
                 onClick={handleToggleExpand}
@@ -20,10 +21,7 @@ const CategorySection = ({ category, posts }) => {
                 {category}
             </button>
 
-            <div
-                id={`category-${category}`}
-                className={`category-content${isExpanded ? ' expanded' : ''}`}
-            >
+            <div className="category-content">
                 {(posts[category] || []).map((post, index) => (
                     <BlogPost key={index} post={post} />
                 ))}
