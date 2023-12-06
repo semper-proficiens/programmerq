@@ -1,39 +1,9 @@
+// components/BlogPage.js
 import React, { useContext, useState } from 'react';
 import { Container, Button, Modal } from 'react-bootstrap';
 import { DarkModeContext } from '../contexts/DarkModeContext';
-import BlogPost from './BlogPost';
 import CreatePostForm from './CreatePostForm';
-
-// New Category component
-const CategorySection = ({ category, posts, isDarkMode }) => {
-    const [isExpanded, setIsExpanded] = useState(false);
-
-    const handleToggleExpand = () => {
-        setIsExpanded((prev) => !prev);
-    };
-
-    return (
-        <div key={category} className="mt-5">
-            <button
-                className="btn btn-primary mb-3"
-                onClick={handleToggleExpand}
-                aria-controls={`category-${category}`}
-                aria-expanded={isExpanded}
-            >
-                {category}
-            </button>
-
-            <div
-                id={`category-${category}`}
-                className={`category-content${isExpanded ? ' expanded' : ''}`}
-            >
-                {(posts[category] || []).map((post, index) => (
-                    <BlogPost key={index} post={post} />
-                ))}
-            </div>
-        </div>
-    );
-};
+import CategorySection from './CategorySection';
 
 const BlogPage = () => {
     const { isDarkMode } = useContext(DarkModeContext);
@@ -86,12 +56,7 @@ const BlogPage = () => {
             </section>
 
             {categories.map((category) => (
-                <CategorySection
-                    key={category}
-                    category={category}
-                    posts={posts}
-                    isDarkMode={isDarkMode}
-                />
+                <CategorySection key={category} category={category} posts={posts} />
             ))}
         </Container>
     );
