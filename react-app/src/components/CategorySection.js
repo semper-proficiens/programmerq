@@ -14,7 +14,7 @@ const CategorySection = ({ category, posts }) => {
     return (
         <div key={category} className={`category-section ${isExpanded ? 'expanded' : ''}`}>
             <button
-                className={`btn ${isDarkMode ? 'btn-dark' : 'btn-light'} category-button`}
+                className={`btn ${isDarkMode ? 'btn-category-dark' : 'btn-category-light'} mb-3`}
                 onClick={handleToggleExpand}
                 aria-controls={`category-${category}`}
                 aria-expanded={isExpanded}

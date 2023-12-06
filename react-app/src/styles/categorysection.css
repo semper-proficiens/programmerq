@@ -1,11 +1,33 @@
+/* components/CategorySection.css */
+.category-section {
+    margin-top: 5px;
+}
+
+.btn-category-light {
+    background-color: #3B71CA;
+    color: #fff;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.btn-category-dark {
+    background-color: #E4A11B;
+    color: #fff;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
 .category-content {
     max-height: 0;
     overflow: hidden;
-    transition: max-height 0.3s ease-out;
+    transition: max-height 0.3s ease-out, background-color 0.3s ease-in-out;
+    background-color: #fff; /* Default background color for light mode */
 }
 
 .expanded .category-content {
     max-height: 1000px; /* Adjust this value based on your content height */
-    transition: max-height 0.3s ease-in;
+    transition: max-height 0.3s ease-in, background-color 0.3s ease-in-out;
+    background-color: #343a40; /* Background color for expanded section in dark mode */
 }
 
+.dark-mode .category-content {
+    background-color: #343a40; /* Background color for category content in dark mode */
+}
