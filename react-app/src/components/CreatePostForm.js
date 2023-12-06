@@ -1,7 +1,10 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Form, Button, Dropdown } from 'react-bootstrap';
+import { DarkModeContext } from '../contexts/DarkModeContext';
 
 const CreatePostForm = ({ newPost, handleInputChange, handlePostSubmit }) => {
+    const { isDarkMode } = useContext(DarkModeContext);
+
     return (
         <Form onSubmit={handlePostSubmit}>
             <Form.Group controlId="postTitle">
@@ -28,7 +31,7 @@ const CreatePostForm = ({ newPost, handleInputChange, handlePostSubmit }) => {
             <Form.Group controlId="postCategory">
                 <Form.Label>Category</Form.Label>
                 <Dropdown>
-                    <Dropdown.Toggle variant="primary" id="categoryDropdown">
+                    <Dropdown.Toggle variant={isDarkMode ? 'create-post-dark' : 'create-post-light'} id="categoryDropdown">
                         {newPost.category || 'Select Category'}
                     </Dropdown.Toggle>
                     <Dropdown.Menu>
@@ -43,7 +46,7 @@ const CreatePostForm = ({ newPost, handleInputChange, handlePostSubmit }) => {
                     </Dropdown.Menu>
                 </Dropdown>
             </Form.Group>
-            <Button variant="primary" type="submit">
+            <Button variant={isDarkMode ? 'create-post-dark' : 'create-post-light'} type="submit">
                 Create Post
             </Button>
         </Form>
