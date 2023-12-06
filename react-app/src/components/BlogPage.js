@@ -1,13 +1,13 @@
 import React, { useContext, useState } from 'react';
-import { Container, Form, Button } from 'react-bootstrap';
+import { Container, Form, Button, Dropdown } from 'react-bootstrap';
 import { DarkModeContext } from '../contexts/DarkModeContext';
 import BlogPost from './BlogPost';
-import BlogList from './BlogList';
 
 function BlogPage() {
     const { isDarkMode } = useContext(DarkModeContext);
-    const [newPost, setNewPost] = useState({ title: '', content: '' });
-    const [posts, setPosts] = useState([]);
+    const [newPost, setNewPost] = useState({ title: '', content: '', category: '' });
+    const [categories, setCategories] = useState([]);
+    const [posts, setPosts] = useState({});
     const [showCreateForm, setShowCreateForm] = useState(false);
 
     const handleInputChange = (e) => {
@@ -17,19 +17,23 @@ function BlogPage() {
 
     const handlePostSubmit = (e) => {
         e.preventDefault();
-        // Add validation and actual submission logic here
-        // For simplicity, we'll just add the new post to the posts array
-        setPosts((prevPosts) => [...prevPosts, newPost]);
-        // Clear the form
-        setNewPost({ title: '', content: '' });
-        // Hide the form after submission
+        const category = newPost.category;
+        if (!categories.includes(category)) {
+            setCategories([...categories, category]);
+            setPosts((prevPosts) => ({ ...prevPosts, [category]: [newPost] }));
+        } else {
+            setPosts((prevPosts) => ({
+                ...prevPosts,
+                [category]: [...prevPosts[category], newPost],
+            }));
+        }
+        setNewPost({ title: '', content: '', category: '' });
         setShowCreateForm(false);
     };
 
     return (
         <Container id="blog" className="my-5">
             <section className="mt-5">
-                {/* Toggle visibility of the form */}
                 <Button
                     variant="primary"
                     onClick={() => setShowCreateForm(!showCreateForm)}
@@ -38,7 +42,6 @@ function BlogPage() {
                     Create Post
                 </Button>
 
-                {/* Display the form if showCreateForm is true */}
                 {showCreateForm && (
                     <Form onSubmit={handlePostSubmit}>
                         <Form.Group controlId="postTitle">
@@ -62,15 +65,41 @@ function BlogPage() {
                                 onChange={handleInputChange}
                             />
                         </Form.Group>
+                        <Form.Group controlId="postCategory">
+                            <Form.Label>Category</Form.Label>
+                            <Dropdown>
+                                <Dropdown.Toggle variant="primary" id="categoryDropdown">
+                                    {newPost.category || 'Select Category'}
+                                </Dropdown.Toggle>
+                                <Dropdown.Menu>
+                                    <Dropdown.Item onClick={() => handleInputChange({ target: { name: 'category', value: 'Security' } })}>
+                                        Security
+                                    </Dropdown.Item>
+                                    <Dropdown.Item onClick={() => handleInputChange({ target: { name: 'category', value: 'Application Performance' } })}>
+                                        Application Performance
+                                    </Dropdown.Item>
+                                    <Dropdown.Item onClick={() => handleInputChange({ target: { name: 'category', value: 'CICD' } })}>
+                                        CICD
+                                    </Dropdown.Item>
+                                    {/* Add more categories as needed */}
+                                </Dropdown.Menu>
+                            </Dropdown>
+                        </Form.Group>
                         <Button variant="primary" type="submit">
-                            Submit Post
+                            Create Post
                         </Button>
                     </Form>
                 )}
             </section>
 
-            {/* Display the list of recent blog posts using BlogList */}
-            <BlogList posts={posts} />
+            {categories.map((category) => (
+                <div key={category} className="mt-5">
+                    <h2 className={isDarkMode ? "h3 text-white" : "h3 text-black"}>{category}</h2>
+                    {posts[category].map((post, index) => (
+                        <BlogPost key={index} post={post} />
+                    ))}
+                </div>
+            ))}
         </Container>
     );
 }
