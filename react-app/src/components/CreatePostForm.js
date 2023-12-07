@@ -62,7 +62,7 @@ const CreatePostForm = ({ newPost, handleInputChange, handlePostSubmit }) => {
                         {newPost.category || 'Select Category'}
                     </Dropdown.Toggle>
                     <Dropdown.Menu className={isDarkMode ? 'dark' : 'light'}>
-                        {['Security', 'Application Performance', 'CICD'].map((category) => (
+                        {['Security', 'Application Performance', 'CICD', 'Hardware'].map((category) => (
                             <Dropdown.Item
                                 key={category}
                                 onClick={() => handleInputChange({ target: { name: 'category', value: category } })}
