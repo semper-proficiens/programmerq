@@ -14,6 +14,7 @@ import BlogPage from "./components/BlogPage"
 import DarkLightToggle from "./components/DarkLightToggle";
 import { DarkModeProvider } from "./contexts/DarkModeContext";
 import DailyProgrammerPage from "./components/DailyProgrammerPage";
+import Post from './components/Post';
 
 function MainPage() {
 
@@ -36,6 +37,7 @@ function MainPage() {
                         <Route path="/services/dailyprogrammer" element={<DailyProgrammerPage/>} />
                         <Route path="/about" element={<WorkInProgress />} />
                         <Route path="/login" element={<LoginPage />} />
+                        <Route path="/post/:id" component={Post} />
                     </Routes>
                 </DarkModeProvider>
             </div>

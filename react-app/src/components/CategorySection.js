@@ -25,14 +25,11 @@ const CategorySection = ({ category, posts }) => {
             <div className={`category-content ${isDarkMode ? 'dark-mode' : ''}`}>
                 {isExpanded &&
                 (posts[category] || []).map((post, index) => (
-                    <Link
-                        key={index}
-                        to={`/post/${index + 1}`} // Assuming each post has a unique identifier/index
-                        className={`post-link ${isDarkMode ? 'post-link-dark' : 'post-link-light'}`}
-                    >
-                        <h3>{post.title}</h3>
-                        <p>{post.content}</p>
-                    </Link>
+                    <div key={index} className={`post ${isDarkMode ? 'post-dark' : 'post-light'}`}>
+                        <Link to={`/post/${index + 1}`} className={`post-title ${isDarkMode ? 'post-link-dark' : 'post-link-light'}`}>
+                            <h3>{post.title}</h3>
+                        </Link>
+                    </div>
                 ))}
             </div>
         </div>
