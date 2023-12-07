@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import { Form, Button, Dropdown } from 'react-bootstrap';
 import { DarkModeContext } from '../contexts/DarkModeContext';
+import '../styles/createpostform.css';
 
 const CreatePostForm = ({ newPost, handleInputChange, handlePostSubmit }) => {
     const { isDarkMode } = useContext(DarkModeContext);
@@ -31,14 +32,18 @@ const CreatePostForm = ({ newPost, handleInputChange, handlePostSubmit }) => {
             <Form.Group controlId="postCategory">
                 <Form.Label>Category</Form.Label>
                 <Dropdown>
-                    <Dropdown.Toggle variant={isDarkMode ? 'create-post-dark' : 'create-post-light'} id="categoryDropdown">
+                    <Dropdown.Toggle
+                        variant={isDarkMode ? 'create-post-dark' : 'create-post-light'}
+                        id="categoryDropdown"
+                    >
                         {newPost.category || 'Select Category'}
                     </Dropdown.Toggle>
-                    <Dropdown.Menu>
+                    <Dropdown.Menu className={isDarkMode ? 'dark' : 'light'}>
                         {['Security', 'Application Performance', 'CICD'].map((category) => (
                             <Dropdown.Item
                                 key={category}
                                 onClick={() => handleInputChange({ target: { name: 'category', value: category } })}
+                                className={isDarkMode ? 'dark' : 'light'} // Apply custom styles based on mode
                             >
                                 {category}
                             </Dropdown.Item>

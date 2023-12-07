@@ -1,0 +1,32 @@
+/* Dropdown menu styles */
+.dark .dropdown-menu {
+    background-color: #28282B;
+    color: #f0a500;
+}
+
+.light .dropdown-menu {
+    background-color: #FFFFFF;
+    color: #28282B;
+}
+
+/* Individual dropdown item styles */
+.dark .dropdown-item {
+    background-color: #28282B;
+    color: #f0a500;
+}
+
+.dark .dropdown-item:hover,
+.dark .dropdown-item:focus {
+    background-color: #ffc107;
+}
+
+.light .dropdown-item {
+    background-color: #FFFFFF;
+    color: #28282B;
+}
+
+.light .dropdown-item:hover,
+.light .dropdown-item:focus {
+    background-color: #28282B;
+    color: #FFFFFF;
+}
