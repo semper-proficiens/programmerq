@@ -1,5 +1,6 @@
+// components/CategorySection.js
 import React, { useState, useContext } from 'react';
-import BlogPost from './BlogPost';
+import { Link } from 'react-router-dom';
 import '../styles/categorysection.css';
 import { DarkModeContext } from '../contexts/DarkModeContext';
 
@@ -22,8 +23,16 @@ const CategorySection = ({ category, posts }) => {
                 {category}
             </button>
             <div className={`category-content ${isDarkMode ? 'dark-mode' : ''}`}>
-                {(posts[category] || []).map((post, index) => (
-                    <BlogPost key={index} post={post} />
+                {isExpanded &&
+                (posts[category] || []).map((post, index) => (
+                    <Link
+                        key={index}
+                        to={`/post/${index + 1}`} // Assuming each post has a unique identifier/index
+                        className={`post-link ${isDarkMode ? 'post-link-dark' : 'post-link-light'}`}
+                    >
+                        <h3>{post.title}</h3>
+                        <p>{post.content}</p>
+                    </Link>
                 ))}
             </div>
         </div>

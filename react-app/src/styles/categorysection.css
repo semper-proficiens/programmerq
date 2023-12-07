@@ -55,3 +55,24 @@
     background-color: #343a40; /* Background color for category content in dark mode */
     color: #fff; /* Text color in dark mode */
 }
+
+.post-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    margin-bottom: 1rem;
+    cursor: pointer;
+}
+
+.post-link:hover {
+    color: #007bff; /* Change the color on hover as desired */
+}
+
+.post-link-dark {
+    color: #ffffff;
+}
+
+.post-link-light {
+    color: #000000;
+}
+
