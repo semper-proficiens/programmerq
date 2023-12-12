@@ -8,6 +8,5 @@ app-build: ## builds the app in docker
 app-run: ## runs docker build in port 3000
 	docker run -it -p 3000:3000 --rm programmerq
 
-local_run: ## we would normally run 'npm start' but there is an ssl error, and this is a workaround
+local_run: ## make sure to run 'npm install' first for the npm dependencies
 	npm start
-

@@ -1,4 +1,3 @@
-// components/BlogPage.js
 import React, { useContext, useState } from 'react';
 import { Container, Button, Modal } from 'react-bootstrap';
 import { DarkModeContext } from '../contexts/DarkModeContext';
@@ -27,6 +26,23 @@ const BlogPage = () => {
             updatedPosts[category] = [...(prevPosts[category] || []), newPost];
             return updatedPosts;
         });
+
+        // Send a post request to the backend
+        fetch('/api/posts', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(newPost),
+        })
+            .then((response) => response.json())
+            .then((data) => {
+                console.log('Success:', data);
+            })
+            .catch((error) => {
+                console.error('Error:', error);
+            });
+
         setNewPost({ title: '', content: '', category: '' });
         setShowCreateForm(false);
     };
