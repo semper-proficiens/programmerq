@@ -5,5 +5,5 @@ help:
 get_hacker_breaches: ## pass the API_KEY env var (e.g. HIBP_KEY=secret_value make get_hacker_breaches)
 	@python3 apis/hibp_api/hacker_breaches/hacker_breaches.py
 
-get_pl_vulns:
+get_pl_vulns: ## gets nvd database vulnerabilities
 	cd apis/nvd/ && go run main.go
