@@ -8,7 +8,41 @@ function LoginPage() {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        console.log('Form submitted');
+
+        const email = event.target.formBasicEmail.value;
+        const password = event.target.formBasicPassword.value;
+        const confirmPassword = isSignup ? event.target.formBasicPasswordConfirm.value : null;
+
+        if (isSignup) {
+            if (password !== confirmPassword) {
+                // Handle the mismatch password here
+                console.log('Passwords do not match');
+                return;
+            }
+
+            fetch('YOUR_BACKEND_API_URL', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    email,
+                    password,
+                }),
+            })
+                .then((response) => response.json())
+                .then((data) => {
+                    console.log('Success:', data);
+                    // Handle the response data here
+                })
+                .catch((error) => {
+                    console.error('Error:', error);
+                    // Handle the error here
+                });
+        } else {
+            // Handle login here
+            console.log('Logging in');
+        }
     }
 
     return (
