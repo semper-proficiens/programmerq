@@ -3,9 +3,11 @@ import { Container, Button, Modal } from 'react-bootstrap';
 import { DarkModeContext } from '../contexts/DarkModeContext';
 import CreatePostForm from './CreatePostForm';
 import CategorySection from './CategorySection';
+import { AuthContext } from '../contexts/AuthContext';
 import '../styles/createpostbutton.css'
 
 const BlogPage = () => {
+    const { isLoggedIn } = useContext(AuthContext);
     const { isDarkMode } = useContext(DarkModeContext);
     const [newPost, setNewPost] = useState({ title: '', content: '', category: '' });
     const [categories, setCategories] = useState([]);
@@ -55,26 +57,32 @@ const BlogPage = () => {
     return (
         <Container id="blog" className="my-5">
             <section className="mt-5">
-                <Button
-                    variant={isDarkMode ? 'create-post-dark' : 'create-post-light'}
-                    onClick={() => setShowCreateForm(true)}
-                    className="mb-3"
-                >
-                    Create Post
-                </Button>
+                {isLoggedIn && (
+                    <>
+                        <Button
+                            variant={isDarkMode ? 'create-post-dark' : 'create-post-light'}
+                            onClick={() => setShowCreateForm(true)}
+                            className="mb-3"
+                        >
+                            Create Post
+                        </Button>
 
-                <Modal show={showCreateForm} onHide={handleCancelCreate}>
-                    <Modal.Header closeButton>
-                        <Modal.Title>Create Post</Modal.Title>
-                    </Modal.Header>
-                    <Modal.Body>
-                        <CreatePostForm
-                            newPost={newPost}
-                            handleInputChange={handleInputChange}
-                            handlePostSubmit={handlePostSubmit}
-                        />
-                    </Modal.Body>
-                </Modal>
+                        <Modal show={showCreateForm} onHide={handleCancelCreate}>
+                            <Modal.Header closeButton>
+                                <Modal.Title>Create Post</Modal.Title>
+                            </Modal.Header>
+                            <Modal.Body>
+                                <CreatePostForm
+                                    newPost={newPost}
+                                    handleInputChange={handleInputChange}
+                                    handlePostSubmit={handlePostSubmit}
+                                />
+                            </Modal.Body>
+                        </Modal>
+                    </>
+                )}
+
+
             </section>
 
             {categories.map((category) => (

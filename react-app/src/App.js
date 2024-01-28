@@ -15,31 +15,38 @@ import DarkLightToggle from "./components/DarkLightToggle";
 import { DarkModeProvider } from "./contexts/DarkModeContext";
 import DailyProgrammerPage from "./components/DailyProgrammerPage";
 import Post from './components/Post';
+import { AuthProvider } from './contexts/AuthContext';
+import  Auth  from './components/Auth'
 
 function MainPage() {
 
     return (
         <BrowserRouter>
             <div className={"text-center"}>
-                <DarkModeProvider>
-                    <NavbarComponent className="mx-auto"/>
-                    <DarkLightToggle/>
-                    <Routes>
-                        <Route path="/" element={<>
-                            <WelcomeMessage/>
-                            <HomeServices/>
-                            <HomeBlog/>
-                            <QueuedSquares width={20} height={20} color="#ff0000" speed={1} zIndex={2} />
-                            <Footer/>
-                        </>} />
-                        <Route path="/blog" element={<BlogPage />} />
-                        <Route path="/services" element={<WorkInProgress />} />
-                        <Route path="/services/dailyprogrammer" element={<DailyProgrammerPage/>} />
-                        <Route path="/about" element={<WorkInProgress />} />
-                        <Route path="/login" element={<LoginPage />} />
-                        <Route path="/post/:id" component={Post} />
-                    </Routes>
-                </DarkModeProvider>
+                <AuthProvider>
+                    <DarkModeProvider>
+                        <NavbarComponent className="mx-auto"/>
+                        <DarkLightToggle/>
+                        <Routes>
+                            <Route path="/" element={
+                                <>
+                                    {/*<WelcomeMessage/>*/}
+                                    <HomeServices/>
+                                    <HomeBlog/>
+                                    <QueuedSquares width={20} height={20} color="#ff0000" speed={1} zIndex={2} />
+                                    <Footer/>
+                                </>
+                            }/>
+                            <Route path="/blog" element={<BlogPage />} />
+                            <Route path="/services" element={<WorkInProgress />} />
+                            <Route path="/services/dailyprogrammer" element={<DailyProgrammerPage/>} />
+                            <Route path="/about" element={<WorkInProgress />} />
+                            <Route path="/login" element={<LoginPage />} />
+                            <Route path="/post/:id" element={<Post />} />
+                            <Route path="/auth" element={<Auth />} />
+                        </Routes>
+                    </DarkModeProvider>
+                </AuthProvider>
             </div>
         </BrowserRouter>
     );

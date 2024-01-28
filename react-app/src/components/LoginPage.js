@@ -5,10 +5,9 @@ import GoogleAuth from '../services/auth/googleAuth';
 function LoginPage() {
     const [isSignup, setIsSignup] = useState(false);
 
-    const responseGoogle = (response) => {
-        console.log(response);
-        // handle response
-    }
+    const handleLogin = () => {
+        GoogleAuth.redirectToGoogle();
+    };
 
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -90,7 +89,8 @@ function LoginPage() {
                 <div className="oauth-options">
                     <h3 style={{color: "#fdfdfc"}}>Or one of these</h3>
                     <div>
-                        <GoogleAuth.GoogleLoginButton onSuccess={responseGoogle} onFailure={responseGoogle} />
+                        {/*<GoogleAuth.GoogleLoginButton onSuccess={responseGoogle} onFailure={responseGoogle} />*/}
+                        <button onClick={handleLogin}>Login with Google</button>
                     </div>
                     <div>
                         <Button variant="outline-dark" onClick={() => handleOAuthLogin('facebook')} style={{backgroundColor: "#f0a500", marginTop: 5}}>
