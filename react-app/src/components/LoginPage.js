@@ -1,8 +1,14 @@
 import React, { useState } from 'react';
 import { Form, Button, Container } from 'react-bootstrap';
+import GoogleAuth from '../services/auth/googleAuth';
 
 function LoginPage() {
     const [isSignup, setIsSignup] = useState(false);
+
+    const responseGoogle = (response) => {
+        console.log(response);
+        // handle response
+    }
 
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -84,9 +90,7 @@ function LoginPage() {
                 <div className="oauth-options">
                     <h3 style={{color: "#fdfdfc"}}>Or one of these</h3>
                     <div>
-                        <Button variant="outline-dark" onClick={() => handleOAuthLogin('google')} style={{backgroundColor: "#f0a500", marginTop: 5}}>
-                            Google
-                        </Button>
+                        <GoogleAuth.GoogleLoginButton onSuccess={responseGoogle} onFailure={responseGoogle} />
                     </div>
                     <div>
                         <Button variant="outline-dark" onClick={() => handleOAuthLogin('facebook')} style={{backgroundColor: "#f0a500", marginTop: 5}}>
