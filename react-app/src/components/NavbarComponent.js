@@ -12,6 +12,8 @@ function NavbarComponent() {
     const { isLoggedIn, user, logOut } = useContext(AuthContext);
     const { isDarkMode } = useContext(DarkModeContext);
 
+    console.log('Navbar rendered with:', { isLoggedIn, user });
+
     return (
         <Navbar bg={isDarkMode ? "secondary" : "dark"} variant={isDarkMode ? "light" : "dark"} expand="lg">
             <Container>

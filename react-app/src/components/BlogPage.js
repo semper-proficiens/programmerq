@@ -14,6 +14,8 @@ const BlogPage = () => {
     const [posts, setPosts] = useState({});
     const [showCreateForm, setShowCreateForm] = useState(false);
 
+    console.log('BlogPage rendered with:', { isLoggedIn });
+
     const handleInputChange = (e) => {
         const { name, value } = e.target;
         setNewPost((prevPost) => ({ ...prevPost, [name]: value }));

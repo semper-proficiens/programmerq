@@ -1,11 +1,12 @@
 import axios from 'axios';
+import { jwtDecode } from 'jwt-decode';
 
 const GoogleAuth = {
     // Function to handle the redirection to Google's OAuth 2.0 server
     redirectToGoogle: () => {
         const clientId = process.env.REACT_APP_GOOGLE_CLIENT_ID;
         const redirectUri = `${window.location.origin}/auth`;
-        const scope = 'email';
+        const scope = 'email profile';
         const responseType = 'code';
 
         const url = `https://accounts.google.com/o/oauth2/v2/auth?client_id=${clientId}&redirect_uri=${redirectUri}&response_type=${responseType}&scope=${scope}`;
@@ -29,11 +30,14 @@ const GoogleAuth = {
                 grant_type: 'authorization_code',
             });
 
-            console.log('Response:', response);
+            // console.log('Response:', response);
 
             // You now have the tokens, you can save them in your state, context, or however you manage your data.
             if (response && response.data) {
-                return response.data;
+                const idToken = response.data.id_token;
+                const user = jwtDecode(idToken); // Import jwtDecode from 'jwt-decode'
+                // console.log("User: ", user )
+                return user;
             } else {
                 console.log('Response or response.data is undefined');
                 return null;

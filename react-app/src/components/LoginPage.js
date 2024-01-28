@@ -1,12 +1,23 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { Form, Button, Container } from 'react-bootstrap';
 import GoogleAuth from '../services/auth/googleAuth';
+import { AuthContext } from '../contexts/AuthContext';
 
 function LoginPage() {
     const [isSignup, setIsSignup] = useState(false);
 
+    const { logIn } = useContext(AuthContext);
+
     const handleLogin = () => {
-        GoogleAuth.redirectToGoogle();
+        GoogleAuth.redirectToGoogle()
+            .then(userData => {
+                // Ensure user data is received correctly
+                console.log("Received user data: ", userData);
+                logIn(userData);
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
     };
 
     const handleSubmit = (event) => {
