@@ -100,7 +100,6 @@ function LoginPage() {
                 <div className="oauth-options">
                     <h3 style={{color: "#fdfdfc"}}>Or one of these</h3>
                     <div>
-                        {/*<GoogleAuth.GoogleLoginButton onSuccess={responseGoogle} onFailure={responseGoogle} />*/}
                         <button onClick={handleLogin}>Login with Google</button>
                     </div>
                     <div>

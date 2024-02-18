@@ -1,0 +1,66 @@
+.blog-post-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.blog-post-widget-title-container-light {
+    text-align: center;
+    word-break: break-all;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 35px;
+    color: black;
+}
+
+.blog-post-widget-title-container-dark {
+    text-align: center;
+    word-break: break-all;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 35px;
+    color: white;
+}
+
+.blog-post-add-widget-light {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+    height: 300px;
+    margin: 10px;
+    border-radius: 20px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    background-color: black;
+    border: 2px solid #3B71CA;
+}
+
+.blog-post-add-widget-dark {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+    height: 300px;
+    margin: 10px;
+    border-radius: 20px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    background-color: #343a40;
+    border: 2px solid #E4A11B;
+}
+
+.blog-post-add-widget-light:hover {
+    box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.8);
+    background-color: #343a40;
+}
+
+.blog-post-add-widget-dark:hover {
+    box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.8);
+    background-color: #343a40;
+}

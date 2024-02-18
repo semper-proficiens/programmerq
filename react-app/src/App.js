@@ -1,7 +1,7 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './styles/navbar.css';
-import WelcomeMessage from './components/WelcomeMessage.js';
+// import WelcomeMessage from './components/WelcomeMessage.js';
 import HomeServices from './components/HomeServices';
 import HomeBlog from './components/HomeBlog';
 import QueuedSquares from './components/QueuedSquares';
