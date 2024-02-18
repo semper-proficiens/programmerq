@@ -18,6 +18,7 @@ import Post from './components/Post';
 import { AuthProvider } from './contexts/AuthContext';
 import  Auth  from './components/Auth'
 import BlogPostCategories from "./components/BlogPostCategories";
+import PostExample from "./components/PostExample";
 
 function MainPage() {
 
@@ -39,7 +40,8 @@ function MainPage() {
                                 </>
                             }/>
                             <Route path="/blog" element={<BlogPostCategories />} />
-                            <Route path="/blog/category/:id" element={<BlogPostList />} />
+                            <Route path="/blog/:id" element={<BlogPostList />} />
+                            <Route path="/post/ServerRack" element={<PostExample />} />
                             <Route path="/services" element={<WorkInProgress />} />
                             <Route path="/services/dailyprogrammer" element={<DailyProgrammerPage/>} />
                             <Route path="/about" element={<WorkInProgress />} />

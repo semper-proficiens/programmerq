@@ -9,7 +9,7 @@ function BlogPostCategories() {
         <div className="blog-post-category-page">
             <div className="widgets-container">
                 {categories.map((category, index) => (
-                    <Link to={`/blog/category/${category}`} key={index}>
+                    <Link to={`/blog/${category}`} key={index}>
                         <BlogPostCategoryWidget category={category} />
                     </Link>
                 ))}
