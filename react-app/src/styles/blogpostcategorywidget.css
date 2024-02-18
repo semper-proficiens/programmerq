@@ -5,26 +5,6 @@
     height: 100vh;
 }
 
-.blog-post-widget-title-container-light {
-    text-align: center;
-    word-break: break-all;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    font-size: 35px;
-    color: black;
-}
-
-.blog-post-widget-title-container-dark {
-    text-align: center;
-    word-break: break-all;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    font-size: 35px;
-    color: white;
-}
-
 .blog-post-add-widget-light {
     display: flex;
     justify-content: center;

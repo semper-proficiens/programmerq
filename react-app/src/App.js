@@ -10,13 +10,14 @@ import Footer from "./components/Footer";
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import WorkInProgress from "./components/WorkInProgress";
 import LoginPage from "./components/LoginPage";
-import BlogPage from "./components/BlogPage"
+import BlogPostList from "./components/BlogPostList";
 import DarkLightToggle from "./components/DarkLightToggle";
 import { DarkModeProvider } from "./contexts/DarkModeContext";
 import DailyProgrammerPage from "./components/DailyProgrammerPage";
 import Post from './components/Post';
 import { AuthProvider } from './contexts/AuthContext';
 import  Auth  from './components/Auth'
+import BlogPostCategories from "./components/BlogPostCategories";
 
 function MainPage() {
 
@@ -37,7 +38,8 @@ function MainPage() {
                                     <Footer/>
                                 </>
                             }/>
-                            <Route path="/blog" element={<BlogPage />} />
+                            <Route path="/blog" element={<BlogPostCategories />} />
+                            <Route path="/blog/category/:id" element={<BlogPostList />} />
                             <Route path="/services" element={<WorkInProgress />} />
                             <Route path="/services/dailyprogrammer" element={<DailyProgrammerPage/>} />
                             <Route path="/about" element={<WorkInProgress />} />
