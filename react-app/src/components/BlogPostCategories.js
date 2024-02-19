@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import BlogPostCategoryWidget from './BlogPostCategoryWidget';
 
-const categories = ['Hardware', 'Security', 'App Performance', 'CI/CD', 'SEO', 'NFT', 'Web3', 'Mobile Apps'];
+const categories = ['Hardware', 'Security', 'App Performance', 'CI/CD', 'SEO', 'NFT', 'Web3', 'Mobile Apps', 'Web Monetization'];
 
 function BlogPostCategories() {
     return (
