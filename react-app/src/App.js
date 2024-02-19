@@ -15,7 +15,7 @@ import DarkLightToggle from "./components/DarkLightToggle";
 import { DarkModeProvider } from "./contexts/DarkModeContext";
 import DailyProgrammerPage from "./components/DailyProgrammerPage";
 import Post from './components/Post';
-import { AuthProvider } from './contexts/AuthContext';
+// import { AuthProvider } from './contexts/AuthContext';
 import  Auth  from './components/Auth'
 import BlogPostCategories from "./components/BlogPostCategories";
 import PostExample from "./components/PostExample";
@@ -25,7 +25,7 @@ function MainPage() {
     return (
         <BrowserRouter>
             <div className={"text-center"}>
-                <AuthProvider>
+                {/*<AuthProvider>*/}
                     <DarkModeProvider>
                         <NavbarComponent className="mx-auto"/>
                         <DarkLightToggle/>
@@ -50,7 +50,7 @@ function MainPage() {
                             <Route path="/auth" element={<Auth />} />
                         </Routes>
                     </DarkModeProvider>
-                </AuthProvider>
+                {/*</AuthProvider>*/}
             </div>
         </BrowserRouter>
     );
