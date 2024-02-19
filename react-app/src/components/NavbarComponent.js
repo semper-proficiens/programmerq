@@ -24,7 +24,7 @@ function NavbarComponent() {
                         height="30"
                         className="d-inline-block align-top mr-2"
                     />
-                    <span className="brand-text pl-2">Programmer<span className={isDarkMode ? "text-warning" : "text-primary"}>Q</span></span>
+                    <span className="brand-text pl-2 cursive-text">Programmer<span className={isDarkMode ? "text-warning" : "text-primary"}>Q</span></span>
                 </Navbar.Brand>
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="ml-auto m-auto">

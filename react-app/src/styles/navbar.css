@@ -17,13 +17,14 @@
 }
 
 .navbar-nav .nav-link {
-    font-size: x-large;
+    font-size: xx-large;
     border: none;
     justify-content: space-evenly;
+    font-family: cursive;
 }
 
 .navbar .nav-link:hover {
-    background-color: #343a40; /* Replace #yourcolor with the color of your choice */
+    background-color: #343a40;
 }
 
 .navbar .btn-outline-warning {
@@ -48,6 +49,7 @@
 
 .dropdown-menu {
     background-color: #343a40;
+    text-align: center; /* Add this line */
 }
 
 .nav-link-dropdown .dropdown-divider.dark {
@@ -69,8 +71,8 @@
 }
 
 .navbar-dark .navbar-nav .nav-link-dropdown .dropdown-item:hover {
-    color: #f0a500; /* Replace with the color of your choice */
-    background-color: #ffc107; /* warning-light color */
+    color: #f0a500;
+    background-color: #ffc107;
 }
 
 .dropdown-divider.dark {
@@ -81,12 +83,19 @@
     display: block;
 }
 
-/* New rules */
-
 .navbar .dropdown-toggle::after {
     display: none;
 }
 
 .navbar .dropdown:hover .dropdown-menu {
     display: block;
+}
+
+.brand-text {
+    font-family: cursive;
+    font-size: 35px;
+}
+
+.cursive-text {
+    font-family: cursive;
 }
