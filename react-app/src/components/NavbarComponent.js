@@ -42,6 +42,7 @@ function NavbarComponent() {
                             <NavDropdown.Item as={Link} to="/services/service2" className={isDarkMode ? "text-warning" : "text-primary bg-dark"}><span>Service2</span></NavDropdown.Item>
                         </NavDropdown>
                         <Nav.Link as={Link} to="/blog"><span className={isDarkMode ? "text-warning" : "text-primary"}>B</span>log</Nav.Link>
+                        <Nav.Link as={Link} to="/blog"><span className={isDarkMode ? "text-warning" : "text-primary"}>I</span>1%</Nav.Link>
                         <Nav.Link as={Link} to="/about"><span className={isDarkMode ? "text-warning" : "text-primary"}>A</span>bout</Nav.Link>
                     </Nav>
                     <Nav className="ml-auto">
