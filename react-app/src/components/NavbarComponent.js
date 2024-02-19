@@ -1,15 +1,16 @@
 import React, {useContext} from 'react';
-import { Nav, Navbar, Container, NavDropdown, Button } from 'react-bootstrap';
+import { Nav, Navbar, Container, NavDropdown } from 'react-bootstrap';
+// import { Button } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../styles/navbar.css';
 import logo from '../assets/images/logo.png';
 import { Link } from 'react-router-dom';
-import { AuthContext } from '../contexts/AuthContext';
+// import { AuthContext } from '../contexts/AuthContext';
 import { DarkModeContext } from '../contexts/DarkModeContext';
 
 function NavbarComponent() {
 
-    const { isLoggedIn, user, logOut } = useContext(AuthContext);
+    // const { isLoggedIn, user, logOut } = useContext(AuthContext);
     const { isDarkMode } = useContext(DarkModeContext);
 
     return (
@@ -59,14 +60,14 @@ function NavbarComponent() {
                         </NavDropdown>
                     </Nav>
                 </Navbar.Collapse>
-                {isLoggedIn ? (
-                    <>
-                        <Navbar.Text>Signed in as: {user.name}</Navbar.Text>
-                        <Button variant={isDarkMode ? "outline-warning" : "outline-primary"} onClick={logOut}>Log out</Button>
-                    </>
-                ) : (
-                    <Button as={Link} to="/login" variant={isDarkMode ? "outline-warning" : "outline-primary"} className="btn-login">Login</Button>
-                )}
+                {/*{isLoggedIn ? (*/}
+                {/*    <>*/}
+                {/*        <Navbar.Text>Signed in as: {user.name}</Navbar.Text>*/}
+                {/*        <Button variant={isDarkMode ? "outline-warning" : "outline-primary"} onClick={logOut}>Log out</Button>*/}
+                {/*    </>*/}
+                {/*) : (*/}
+                {/*    <Button as={Link} to="/login" variant={isDarkMode ? "outline-warning" : "outline-primary"} className="btn-login">Login</Button>*/}
+                {/*)}*/}
             </Container>
         </Navbar>
     );

@@ -9,7 +9,7 @@ import NavbarComponent from "./components/NavbarComponent";
 import Footer from "./components/Footer";
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import WorkInProgress from "./components/WorkInProgress";
-import LoginPage from "./components/LoginPage";
+// import LoginPage from "./components/LoginPage";
 import BlogPostList from "./components/BlogPostList";
 import DarkLightToggle from "./components/DarkLightToggle";
 import { DarkModeProvider } from "./contexts/DarkModeContext";
@@ -45,7 +45,7 @@ function MainPage() {
                             <Route path="/services" element={<WorkInProgress />} />
                             <Route path="/services/dailyprogrammer" element={<DailyProgrammerPage/>} />
                             <Route path="/about" element={<WorkInProgress />} />
-                            <Route path="/login" element={<LoginPage />} />
+                            {/*<Route path="/login" element={<LoginPage />} />*/}
                             <Route path="/post/:id" element={<Post />} />
                             <Route path="/auth" element={<Auth />} />
                         </Routes>
