@@ -20,8 +20,8 @@ function NavbarComponent() {
                     <img
                         alt=""
                         src={logo}
-                        width="30"
-                        height="30"
+                        width="50"
+                        height="50"
                         className="d-inline-block align-top mr-2"
                     />
                     <span className="brand-text pl-2 cursive-text">Programmer<span className={isDarkMode ? "text-warning" : "text-primary"}>Q</span></span>
