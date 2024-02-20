@@ -2,7 +2,7 @@ import React, {useContext, useState} from 'react';
 import { Card, Button } from 'react-bootstrap';
 import { DarkModeContext } from '../contexts/DarkModeContext';
 
-function ServiceCard({ service }) {
+function ApplicationCard({ service }) {
     const [isExpanded, setIsExpanded] = useState(false);
     const toggleExpand = () => setIsExpanded(!isExpanded);
 
@@ -42,4 +42,4 @@ function ServiceCard({ service }) {
     );
 }
 
-export default ServiceCard;
+export default ApplicationCard;

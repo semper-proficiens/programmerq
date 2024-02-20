@@ -1,7 +1,7 @@
 import React, {useContext, useState} from 'react';
 import { Container, Row, Col, Button } from 'react-bootstrap';
 import { BsChevronLeft, BsChevronRight } from 'react-icons/bs';
-import ServiceCard from './ServiceCard';
+import ApplicationCard from './ApplicationCard';
 import dashboardImage from '../assets/images/dashboard_350x200.jpeg';
 import { DarkModeContext } from '../contexts/DarkModeContext';
 
@@ -47,7 +47,7 @@ function HomeServices() {
 
     return (
         <Container id="services">
-            <h2>Services</h2>
+            <h2 class={isDarkMode ? "text-warning" : "primary"}>Applications</h2>
             <Row className="justify-content-center align-items-center">
                 <Col md={1} className="d-flex align-items-center justify-content-end">
                     <Button className="p-0" variant={isDarkMode ? "outline-warning" : "light"} onClick={handlePrevService}>
@@ -55,7 +55,7 @@ function HomeServices() {
                     </Button>
                 </Col>
                 <Col md={3}>
-                    <ServiceCard service={services[serviceIndex]} />
+                    <ApplicationCard service={services[serviceIndex]} />
                 </Col>
                 <Col md={1} className="d-flex align-items-center">
                     <Button className="p-0" variant={isDarkMode ? "outline-warning" : "light"} onClick={handleNextService}>

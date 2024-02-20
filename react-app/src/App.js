@@ -1,7 +1,7 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './styles/navbar.css';
-// import WelcomeMessage from './components/WelcomeMessage.js';
+import WelcomeMessage from './components/WelcomeMessage.js';
 import HomeServices from './components/HomeServices';
 import HomeBlog from './components/HomeBlog';
 import QueuedSquares from './components/QueuedSquares';
@@ -32,7 +32,7 @@ function MainPage() {
                         <Routes>
                             <Route path="/" element={
                                 <>
-                                    {/*<WelcomeMessage/>*/}
+                                    <WelcomeMessage/>
                                     <HomeServices/>
                                     <HomeBlog/>
                                     <QueuedSquares width={20} height={20} color="#ff0000" speed={1} zIndex={2} />
@@ -42,8 +42,8 @@ function MainPage() {
                             <Route path="/blog" element={<BlogPostCategories />} />
                             <Route path="/blog/:id" element={<BlogPostList />} />
                             <Route path="/post/ServerRack" element={<PostExample />} />
-                            <Route path="/services" element={<WorkInProgress />} />
-                            <Route path="/services/dailyprogrammer" element={<DailyProgrammerPage/>} />
+                            <Route path="/application" element={<WorkInProgress />} />
+                            <Route path="/application/dailyprogrammer" element={<DailyProgrammerPage/>} />
                             <Route path="/about" element={<WorkInProgress />} />
                             {/*<Route path="/login" element={<LoginPage />} />*/}
                             <Route path="/post/:id" element={<Post />} />
