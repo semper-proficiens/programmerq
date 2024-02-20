@@ -63,3 +63,7 @@
     from, to { border-color: transparent }
     50% { border-color: #28282B; }
 }
+
+.mb-custom {
+    margin-bottom: 5px;
+}
