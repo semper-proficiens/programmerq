@@ -18,7 +18,7 @@ import Post from './components/Post';
 // import { AuthProvider } from './contexts/AuthContext';
 import  Auth  from './components/Auth'
 import BlogPostCategories from "./components/BlogPostCategories";
-import PostExample from "./components/PostExample";
+import ServerRack from "./components/posts/ServerRack";
 
 function MainPage() {
 
@@ -42,7 +42,7 @@ function MainPage() {
                             }/>
                             <Route path="/blog" element={<BlogPostCategories />} />
                             <Route path="/blog/:id" element={<BlogPostList />} />
-                            <Route path="/post/ServerRack" element={<PostExample />} />
+                            <Route path="/post/ServerRack" element={<ServerRack />} />
                             <Route path="/application" element={<WorkInProgress />} />
                             <Route path="/application/dailyprogrammer" element={<DailyProgrammerPage/>} />
                             <Route path="/about" element={<WorkInProgress />} />
