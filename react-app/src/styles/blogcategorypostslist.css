@@ -1,0 +1,56 @@
+/* blogpostcategorywidget.css */
+/* General List Styles */
+.post-list ul {
+    padding: 0;
+    margin: 0;
+}
+
+/* Header Styles */
+.blog-header {
+    /* Default color for light mode */
+    color: #333;
+    transition: color 0.3s ease;
+}
+
+/* Dark Mode Styles */
+.dark-mode .blog-header {
+    /* White text for dark mode */
+    color: #fff;
+}
+
+/* List Item Styles */
+.post-item {
+    list-style-type: none;
+    margin-bottom: 0.5rem;
+}
+
+/* Link Styles */
+.blog-post-link {
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 10px;
+    border: 2px solid #ccc; /* Solid border for visibility */
+    display: inline-block;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+    /* Default color for light mode */
+    color: #333;
+    background-color: #f0f0f0;
+    border-color: #ccc;
+}
+
+.blog-post-link:hover {
+    border-color: #000;
+    transform: scale(1.05);
+}
+
+/* Dark Mode Styles for Links */
+.dark-mode .blog-post-link {
+    color: #fff; /* White text for dark mode */
+    background-color: #444; /* Dark background for dark mode */
+    border-color: #777; /* Dark border for dark mode */
+}
+
+.dark-mode .blog-post-link:hover {
+    border-color: #fff;
+}
