@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import { DarkModeContext } from '../../contexts/DarkModeContext';
 import '../../styles/post.css';
 import ServerRackImage from '../../assets/images/server_rack_cables.jpeg';
+import ServerRackMess from '../../assets/images/server_rack_mess.jpeg';
 
 function ServerRack() {
     const { isDarkMode } = useContext(DarkModeContext);
@@ -59,13 +60,17 @@ function ServerRack() {
                 <p className="post-content">
                     Get a HomeLab going, get something running in Server(s) that <strong>you</strong> maintain.
                     It doesn't have to be perfect, you can iterate on the imperfections and improve as you go along.
-                    Let me show you mine (where you're currently seeing this page rendered from). As you can tell,
+                    Let me show you mine (where you're currently seeing this page rendered from).
+
+                    <img className="post-image" src={ServerRackMess} alt="ServerRackMess" />
+
+                    As you can tell,
                     it's definitely not good looking, and every Server Rack <em>aficionado</em> is probably
                     having a heart attack seeing this.
 
                     But, trust me, going through this experience is worth it, and probably something cool you can talk about
                     with your coworkers or friends (those <em>OMG! You're a hacker!</em> moments from
-                    non-tech folks are priceless 😎).
+                    non-tech folks are also priceless 😎).
                 </p>
             </section>
         </article>
