@@ -4,7 +4,7 @@ import { DarkModeContext } from '../contexts/DarkModeContext';
 import '../styles/blogpostcategorywidget.css';
 
 const blogPosts = {
-    'Hardware': ['ServerRack', 'Post 2', 'Post 3'],
+    'Hardware': ['ServerRack - Why you should build one', 'Post 2', 'Post 3'],
     'Security': ['Post 4', 'Post 5', 'Post 6'],
     'App Performance': ['Post 7', 'Post 8', 'Post 9'],
     'CI/CD': ['Post 10', 'Post 11', 'Post 12'],
