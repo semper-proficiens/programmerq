@@ -1,8 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import BlogPostCategoryWidget from './BlogPostCategoryWidget';
+import BlogPosts from './BlogPosts';
 
-const categories = ['Hardware', 'Security', 'App Performance', 'CI/CD', 'SEO', 'NFT', 'Web3', 'Mobile Apps', 'Web Monetization'];
+const categories = Object.keys(BlogPosts);
 
 function BlogPostCategories() {
     return (
