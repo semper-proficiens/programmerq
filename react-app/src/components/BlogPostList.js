@@ -1,5 +1,7 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import { useParams, Link } from 'react-router-dom';
+import { DarkModeContext } from '../contexts/DarkModeContext';
+import '../styles/blogpostcategorywidget.css';
 
 const blogPosts = {
     'Hardware': ['ServerRack', 'Post 2', 'Post 3'],
@@ -10,12 +12,14 @@ const blogPosts = {
 };
 
 function BlogPostList() {
+    const { isDarkMode } = useContext(DarkModeContext);
+
     const { id } = useParams();
     const category = id.replace(/%20/g, " ");
     const posts = blogPosts[category];
 
     return (
-        <div className="blog-post-list">
+        <div className={isDarkMode ? 'post dark-mode' : 'post'}>
             <h2>{category} Posts</h2>
             <ul>
                 {posts.map((post, index) => (
