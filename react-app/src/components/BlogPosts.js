@@ -3,31 +3,31 @@ import WorkInProgress from "./WorkInProgress";
 
 const BlogPosts = {
     'Hardware': [
-        { title: 'Server Rack - Why you need to build one', slug: 'ServerRack', component: ServerRack },
+        { title: 'Server Rack - Why you need to build one', slug: 'Server Rack', component: ServerRack },
     ],
     'Security': [
         { title: 'Test your own website', slug: 'WebsiteSecurity', component: WorkInProgress },
     ],
     'App Performance': [
-        { title: 'Test your own website', slug: 'WebsiteSecurity', component: WorkInProgress },
+        { title: 'How is your App performing? See what you should look after', slug: 'Measure your App ', component: WorkInProgress },
     ],
-    'CI/CD': [
-        { title: 'Test your own website', slug: 'WebsiteSecurity', component: WorkInProgress },
+    'CICD': [
+        { title: 'Automate your FrontEnd Deployment', slug: 'CICD', component: WorkInProgress },
     ],
     'SEO': [
-        { title: 'Test your own website', slug: 'WebsiteSecurity', component: WorkInProgress },
+        { title: 'Increase traffic to your website', slug: 'SEO', component: WorkInProgress },
     ],
     'NFT': [
-        { title: 'Test your own website', slug: 'WebsiteSecurity', component: WorkInProgress },
+        { title: 'New to NFT? Hope on the next generation wagon', slug: 'NFT', component: WorkInProgress },
     ],
     'Web3': [
-        { title: 'Test your own website', slug: 'WebsiteSecurity', component: WorkInProgress },
+        { title: 'Web3 - What is it and why should you care', slug: 'Web3', component: WorkInProgress },
     ],
     'Mobile Apps': [
-        { title: 'Test your own website', slug: 'WebsiteSecurity', component: WorkInProgress },
+        { title: 'Go from Web to Mobile', slug: 'Mobile Apps', component: WorkInProgress },
     ],
     'Web Monetization': [
-        { title: 'Test your own website', slug: 'WebsiteSecurity', component: WorkInProgress },
+        { title: 'Make some $ from your website', slug: 'Web Monetization', component: WorkInProgress },
     ],
 };
 
