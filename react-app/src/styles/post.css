@@ -24,4 +24,26 @@
 .post-content {
     font-size: 1.2em;
     line-height: 1.6;
+    text-align: justify;
+}
+
+.post-divider {
+    border: 0;
+    height: 2px;
+    background-image: linear-gradient(to right, transparent, #555, transparent);
+    margin: 2em 0;
+}
+
+.post-section {
+    margin-bottom: 2em;
+}
+
+.post-subheading {
+    font-size: 1.5em;
+    color: #333;
+    margin-bottom: 0.5em;
+}
+
+.dark-mode .post-subheading {
+    color: #ccc; /* Color for dark mode */
 }

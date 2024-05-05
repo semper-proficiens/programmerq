@@ -3,7 +3,9 @@ import WorkInProgress from "./WorkInProgress";
 
 const BlogPosts = {
     'Hardware': [
-        { title: 'Server Rack - Why you need to build one', slug: 'Server Rack', component: ServerRack },
+        { title: 'Server Rack and  Why you need to build one (~5min read)', slug: 'Server Rack', component: ServerRack },
+        { title: 'Where to find parts for your servers', slug: 'Server Supplies', component: WorkInProgress },
+        { title: 'What I used to build my Server Rack', slug: 'Server Supplies', component: WorkInProgress },
     ],
     'Security': [
         { title: 'Test your own website', slug: 'WebsiteSecurity', component: WorkInProgress },
