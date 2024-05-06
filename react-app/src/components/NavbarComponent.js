@@ -1,5 +1,6 @@
 import React, {useContext} from 'react';
-import { Nav, Navbar, Container, NavDropdown } from 'react-bootstrap';
+import { Nav, Navbar, Container } from 'react-bootstrap';
+// import { NavDropdown } from 'react-bootstrap';
 // import { Button } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../styles/navbar.css';
@@ -29,34 +30,35 @@ function NavbarComponent() {
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="m-auto">
                         <Nav.Link as={Link} to="/"><span className={isDarkMode ? "text-warning" : "text-primary"}>H</span>ome</Nav.Link>
-                        <NavDropdown
-                            title={
-                                <span>
-                    <span className={isDarkMode ? "text-warning" : "text-primary"}>A</span>pplications
-                </span>
-                            }
-                            id="basic-nav-dropdown"
-                            className="nav-link-dropdown"
-                        >
-                            <NavDropdown.Item as={Link} to="/application/dailyprogrammer" className={isDarkMode ? "text-warning" : "text-primary bg-dark"}><span>DailyProgrammer</span><div className="dropdown-divider dark"></div></NavDropdown.Item>
-                            <NavDropdown.Item as={Link} to="/application/service2" className={isDarkMode ? "text-warning" : "text-primary bg-dark"}><span>Service2</span></NavDropdown.Item>
-                        </NavDropdown>
+                        <Nav.Link as={Link} to="/applications"><span className={isDarkMode ? "text-warning" : "text-primary"}>A</span>pplications</Nav.Link>
+                {/*        <NavDropdown*/}
+                {/*            title={*/}
+                {/*                <span>*/}
+                {/*    <span className={isDarkMode ? "text-warning" : "text-primary"}>A</span>pplications*/}
+                {/*</span>*/}
+                {/*            }*/}
+                {/*            id="basic-nav-dropdown"*/}
+                {/*            className="nav-link-dropdown"*/}
+                {/*        >*/}
+                {/*            <NavDropdown.Item as={Link} to="/application/dailyprogrammer" className={isDarkMode ? "text-warning" : "text-primary bg-dark"}><span>DailyProgrammer</span><div className="dropdown-divider dark"></div></NavDropdown.Item>*/}
+                {/*        </NavDropdown>*/}
                         <Nav.Link as={Link} to="/blog"><span className={isDarkMode ? "text-warning" : "text-primary"}>B</span>log</Nav.Link>
                         <Nav.Link as={Link} to="/blog"><span className={isDarkMode ? "text-warning" : "text-primary"}>D</span>ev-Diary</Nav.Link>
                         <Nav.Link as={Link} to="/about"><span className={isDarkMode ? "text-warning" : "text-primary"}>A</span>bout</Nav.Link>
-                        <NavDropdown
-                            title={
-                                <span>
-                    <span className={isDarkMode ? "text-warning" : "text-primary"}>M</span>ore
-                </span>
-                            }
-                            id="basic-nav-dropdown"
-                            className="nav-link-dropdown"
-                        >
-                            <NavDropdown.Item href="#action/3.1" className={isDarkMode ? "text-warning" : "text-primary"}><span>Contact</span><div className="dropdown-divider dark"></div></NavDropdown.Item>
-                            <NavDropdown.Item href="#action/3.1" className={isDarkMode ? "text-warning" : "text-primary"}><span>Privacy Policy</span><div className="dropdown-divider dark"></div></NavDropdown.Item>
-                            <NavDropdown.Item href="#action/3.1" className={isDarkMode ? "text-warning" : "text-primary"}><span>Terms and Conditions</span></NavDropdown.Item>
-                        </NavDropdown>
+                        <Nav.Link as={Link} to="/more"><span className={isDarkMode ? "text-warning" : "text-primary"}>M</span>ore</Nav.Link>
+                {/*        <NavDropdown*/}
+                {/*            title={*/}
+                {/*                <span>*/}
+                {/*    <span className={isDarkMode ? "text-warning" : "text-primary"}>M</span>ore*/}
+                {/*</span>*/}
+                {/*            }*/}
+                {/*            id="basic-nav-dropdown"*/}
+                {/*            className="nav-link-dropdown"*/}
+                {/*        >*/}
+                {/*            <NavDropdown.Item href="#action/3.1" className={isDarkMode ? "text-warning" : "text-primary"}><span>Contact</span><div className="dropdown-divider dark"></div></NavDropdown.Item>*/}
+                {/*            <NavDropdown.Item href="#action/3.1" className={isDarkMode ? "text-warning" : "text-primary"}><span>Privacy Policy</span><div className="dropdown-divider dark"></div></NavDropdown.Item>*/}
+                {/*            <NavDropdown.Item href="#action/3.1" className={isDarkMode ? "text-warning" : "text-primary"}><span>Terms and Conditions</span></NavDropdown.Item>*/}
+                {/*        </NavDropdown>*/}
                     </Nav>
                 </Navbar.Collapse>
                 {/*{isLoggedIn ? (*/}

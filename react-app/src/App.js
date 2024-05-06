@@ -18,6 +18,7 @@ import DailyProgrammerPage from "./components/DailyProgrammerPage";
 import  Auth  from './components/Auth'
 import BlogPostCategories from "./components/BlogPostCategories";
 import BlogPost from "./components/BlogPost";
+import ApplicationsPage from "./components/ApplicationsPage";
 
 function MainPage() {
 
@@ -42,8 +43,9 @@ function MainPage() {
                             <Route path="/blog" element={<BlogPostCategories />} />
                             <Route path="/blog/:id" element={<BlogPostList />} />
                             <Route path="/post/:slug" element={<BlogPost />} />
-                            <Route path="/application" element={<WorkInProgress />} />
+                            <Route path="/applications" element={<ApplicationsPage />} />
                             <Route path="/application/dailyprogrammer" element={<DailyProgrammerPage/>} />
+                            <Route path="/more" element={<WorkInProgress />} />
                             <Route path="/about" element={<WorkInProgress />} />
                             {/*<Route path="/login" element={<LoginPage />} />*/}
                             <Route path="/auth" element={<Auth />} />

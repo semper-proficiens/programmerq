@@ -10,14 +10,11 @@ function ServerRack() {
     return (
 
         <article className={isDarkMode ? 'post dark-mode' : 'post'}>
-            <h1 className="post-title">Server Rack</h1>
 
             <img className="post-image" src={ServerRackImage} alt="ServerRack" />
 
-            <hr className="post-divider" />
-
             <section className="post-section">
-                <h2 className="post-subheading">Next-Gen Engineers and the Cloud</h2>
+                <h1 className="post-subheading">Next-Gen Engineers and the Cloud</h1>
                 <p className="post-content">
                     In today's world, we're all hooked into Cloud-oriented Infrastructure and Cloud-hosted Apps.
                     The Cloud is a new paradigm that is groundbreaking and every Engineer should be involved in growing their
@@ -33,9 +30,9 @@ function ServerRack() {
             <hr className="post-divider" />
 
             <section className="post-section">
-                <h2 className="post-subheading">Cost</h2>
+                <h1 className="post-subheading">Cost</h1>
                 <p className="post-content">
-                    Have you ever been hit with a Cloud Provider bill? I have, and it sure hurts 🤕.
+                    Have you ever been hit with a Cloud Provider bill? I have, and it sure hurts <span span role="img" aria-label="head hurt">🤕</span>.
                     Most Public Cloud Providers offer tier-free resources for a promotional period, and that's awesome.
                     This option is certainly cool for testing stuff and learning new stuff. But what if you need something
                     more permanent? Yeah...after the promotional period that first bill is going to  open a whole in your budget.
@@ -45,7 +42,7 @@ function ServerRack() {
             <hr className="post-divider" />
 
             <section className="post-section">
-                <h2 className="post-subheading">Learning Experience</h2>
+                <h1 className="post-subheading">Learning Experience</h1>
                 <p className="post-content">
                     So, almost every new Engineer out there is following tutorials for Cloud certifications, or other purposes,
                     and they are just stand up vanilla Network infrastructure. This often leads to Public Networks,
@@ -56,7 +53,7 @@ function ServerRack() {
             <hr className="post-divider" />
 
             <section className="post-section">
-                <h2 className="post-subheading">Conclusion</h2>
+                <h1 className="post-subheading">Conclusion</h1>
                 <p className="post-content">
                     Get a HomeLab going, get something running in Server(s) that <strong>you</strong> maintain.
                     It doesn't have to be perfect, you can iterate on the imperfections and improve as you go along.
@@ -64,13 +61,12 @@ function ServerRack() {
 
                     <img className="post-image" src={ServerRackMess} alt="ServerRackMess" />
 
-                    As you can tell,
-                    it's definitely not good looking, and every Server Rack <em>aficionado</em> is probably
+                    As you can tell, it's definitely not good-looking, and every Server Rack <em>aficionado</em> is probably
                     having a heart attack seeing this.
 
                     But, trust me, going through this experience is worth it, and probably something cool you can talk about
-                    with your coworkers or friends (those <em>OMG! You're a hacker!</em> moments from
-                    non-tech folks are also priceless 😎).
+                    with your coworkers or friends (those <em>"OMG! You're a hacker!"</em> moments from
+                    non-tech folks are also priceless <span role="img" aria-label="smiling face with sunglasses emoji">😎</span>).
                 </p>
             </section>
         </article>

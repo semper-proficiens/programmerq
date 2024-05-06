@@ -19,6 +19,8 @@
 .post-image {
     width: 100%;
     height: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 .post-content {
