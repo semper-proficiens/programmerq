@@ -5,21 +5,20 @@ import '../styles/blog.css';
 import { Link } from 'react-router-dom';
 import { DarkModeContext } from '../contexts/DarkModeContext';
 
-function HomeBlog() {
+function HomeApplications() {
     const { isDarkMode } = useContext(DarkModeContext);
 
     return (
         <Container id="blog" className="my-5">
-            <h2 className={isDarkMode ? "text-warning" : "primary"}>Blog</h2>
+            <h2 className={isDarkMode ? "text-warning" : "primary"}>Applications</h2>
             <div className={isDarkMode ? "blog-box-dark" : "blog-box-light"}>
                 <p className={`${isDarkMode ? "typewriter-dark" : "typewriter-light"} mb-custom`}>
-                    Check the <Link to="/blog">Blog</Link> section for interesting topics around Software Engineering,
-                    Security, and even how to generate some revenue using self-hosted servers, and other nerd
-                    ideas
+                    Check the <Link to="/applications">Applications</Link> section for some self-developed
+                    Applications that attempt to solve some SoftWare Engineer problems, and Internet security
                 </p>
             </div>
         </Container>
     );
 }
 
-export default HomeBlog;
+export default HomeApplications;

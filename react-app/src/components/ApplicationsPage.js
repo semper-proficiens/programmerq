@@ -1,31 +1,57 @@
-import React, {useContext} from "react";
-import {DarkModeContext} from "../contexts/DarkModeContext";
-import '../styles/post.css';
+import React, {useContext, useState} from 'react';
+import { Container, Row, Col, Button } from 'react-bootstrap';
+import { BsChevronLeft, BsChevronRight } from 'react-icons/bs';
+import ApplicationCard from './ApplicationCard';
+import dashboardImage from '../assets/images/dashboard_350x200.jpeg';
+import { DarkModeContext } from '../contexts/DarkModeContext';
+
 
 function ApplicationsPage() {
+    const [serviceIndex, setServiceIndex] = useState(0);
     const { isDarkMode } = useContext(DarkModeContext);
 
+    const services = [
+        {
+            title: "DailyProgrammer",
+            description: "Byte-sized Hacking Dashboard info on cyber-security topics like hacks, programming languages, and more",
+            imageUrl: dashboardImage,
+            link: "#",
+        },
+        {
+            title: "Service 2",
+            description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed commodo, lectus nec ullamcorper convallis, velit velit maximus quam, ut eleifend leo arcu sit amet elit.",
+            imageUrl: "https://via.placeholder.com/350x200",
+            link: "#",
+        }
+    ];
+
+    const handlePrevService = () => {
+        setServiceIndex((serviceIndex - 1 + services.length) % services.length);
+    }
+
+    const handleNextService = () => {
+        setServiceIndex((serviceIndex + 1) % services.length);
+    }
+
     return (
-
-        <article className={isDarkMode ? 'post dark-mode' : 'post'}>
-
-            <section className="post-section">
-                <h1 className="post-subheading">Daily Programmer</h1>
-                <p className="post-content">
-                    Check all your Security parameters from one place
-                </p>
-            </section>
-
-            <hr className="post-divider" />
-
-            <section className="post-section">
-                <h1 className="post-subheading">Service2</h1>
-                <p className="post-content">
-                    Check all your Security parameters from one place
-                </p>
-            </section>
-
-        </article>
+        <Container id="services">
+            <h2 class={isDarkMode ? "text-warning" : "primary"}>Applications</h2>
+            <Row className="justify-content-center align-items-center">
+                <Col md={1} className="d-flex align-items-center justify-content-end">
+                    <Button className="p-0" variant={isDarkMode ? "outline-warning" : "light"} onClick={handlePrevService}>
+                        <BsChevronLeft className="h2 text-black" />
+                    </Button>
+                </Col>
+                <Col md={3}>
+                    <ApplicationCard service={services[serviceIndex]} />
+                </Col>
+                <Col md={1} className="d-flex align-items-center">
+                    <Button className="p-0" variant={isDarkMode ? "outline-warning" : "light"} onClick={handleNextService}>
+                        <BsChevronRight className="h2 text-black" />
+                    </Button>
+                </Col>
+            </Row>
+        </Container>
     );
 }
 

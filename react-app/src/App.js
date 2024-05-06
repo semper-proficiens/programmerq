@@ -1,8 +1,7 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './styles/navbar.css';
-// import WelcomeMessage from './components/WelcomeMessage.js';
-import HomeServices from './components/HomeServices';
+import WelcomeMessage from './components/WelcomeMessage.js';
 import HomeBlog from './components/HomeBlog';
 import QueuedSquares from './components/QueuedSquares';
 import NavbarComponent from "./components/NavbarComponent";
@@ -19,6 +18,7 @@ import  Auth  from './components/Auth'
 import BlogPostCategories from "./components/BlogPostCategories";
 import BlogPost from "./components/BlogPost";
 import ApplicationsPage from "./components/ApplicationsPage";
+import HomeApplications from "./components/HomeApplications";
 
 function MainPage() {
 
@@ -32,8 +32,8 @@ function MainPage() {
                         <Routes>
                             <Route path="/" element={
                                 <>
-                                    {/*<WelcomeMessage/>*/}
-                                    <HomeServices/>
+                                    <WelcomeMessage/>
+                                    <HomeApplications/>
                                     <HomeBlog/>
                                     <QueuedSquares width={20} height={20} color="#ff0000" speed={1} zIndex={2} />
                                     <Footer/>

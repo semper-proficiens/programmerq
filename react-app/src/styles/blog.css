@@ -1,6 +1,7 @@
 .blog-box-light {
     max-width: 700px;
-    margin: 0 auto;
+    margin-left: auto;
+    margin-right: auto;
     padding: 1.5rem;
     border: 2px solid #28282B;
     border-radius: 10px;
@@ -11,7 +12,8 @@
 
 .blog-box-dark {
     max-width: 700px;
-    margin: 0 auto;
+    margin-left: auto;
+    margin-right: auto;
     padding: 1.5rem;
     border: 2px solid #f0a500;
     border-radius: 10px;
@@ -66,4 +68,20 @@
 
 .mb-custom {
     margin-bottom: 5px;
+}
+
+@media (min-width: 768px) { /* Example for tablets and above */
+    .blog-box-dark,
+    .blog-box-light {
+        padding: 30px;
+        /* width: 90%; Adjust width as needed */
+    }
+}
+
+@media (min-width: 992px) { /* Example for desktops and above */
+    .blog-box-dark,
+    .blog-box-light {
+        padding: 40px;
+        /* width: 95%; Adjust width as needed */
+    }
 }
