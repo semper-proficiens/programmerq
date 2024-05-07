@@ -12,7 +12,7 @@ function ApplicationsPage() {
 
     const services = [
         {
-            title: "DailyProgrammer",
+            title: "Daily Programmer",
             description: "Byte-sized Hacking Dashboard info on cyber-security topics like hacks, programming languages, and more!",
             imageUrl: dashboardImage,
             link: "#",

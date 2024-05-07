@@ -7,15 +7,26 @@ function ApplicationCard({ service }) {
 
     // Define a custom style for the text
     const textStyle = {
-        color: isDarkMode ? '#f8f9fa' : '#343a40',
+        color: isDarkMode ? '#dcdcdc' : '#343a40',
         textAlign: 'justify'
+    };
+
+    const titleStyle = {
+        color: isDarkMode ? '#ffc107' : '#28282B',
+        fontFamily: 'Georgia, serif',
+        fontWeight: 'bold',
+        fontSize: '1.5rem',
+        textShadow: '1px 1px 2px rgba(0, 0, 0, 0.5)',
+        letterSpacing: '1px',
+        margin: '0.5rem 0',
+        textAlign: 'center',
     };
 
     return (
         <Card style={isDarkMode ? { border: '2px solid #ffc107', maxWidth: '20rem', backgroundColor: '#28282B', minHeight: '100%' } : { border: '2px solid #28282B', maxWidth: '20rem', minHeight: '100%' }}>
             <Card.Img variant="top" src={service.imageUrl} />
             <Card.Body>
-                <Card.Title style={isDarkMode ? { color: "#f8f9fa" } : { color: "#343a40" }}>
+                <Card.Title style={titleStyle}>
                     {service.title}
                 </Card.Title>
                 <Card.Text style={textStyle}>
