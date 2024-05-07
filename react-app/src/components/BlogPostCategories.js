@@ -3,14 +3,14 @@ import { Link } from 'react-router-dom';
 import BlogPostCategoryWidget from './BlogPostCategoryWidget';
 import BlogPosts from './BlogPosts';
 
-const categories = Object.keys(BlogPosts);
+const categories = Object.keys(BlogPosts).sort();
 
 function BlogPostCategories() {
     return (
         <div className="blog-post-page">
             <div className="widgets-container">
-                {categories.map((category, index) => (
-                    <Link to={`/blog/${category}`} key={index}>
+                {categories.map((category) => (
+                    <Link to={`/blog/${category}`} key={category}>
                         <BlogPostCategoryWidget category={category} />
                     </Link>
                 ))}
