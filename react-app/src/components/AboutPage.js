@@ -34,7 +34,8 @@ function AboutPage() {
                     <br/>
 
                     On a side note, it would be amazing to gain an audience, build a community, and who knows, maybe even
-                    earn a few bucks to pay for coffee and keep my bad boy servers alive <span role="img" aria-label="smiling and sweating">😅</span>.
+                    earn a few bucks to pay for coffee <span role="img" aria-label="coffee">☕️</span> and keep my bad
+                    boy servers alive <span role="img" aria-label="smiling and sweating">😅</span>.
                 </p>
             </section>
         </article>
