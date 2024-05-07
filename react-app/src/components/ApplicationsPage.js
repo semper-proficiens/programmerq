@@ -15,7 +15,7 @@ function ApplicationsPage() {
             title: "Daily Programmer",
             description: "Byte-sized Hacking Dashboard info on cyber-security topics like hacks, programming languages, and more!",
             imageUrl: dashboardImage,
-            link: "#",
+            link: "/application/dailyprogrammer",
         },
         {
             title: "Service 2",
