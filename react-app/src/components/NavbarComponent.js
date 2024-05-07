@@ -31,17 +31,6 @@ function NavbarComponent() {
                     <Nav className="m-auto">
                         <Nav.Link as={Link} to="/"><span className={isDarkMode ? "text-warning" : "text-primary"}>H</span>ome</Nav.Link>
                         <Nav.Link as={Link} to="/applications"><span className={isDarkMode ? "text-warning" : "text-primary"}>A</span>pplications</Nav.Link>
-                {/*        <NavDropdown*/}
-                {/*            title={*/}
-                {/*                <span>*/}
-                {/*    <span className={isDarkMode ? "text-warning" : "text-primary"}>A</span>pplications*/}
-                {/*</span>*/}
-                {/*            }*/}
-                {/*            id="basic-nav-dropdown"*/}
-                {/*            className="nav-link-dropdown"*/}
-                {/*        >*/}
-                {/*            <NavDropdown.Item as={Link} to="/application/dailyprogrammer" className={isDarkMode ? "text-warning" : "text-primary bg-dark"}><span>DailyProgrammer</span><div className="dropdown-divider dark"></div></NavDropdown.Item>*/}
-                {/*        </NavDropdown>*/}
                         <Nav.Link as={Link} to="/blog"><span className={isDarkMode ? "text-warning" : "text-primary"}>B</span>log</Nav.Link>
                         {/*<Nav.Link as={Link} to="/blog"><span className={isDarkMode ? "text-warning" : "text-primary"}>D</span>ev-Diary</Nav.Link>*/}
                         <Nav.Link as={Link} to="/about"><span className={isDarkMode ? "text-warning" : "text-primary"}>A</span>bout</Nav.Link>

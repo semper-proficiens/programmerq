@@ -7,18 +7,19 @@ import QueuedSquares from './components/QueuedSquares';
 import NavbarComponent from "./components/NavbarComponent";
 import Footer from "./components/Footer";
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import WorkInProgress from "./components/WorkInProgress";
-// import LoginPage from "./components/LoginPage";
 import BlogPostList from "./components/BlogPostList";
 import DarkLightToggle from "./components/DarkLightToggle";
 import { DarkModeProvider } from "./contexts/DarkModeContext";
 import DailyProgrammerPage from "./components/DailyProgrammerPage";
-// import { AuthProvider } from './contexts/AuthContext';
-import  Auth  from './components/Auth'
 import BlogPostCategories from "./components/BlogPostCategories";
 import BlogPost from "./components/BlogPost";
 import ApplicationsPage from "./components/ApplicationsPage";
 import HomeApplications from "./components/HomeApplications";
+import AboutPage from "./components/AboutPage";
+import MorePage from "./components/MorePage";
+// import LoginPage from "./components/LoginPage";
+// import { AuthProvider } from './contexts/AuthContext';
+// import Auth  from './components/Auth;'
 
 function MainPage() {
 
@@ -45,10 +46,10 @@ function MainPage() {
                             <Route path="/post/:slug" element={<BlogPost />} />
                             <Route path="/applications" element={<ApplicationsPage />} />
                             <Route path="/application/dailyprogrammer" element={<DailyProgrammerPage/>} />
-                            <Route path="/more" element={<WorkInProgress />} />
-                            <Route path="/about" element={<WorkInProgress />} />
+                            <Route path="/more" element={<MorePage />} />
+                            <Route path="/about" element={<AboutPage />} />
                             {/*<Route path="/login" element={<LoginPage />} />*/}
-                            <Route path="/auth" element={<Auth />} />
+                            {/*<Route path="/auth" element={<Auth />} />*/}
                         </Routes>
                     </DarkModeProvider>
                 {/*</AuthProvider>*/}

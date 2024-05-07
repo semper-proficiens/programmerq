@@ -1,11 +1,10 @@
-import React, {useContext, useState} from 'react';
+import React, {useContext} from 'react';
 import { Card, Button } from 'react-bootstrap';
 import { DarkModeContext } from '../contexts/DarkModeContext';
 
 function ApplicationCard({ service }) {
     const { isDarkMode } = useContext(DarkModeContext);
 
-    // Define a custom style for the text
     const textStyle = {
         color: isDarkMode ? '#dcdcdc' : '#343a40',
         textAlign: 'justify'
