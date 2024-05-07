@@ -1,11 +1,9 @@
-import React, {useContext} from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Container } from 'react-bootstrap';
 import Typing from 'react-typing-animation';
-import {DarkModeContext} from "../contexts/DarkModeContext";
+import { DarkModeContext } from '../contexts/DarkModeContext';
 
-function WelcomeMessage() {
-    const { isDarkMode } = useContext(DarkModeContext);
-
+const TypedWelcomeMessage = ({ isDarkMode }) => {
     const fontStyles = {
         fontFamily: 'Courier New',
         fontWeight: 'bold',
@@ -13,18 +11,31 @@ function WelcomeMessage() {
         letterSpacing: '1px',
         lineHeight: '48px',
         marginBottom: '50px',
-        color: isDarkMode ? "#E4A11B" : "primary",
+        color: isDarkMode ? '#E4A11B' : '#007bff',
     };
+
+    // Generate a unique key for the component to force remount
+    const componentKey = isDarkMode ? 'dark' : 'light';
+
+    return (
+        <Typing speed={300} key={componentKey}>
+            <h1 style={fontStyles}>Welcome to ProgrammerQ!</h1>
+        </Typing>
+    );
+};
+
+function WelcomeMessage() {
+    const { isDarkMode } = useContext(DarkModeContext);
+    const [key, setKey] = useState(isDarkMode ? 'dark' : 'light');
+
+    // Update the key when the theme changes to force remount the TypedWelcomeMessage
+    useEffect(() => {
+        setKey(isDarkMode ? 'dark' : 'light');
+    }, [isDarkMode]);
 
     return (
         <Container>
-            <Typing speed={300}>
-                <h1 style={fontStyles}>
-                    {Array.from('Welcome to ProgrammerQ!').map((letter, index) => (
-                        <span key={index}>{letter}</span>
-                    ))}
-                </h1>
-            </Typing>
+            <TypedWelcomeMessage key={key} isDarkMode={isDarkMode} />
         </Container>
     );
 }

@@ -35,19 +35,6 @@ function NavbarComponent() {
                         {/*<Nav.Link as={Link} to="/blog"><span className={isDarkMode ? "text-warning" : "text-primary"}>D</span>ev-Diary</Nav.Link>*/}
                         <Nav.Link as={Link} to="/about"><span className={isDarkMode ? "text-warning" : "text-primary"}>A</span>bout</Nav.Link>
                         <Nav.Link as={Link} to="/more"><span className={isDarkMode ? "text-warning" : "text-primary"}>M</span>ore</Nav.Link>
-                {/*        <NavDropdown*/}
-                {/*            title={*/}
-                {/*                <span>*/}
-                {/*    <span className={isDarkMode ? "text-warning" : "text-primary"}>M</span>ore*/}
-                {/*</span>*/}
-                {/*            }*/}
-                {/*            id="basic-nav-dropdown"*/}
-                {/*            className="nav-link-dropdown"*/}
-                {/*        >*/}
-                {/*            <NavDropdown.Item href="#action/3.1" className={isDarkMode ? "text-warning" : "text-primary"}><span>Contact</span><div className="dropdown-divider dark"></div></NavDropdown.Item>*/}
-                {/*            <NavDropdown.Item href="#action/3.1" className={isDarkMode ? "text-warning" : "text-primary"}><span>Privacy Policy</span><div className="dropdown-divider dark"></div></NavDropdown.Item>*/}
-                {/*            <NavDropdown.Item href="#action/3.1" className={isDarkMode ? "text-warning" : "text-primary"}><span>Terms and Conditions</span></NavDropdown.Item>*/}
-                {/*        </NavDropdown>*/}
                     </Nav>
                 </Navbar.Collapse>
                 {/*{isLoggedIn ? (*/}
