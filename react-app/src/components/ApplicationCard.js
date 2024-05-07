@@ -11,7 +11,7 @@ function ApplicationCard({ service }) {
     const truncatedText = service.description.slice(0, 50);
 
     return (
-        <Card style={isDarkMode ? {border: '2px solid #28282B', maxWidth: '20rem', backgroundColor: '#28282B' } : {border: '2px solid #28282B', maxWidth: '20rem' }}>
+        <Card style={isDarkMode ? {border: '2px solid #ffc107', maxWidth: '20rem', backgroundColor: '#28282B' } : {border: '2px solid #28282B', maxWidth: '20rem' }}>
             <Card.Img variant="top" src={service.imageUrl} />
             <Card.Body>
                 <Card.Title style={isDarkMode ? {maxHeight: "2.4em", overflow: "hidden", color: "#f8f9fa"} : {maxHeight: "2.4em", overflow: "hidden", color: "#343a40"}}>{service.title}</Card.Title>
