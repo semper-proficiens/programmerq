@@ -13,8 +13,7 @@ function HomeApplications() {
             <h2 className={isDarkMode ? "text-warning" : "primary"}>Applications</h2>
             <div className={isDarkMode ? "blog-box-dark" : "blog-box-light"}>
                 <p className={`${isDarkMode ? "typewriter-dark" : "typewriter-light"} mb-custom`}>
-                    Check the <Link to="/applications">Applications</Link> section for some self-developed
-                    Applications that attempt to solve some SoftWare Engineer problems, and Internet security
+                    Check some home-brewed <Link to="/applications">Applications</Link> !
                 </p>
             </div>
         </Container>

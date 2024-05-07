@@ -13,9 +13,7 @@ function HomeBlog() {
             <h2 className={isDarkMode ? "text-warning" : "primary"}>Blog</h2>
             <div className={isDarkMode ? "blog-box-dark" : "blog-box-light"}>
                 <p className={`${isDarkMode ? "typewriter-dark" : "typewriter-light"} mb-custom`}>
-                    Check the <Link to="/blog">Blog</Link> section for interesting topics around Software Engineering,
-                    Security, and even how to generate some revenue using self-hosted servers, and other nerd
-                    ideas
+                    Check the <Link to="/blog">Blog</Link> section for hot topics!
                 </p>
             </div>
         </Container>
