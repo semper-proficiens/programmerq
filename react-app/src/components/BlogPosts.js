@@ -5,9 +5,6 @@ const BlogPosts = {
     '3d Printing': [
         { title: 'How is your App performing? See what you should look after', slug: 'Measure your App ', component: WorkInProgress },
     ],
-    'App Performance': [
-        { title: 'How is your App performing? See what you should look after', slug: 'Measure your App ', component: WorkInProgress },
-    ],
     'CICD': [
         { title: 'Automate your FrontEnd Deployment', slug: 'CICD', component: WorkInProgress },
     ],
@@ -21,6 +18,9 @@ const BlogPosts = {
     ],
     'Mobile Apps': [
         { title: 'Go from Web to Mobile', slug: 'Mobile Apps', component: WorkInProgress },
+    ],
+    'Monitoring': [
+        { title: 'How is your App performing? See what you should look after', slug: 'Measure your App ', component: WorkInProgress },
     ],
     'NFT': [
         { title: 'New to NFT? Hope on the next generation wagon', slug: 'NFT', component: WorkInProgress },
