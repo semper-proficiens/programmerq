@@ -2,12 +2,12 @@
     max-width: 800px;
     margin: auto;
     padding: 20px;
-    background-color: #fff;
+    background-color: transparent;
     color: #333;
 }
 
 .post.dark-mode {
-    background-color: #343a40;
+    background-color: transparent;
     color: #fff;
 }
 
