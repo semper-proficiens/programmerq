@@ -41,6 +41,30 @@
     cursor: pointer;
     padding: 10px;
     transition: background-color 0.3s ease;
+    border: 2px solid;
+}
+
+.post-section:hover {
+    transform: scale(1.05);
+    border: 2px solid #0275D8FF;
+    background-color: #28282B;
+}
+
+.post-section:hover h1 {
+    color: #FFFFFF;
+}
+
+.dark-mode .post-section {
+    border: 2px solid #f0a500;
+}
+
+.dark-mode .post-section:hover {
+    border-color: #f0a500;
+    background-color: #343a40;
+}
+
+.dark-mode .post-section:hover h1 {
+    color: #f0a500;
 }
 
 .post-subheading {

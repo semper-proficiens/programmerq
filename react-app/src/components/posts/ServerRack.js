@@ -27,8 +27,6 @@ function ServerRack() {
                 </p>
             </section>
 
-            <hr className="post-divider" />
-
             <section className="post-section">
                 <h1 className="post-subheading">Cost</h1>
                 <p className="post-content">
@@ -39,8 +37,6 @@ function ServerRack() {
                 </p>
             </section>
 
-            <hr className="post-divider" />
-
             <section className="post-section">
                 <h1 className="post-subheading">Learning Experience</h1>
                 <p className="post-content">
@@ -49,8 +45,6 @@ function ServerRack() {
                     open ports, and other security holes in your implementation.
                 </p>
             </section>
-
-            <hr className="post-divider" />
 
             <section className="post-section">
                 <h1 className="post-subheading">Conclusion</h1>

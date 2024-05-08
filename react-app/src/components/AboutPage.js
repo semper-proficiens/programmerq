@@ -38,8 +38,6 @@ function AboutPage() {
                         )}
             </section>
 
-            <hr className="post-divider" />
-
             <section className="post-section" onClick={() => toggleSection('section2')}>
                 <h1 className="post-subheading">
                     <span className={`arrow ${isSectionExpanded('section2') ? 'down' : ''}`}>&#x2192;</span>
