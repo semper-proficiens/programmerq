@@ -7,7 +7,7 @@
 }
 
 .post.dark-mode {
-    background-color: #333;
+    background-color: #343a40;
     color: #fff;
 }
 
@@ -38,14 +38,30 @@
 
 .post-section {
     margin-bottom: 2em;
+    cursor: pointer;
+    padding: 10px;
+    transition: background-color 0.3s ease;
 }
 
 .post-subheading {
     font-size: 1.5em;
     color: #333;
     margin-bottom: 0.5em;
+    user-select: none;
 }
 
 .dark-mode .post-subheading {
     color: #ccc; /* Color for dark mode */
+}
+
+/* Arrow styles */
+.arrow {
+    display: inline-block;
+    margin-right: 8px;
+    transition: transform 0.3s ease;
+}
+
+/* Rotate arrow when section is expanded */
+.arrow.down {
+    transform: rotate(90deg);
 }
