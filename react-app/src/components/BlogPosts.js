@@ -12,7 +12,7 @@ const BlogPosts = {
         { title: 'Bounty Hunting (~5min read)', slug: 'Server Rack', component: ServerRack },
     ],
     'Self-Hosting': [
-        { title: 'Server Rack and  Why you need to build one (~5min read)', slug: 'Server Rack', component: ServerRack },
+        { title: 'Server Rack and  Why you need to build one (~5.5 min read)', slug: 'Server Rack', component: ServerRack },
         { title: 'Where to find parts for your servers', slug: 'Server Supplies', component: WorkInProgress },
         { title: 'What I used to build my Server Rack', slug: 'Server Supplies', component: WorkInProgress },
     ],
