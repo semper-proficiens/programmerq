@@ -17,16 +17,19 @@ const CodeBlock = ({ language, children }) => {
         }
     };
 
+    // Convert children to a string if it's not already, for copying purposes
+    const codeString = typeof children === 'string' ? children : React.Children.toArray(children).join('');
+
     return (
-        <div className="codeblock-container">
+        <div className="codeblock-container" onClick={(event) => event.stopPropagation()}>
           <pre className={`language-${language}`}>
             <code>
               {children}
             </code>
-          </pre>
-            <button onClick={(event) => copyToClipboard(children, event)} className="copy-button">
+            <button onClick={(event) => copyToClipboard(codeString, event)} className="copy-button">
                 {buttonText}
             </button>
+          </pre>
         </div>
     );
 };
