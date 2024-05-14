@@ -125,6 +125,14 @@ function TeleportSimpleSetup() {
                 </BlogPostIndentedParagraph>
             </CollapsibleSection>
 
+            <CollapsibleSection>
+                <BlogPostIndentedParagraph>
+                    <CodeBlock>
+                        Code
+                    </CodeBlock>
+                </BlogPostIndentedParagraph>
+            </CollapsibleSection>
+
         </article>
     );
 }

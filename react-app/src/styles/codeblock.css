@@ -1,6 +1,7 @@
 pre {
     background-color: #f8f8f8;
     border: 1px solid #ccc;
+    color: #343a40;
     padding: 10px;
     border-radius: 4px;
     overflow-x: auto; /* Allows code to scroll horizontally if it's too long */
@@ -10,4 +11,26 @@ pre {
 
 code {
     font-family: 'Courier New', Courier, monospace;
+}
+
+.codeblock-container {
+    position: relative; /* Set the position context for absolute positioning */
+    padding-top: 30px; /* Add padding to make space for the copy button */
+}
+
+.copy-button {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    padding: 5px;
+    border: none;
+    background-color: #f8f8f8;
+    cursor: pointer;
+    border-radius: 4px;
+    outline: none; /* Remove focus outline */
+    /* Adjust button size, font, color, etc. as needed */
+}
+
+.copy-button:hover {
+    background-color: #e8e8e8;
 }

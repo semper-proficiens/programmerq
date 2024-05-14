@@ -2,6 +2,7 @@ import ServerRack from "./posts/ServerRack";
 import WorkInProgress from "./WorkInProgress";
 import SecureHosting from "./posts/SecureHosting";
 import ServerK8s from "./posts/ServerK8s";
+import TeleportSimpleSetup from "./posts/TeleportSimpleSetup";
 
 const BlogPosts = {
     '3d Printing': [
@@ -27,7 +28,7 @@ const BlogPosts = {
     ],
     'Security': [
         { title: 'Test your own website', slug: 'WebsiteSecurity', component: WorkInProgress },
-        { title: 'How to connect securely to your Servers - Teleport', slug: 'server-ssh', component: WorkInProgress },
+        { title: 'How to connect securely to your Servers - Teleport', slug: 'server-ssh', component: TeleportSimpleSetup },
     ],
     'Self-Hosting': [
         { title: 'Server Rack and  Why you need to build one (~5.5 min read)', slug: 'server-rack', component: ServerRack },
