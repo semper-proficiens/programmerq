@@ -1,21 +1,32 @@
 pre {
+    margin: 0;
+    padding: 16px; /* Add padding to create space around the code text */
     background-color: #f8f8f8;
     border: 1px solid #ccc;
     color: #343a40;
-    padding: 10px;
     border-radius: 4px;
     overflow-x: auto; /* Allows code to scroll horizontally if it's too long */
-    margin-top: 1em;
-    white-space: pre-wrap; /* Ensures code lines wrap and don't extend beyond the container width */
+    white-space: pre; /* Preserves whitespace and does not wrap text */
+    text-align: left;
 }
 
 code {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    display: block; /* Ensures the code is block-level for proper alignment */
+    white-space: inherit; /* Inherits the whitespace setting from the parent `pre` */
+    line-height: 1.5; /* Example line height for readability */
     font-family: 'Courier New', Courier, monospace;
+    max-width: 100%;
+    text-align: left;
 }
 
 .codeblock-container {
     position: relative; /* Set the position context for absolute positioning */
     padding-top: 30px; /* Add padding to make space for the copy button */
+    box-sizing: border-box;
+    max-width: 100%;
 }
 
 .copy-button {

@@ -1,8 +1,20 @@
 import React, { useState } from 'react';
 import '../styles/codeblock.css';
 
+// This function is to remove all indentation when defining CodeBlock children literals
+const dedent = (str) => {
+    const match = str.match(/^[ \t]*(?=\S)/gm);
+    if (!match) return str;
+    const indent = Math.min(...match.map(el => el.length));
+    const re = new RegExp(`^[ \\t]{${indent}}`, 'gm');
+    return indent > 0 ? str.replace(re, '') : str;
+};
+
 const CodeBlock = ({ language, children }) => {
     const [buttonText, setButtonText] = useState('Copy');
+
+    // Apply the dedent function to the children prop
+    const dedentedCode = dedent(children);
 
     // Function to copy the code to the clipboard
     const copyToClipboard = async (code, event) => {
@@ -23,8 +35,8 @@ const CodeBlock = ({ language, children }) => {
     return (
         <div className="codeblock-container" onClick={(event) => event.stopPropagation()}>
           <pre className={`language-${language}`}>
-            <code>
-              {children}
+            <code className="code">
+              {dedentedCode}
             </code>
             <button onClick={(event) => copyToClipboard(codeString, event)} className="copy-button">
                 {buttonText}

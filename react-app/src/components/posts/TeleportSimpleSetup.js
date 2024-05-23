@@ -66,7 +66,9 @@ function TeleportSimpleSetup() {
                         vi /etc/teleport.yaml
                     </CodeBlock>
                     Then, let's add this configuration inside the file, this is yaml, so be careful with indentation:
-                    <CodeBlock>
+                    <CodeBlock language="yaml">
+                        {
+                            `
                         version: v2
                         teleport:
                           nodename: teleport-cluster
@@ -95,6 +97,8 @@ function TeleportSimpleSetup() {
                         proxy_service:
                           enabled: yes
                           web_listen_addr: 0.0.0.0:3080
+                            `
+                        }
                     </CodeBlock>
                     So, let's breakdown a few of the attribute set above (you can also check the official doc for all attributes reference
                     <ExternalLink href="https://goteleport.com/docs/reference/config/"/>):
