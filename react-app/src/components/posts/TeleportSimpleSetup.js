@@ -39,9 +39,11 @@ function TeleportSimpleSetup() {
                     if you want to enable the Teleport Healthcheck and Local Metrics, more info
                     <ExternalLink href="https://goteleport.com/docs/management/diagnostics/monitoring/"/>):
                     <CodeBlock>
+                        {`
                         [Unit]
                         Description=Teleport Service
                         After=network.target
+                        
                         [Service]
                         Type=simple
                         Restart=on-failure
@@ -50,8 +52,10 @@ function TeleportSimpleSetup() {
                         ExecReload=/bin/kill -HUP $MAINPID
                         PIDFile=/run/teleport.pid
                         LimitNOFILE=65536
+                        
                         [Install]
                         WantedBy=multi-user.target
+                        `}
                     </CodeBlock>
                     Close the file and save.
                 </BlogPostIndentedParagraph>
@@ -67,8 +71,7 @@ function TeleportSimpleSetup() {
                     </CodeBlock>
                     Then, let's add this configuration inside the file, this is yaml, so be careful with indentation:
                     <CodeBlock language="yaml">
-                        {
-                            `
+                        {`
                         version: v2
                         teleport:
                           nodename: teleport-cluster
@@ -97,12 +100,15 @@ function TeleportSimpleSetup() {
                         proxy_service:
                           enabled: yes
                           web_listen_addr: 0.0.0.0:3080
-                            `
-                        }
+                        `}
                     </CodeBlock>
+
                     So, let's breakdown a few of the attribute set above (you can also check the official doc for all attributes reference
+
                     <ExternalLink href="https://goteleport.com/docs/reference/config/"/>):
+
                     <CodeBlock>
+                        {`
                         - private_ip: this is private ip your server will have. find out what that value is, and put it here
                         - storage:
                             - type: I chose sqlite here for simplicity, which uses a local SB Lite backend. You can select something else. I recommend to use
@@ -125,6 +131,7 @@ function TeleportSimpleSetup() {
                         Service, so they both run on separate servers. The reason for this is prevent a Proxy service failure to bring down Auth Service with it. But, generally speaking one can't function with the other.
                         - proxy_service.web_listen_addr: all services will hit this port and ip for routing. We're using multiplex, so all Auth traffic will also go here. It also provides a nice web GUI for Teleport.
                         We also selected port 3080, but in PROD you want this to be using a Private Certificate or Public certificate signed by a trusted CA, and be on port 443.
+                        `}
                     </CodeBlock>
                 </BlogPostIndentedParagraph>
             </CollapsibleSection>

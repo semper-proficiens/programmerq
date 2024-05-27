@@ -24,7 +24,9 @@ code {
 
 .codeblock-container {
     position: relative; /* Set the position context for absolute positioning */
-    padding-top: 30px; /* Add padding to make space for the copy button */
+    padding-top: 0; /* Add padding to make space for the copy button */
+    text-indent: 0;
+    margin: 0;
     box-sizing: border-box;
     max-width: 100%;
 }

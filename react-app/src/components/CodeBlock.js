@@ -5,6 +5,9 @@ import '../styles/codeblock.css';
 const CodeBlock = ({ language, children }) => {
     const [buttonText, setButtonText] = useState('Copy');
 
+    // Convert children to a string if it's not already, for copying purposes
+    const codeString = typeof children === 'string' ? children : React.Children.toArray(children).join('');
+
     const dedentedCode = dedent(children);
 
     // Function to copy the code to the clipboard
@@ -19,9 +22,6 @@ const CodeBlock = ({ language, children }) => {
             console.error('Could not copy text: ', err);
         }
     };
-
-    // Convert children to a string if it's not already, for copying purposes
-    const codeString = typeof children === 'string' ? children : React.Children.toArray(children).join('');
 
     return (
         <div className="codeblock-container" onClick={(event) => event.stopPropagation()}>
