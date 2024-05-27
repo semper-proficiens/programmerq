@@ -76,30 +76,26 @@ function TeleportSimpleSetup() {
                         teleport:
                           nodename: teleport-cluster
                           data_dir: /var/lib/teleport
-                          advertise_ip: 192.168.0.172
-                          storage:
-                            type: sqlite
-                            audit_events_uri: ['file:///var/lib/teleport/audit/events', 'stdout://']
+                          advertise_ip: 192.168.0.199
                           log:
                             output: stderr
                             severity: INFO
                             format:
                               output: text
-                        ssh_service:
-                          enabled: yes
-                          labels:
-                            env: dev
+                          ca_pin: ""
+                          diag_addr: ""
                         auth_service:
-                          authentication:
-                            type: local
-                            local_auth: true
-                          enabled: yes
-                          listen_addr: 0.0.0.0:3025
+                          enabled: "yes"
+                          listen_addr: 192.168.0.199:3025
                           proxy_listener_mode: multiplex
-                          client_idle_timeout:  15m
+                        ssh_service:
+                          enabled: "yes"
+                          commands:
+                          - name: hostname
+                            command: [hostname]
+                            period: 1m0s
                         proxy_service:
-                          enabled: yes
-                          web_listen_addr: 0.0.0.0:3080
+                          enabled: "yes"
                         `}
                     </CodeBlock>
 
