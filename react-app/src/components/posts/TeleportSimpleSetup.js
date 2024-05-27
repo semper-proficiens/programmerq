@@ -107,7 +107,7 @@ function TeleportSimpleSetup() {
 
                     <ExternalLink href="https://goteleport.com/docs/reference/config/"/>):
 
-                    <CodeBlock>
+                    <CodeBlock language="yaml">
                         {`
                         - private_ip: this is private ip your server will have. find out what that value is, and put it here
                         - storage:
