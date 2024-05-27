@@ -1,9 +1,9 @@
 pre {
     margin: 0;
     padding: 16px; /* Add padding to create space around the code text */
-    background-color: #f8f8f8;
-    border: 1px solid #ccc;
-    color: #343a40;
+    background-color: #282c34;
+    border: 1px solid #61dafb;
+    color: #61dafb;
     border-radius: 4px;
     overflow-x: auto; /* Allows code to scroll horizontally if it's too long */
     white-space: pre; /* Preserves whitespace and does not wrap text */
