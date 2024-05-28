@@ -4,8 +4,7 @@ import Prism from 'prismjs';
 import 'prismjs/components/prism-yaml';
 import 'prismjs/components/prism-bash';
 import 'prismjs/components/prism-python';
-// ... import other languages you need
-import 'prismjs/themes/prism.css'; // or another theme you prefer
+import 'prismjs/themes/prism.css';
 import 'prismjs/plugins/line-numbers/prism-line-numbers';
 import 'prismjs/plugins/line-numbers/prism-line-numbers.css';
 import '../styles/codeblock.css';

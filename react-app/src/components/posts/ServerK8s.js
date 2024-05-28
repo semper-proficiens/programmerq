@@ -18,7 +18,7 @@ function SecureHosting() {
 
             <CollapsibleSection title="K8s Controller and Node (~1min)">
                 <BlogPostIndentedParagraph>
-                    You can use your preferred virtualization softare for VMs runnign on your self-hosted Server(s).
+                    You can use your preferred virtualization software for VMs running on your self-hosted Server(s).
                     I like ProxMox and that's what I'll be using for this example. You don't have to, and can simply another
                     software like VMWare (make sure it's supported by your Server(s), I tried to use a specific VMWare version
                     in my servers and I couldn't because they are too old and don't support, so make sure to do your homework there first).
@@ -40,16 +40,21 @@ function SecureHosting() {
                     Now, let's fine the file containing our connected interface config and make a copy (yours make look different, just look for
                     a file that shows config for your interface).
                     You can find what's your interface by running this on Ubuntu24.04, it also works on RHEL8, and maybe a few other Linux distros:
-                    <CodeBlock>
+
+                    <CodeBlock language={"bash"}>
                         ip a
                     </CodeBlock>
+
                     Your interface (might be different depending on your config) would be anything that's not a loopback. In my case is <strong>ens18</strong>.
                     Let's backup our original netplan config:
-                    <CodeBlock>
+
+                    <CodeBlock language={"yaml"}>
                         cp /etc/netplan/50-cloud-init.yaml /etc/netplan/50-cloud-init.bak
                     </CodeBlock>
+
                     Use you preferred text editor to change the content of your original netplan.
                     Your original netplan config might look like this:
+
                     <CodeBlock>
 
                     </CodeBlock>

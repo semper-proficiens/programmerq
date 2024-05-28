@@ -3,6 +3,7 @@ import WorkInProgress from "./WorkInProgress";
 import SecureHosting from "./posts/SecureHosting";
 import ServerK8s from "./posts/ServerK8s";
 import TeleportSimpleSetup from "./posts/TeleportSimpleSetup";
+import TroubleshootTeleportNodeJoinOnRhel9 from "./posts/TeleportNodeJoinOnRHEL9";
 
 const BlogPosts = {
     '3d Printing': [
@@ -33,8 +34,10 @@ const BlogPosts = {
     'Self-Hosting': [
         { title: 'Server Rack and  Why you need to build one (~5.5 min read)', slug: 'server-rack', component: ServerRack },
         { title: 'How to serve content securely from your Server (~5 min read)', slug: 'secure-hosting', component: SecureHosting },
-        { title: 'What I used to build my Server Rack', slug: 'Server Supplies', component: WorkInProgress },
-        { title: 'Setup a K8s Controller and K8s Nodes', slug: 'Server K8s', component: ServerK8s },
+        { title: 'What I used to build my Server Rack', slug: 'server-supplis', component: WorkInProgress },
+        { title: 'Setup a K8s Controller and K8s Nodes', slug: 'server-k8s', component: ServerK8s },
+        { title: 'Teleport Simple Setup Self-Hosted', slug: 'teleport-simple-setup', component: TeleportSimpleSetup },
+        { title: 'Troubleshoot Teleport Node Join on RHEL9', slug: 'teleport-simple-setup-node-join-rhel9', component: TroubleshootTeleportNodeJoinOnRhel9 },
     ],
     'SEO': [
         { title: 'Increase traffic to your website', slug: 'SEO', component: WorkInProgress },
