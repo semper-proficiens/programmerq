@@ -351,6 +351,14 @@ function TeleportSimpleSetup() {
                 </BlogPostIndentedParagraph>
 
                 <BlogPostIndentedParagraph>
+                    Similar to how we set the Cluster server, Teleport needs elevated permissions to write to certain
+                    directories, bind to listening ports, etc. So, let's do that:
+                    <CodeBlock language={"bash"}>
+                        sudo chmod 755 /usr/local/bin/teleport
+                    </CodeBlock>
+                </BlogPostIndentedParagraph>
+
+                <BlogPostIndentedParagraph>
                     In order to make a server join our Cluster implementation locally, we need to configure the teleport service as a daemon.
                     Where you configure the service may depend on your OS and preference, for an Ubuntu distro I like to place it here in
                     <strong>/etc/systemd/system/teleport.service</strong> , and let's add this inside the file:
@@ -364,7 +372,7 @@ function TeleportSimpleSetup() {
                         Type=simple
                         Restart=on-failure
                         EnvironmentFile=-/etc/default/teleport
-                        ExecStart=/usr/local/bin/teleport start --pid-file=/run/teleport.pid
+                        ExecStart=/usr/local/bin/teleport start --config /etc/teleport.yaml --pid-file=/run/teleport.pid
                         ExecReload=/bin/kill -HUP $MAINPID
                         PIDFile=/run/teleport.pid
                         LimitNOFILE=65536
