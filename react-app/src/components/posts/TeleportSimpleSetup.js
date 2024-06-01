@@ -21,52 +21,21 @@ function TeleportSimpleSetup() {
                 <BlogPostIndentedParagraph>
                     Follow Teleport installation instruction from
                     <ExternalLink href="https://goteleport.com/docs/installation/"/>.
+
+                    Download and install the Teleport binary:
+                    <CodeBlock language={"yaml"}>
+                        curl https://goteleport.com/static/install.sh | bash -s 15.3.1 oss
+                    </CodeBlock>
+
+                    Of course, Teleport version changes very quickly, so, make sure to adapt and read the vendor installation
+                    doc previously referenced.
                 </BlogPostIndentedParagraph>
 
                 <BlogPostIndentedParagraph>
-                    You can harden this later, but to make sure your Teleport binary runs smoothly from first try,
-                    bump the teleport binary permissions:
-                    <CodeBlock language={"bash"}>
-                        sudo chmod 755 /usr/local/bin/teleport
-                    </CodeBlock>
-                    <br/>
-                    Then, we want to run Teleport as a daemon service that's always running in the background.
-                    So, let's configure the Teleport daemon as a systemd service. In order to so let's create a
-                    systemd file, you can use your favorite text editor to do this, I'll use <strong>vi</strong>:
-                    <CodeBlock language={"bash"}>
-                        vi /usr/lib/systemd/system/teleport.service
-                    </CodeBlock>
-                    Once the file is open, add this service config (you can optionally enable telemetry by adding <strong>"--diag-addr=0.0.0.0:3000"</strong>, and is only needed
-                    if you want to enable the Teleport Healthcheck and Local Metrics, more info
-                    <ExternalLink href="https://goteleport.com/docs/management/diagnostics/monitoring/"/>):
-                    <CodeBlock language={"bash"}>
-                        {`
-                        [Unit]
-                        Description=Teleport Service
-                        After=network.target
-                        
-                        [Service]
-                        Type=simple
-                        Restart=on-failure
-                        RestartSec=5
-                        EnvironmentFile=-/etc/default/teleport
-                        ExecStart=/usr/local/bin/teleport start --config /etc/teleport.yaml --pid-file=/run/teleport.pid
-                        # systemd before 239 needs an absolute path
-                        ExecReload=/bin/sh -c "exec pkill -HUP -L -F /run/teleport.pid"
-                        PIDFile=/run/teleport.pid
-                        LimitNOFILE=524288
-                        
-                        [Install]
-                        WantedBy=multi-user.target
-                        `}
-                    </CodeBlock>
-                    Close the file and save.
-                </BlogPostIndentedParagraph>
-
-                <BlogPostIndentedParagraph>
-                    Now that our Teleport systemd configuration is done, let's configure the Teleport Service itself.
-                    There is the most important Teleport setup step, and the one you should carefully configure, and
-                    will end up coming back to if need to make any adjustments. Here is a sample Teleport configuration
+                    Previous command is very convenient because it abstracts a lot of the previous manual configuration needed to get started with Teleport.
+                    This downloads Teleport binaries, adds them to path, and adds a <strong>systemd</strong> file to run TP as a daemon service.
+                    There is one more step to go and one you should carefully configure, and
+                    will end up coming back to if you need to make any adjustments. Here is a sample Teleport configuration
                     that runs the Teleport Proxy and Auth Service on the Same server (more on this later). Let's create the Teleport configuration
                     file:
                     <CodeBlock language={"bash"}>
@@ -106,9 +75,9 @@ function TeleportSimpleSetup() {
 
                     <CodeBlock language="yaml">
                         {`
-                        - private_ip: this is private ip your server will have. find out what that value is, and put it here
-                        - storage:
-                            - type: I chose sqlite here for simplicity, which uses a local SB Lite backend. You can select something else. I recommend to use
+                        - advertise_ip: this is private ip your tp cluster will have and will listen in. find out what that your VM ip is, and put it here
+                        - storage (omitted and all its attributes as well; defaults to sqlite locally on server):
+                            - type: I chose sqlite here for simplicity, which uses a local SQLite backend. You can select something else. I recommend to use
                             a backend server hosted in a separate server for production. I've used AWS DynamoDB in the past and it works really well.
                             - audit_events_uri: I chose a simple local file and stdout. Again in production you'd want to send this to another backend solution. I have used DDB
                             for this and it works quite well.
@@ -130,6 +99,12 @@ function TeleportSimpleSetup() {
                         We also selected port 3080, but in PROD you want this to be using a Private Certificate or Public certificate signed by a trusted CA, and be on port 443.
                         `}
                     </CodeBlock>
+                </BlogPostIndentedParagraph>
+
+                <BlogPostIndentedParagraph>
+                    This is probably a good stopping point if you want to make this VM config a template Teleport Cluster.
+                    Refer to <Link to="/post/proxmox-templates">ProxMox Template</Link> to see how to turn this VM into
+                    a reusable VM template to spin multiple instances easily in Proxmox.
                 </BlogPostIndentedParagraph>
 
                 <BlogPostIndentedParagraph>
@@ -351,36 +326,16 @@ function TeleportSimpleSetup() {
                 </BlogPostIndentedParagraph>
 
                 <BlogPostIndentedParagraph>
-                    Similar to how we set the Cluster server, Teleport needs elevated permissions to write to certain
-                    directories, bind to listening ports, etc. So, let's do that:
-                    <CodeBlock language={"bash"}>
-                        sudo chmod 755 /usr/local/bin/teleport
-                    </CodeBlock>
-                </BlogPostIndentedParagraph>
+                    Follow Teleport installation instruction from
+                    <ExternalLink href="https://goteleport.com/docs/installation/"/>.
 
-                <BlogPostIndentedParagraph>
-                    In order to make a server join our Cluster implementation locally, we need to configure the teleport service as a daemon.
-                    Where you configure the service may depend on your OS and preference, for an Ubuntu distro I like to place it here in
-                    <strong>/etc/systemd/system/teleport.service</strong> , and let's add this inside the file:
+                    Download and install the Teleport binary:
                     <CodeBlock language={"yaml"}>
-                        {`
-                        [Unit]
-                        Description=Teleport Service
-                        After=network.target
-                        
-                        [Service]
-                        Type=simple
-                        Restart=on-failure
-                        EnvironmentFile=-/etc/default/teleport
-                        ExecStart=/usr/local/bin/teleport start --config /etc/teleport.yaml --pid-file=/run/teleport.pid
-                        ExecReload=/bin/kill -HUP $MAINPID
-                        PIDFile=/run/teleport.pid
-                        LimitNOFILE=65536
-                        
-                        [Install]
-                        WantedBy=multi-user.target
-                        `}
+                        curl https://goteleport.com/static/install.sh | bash -s 15.3.1
                     </CodeBlock>
+
+                    Of course, Teleport version changes very quickly, so, make sure to adapt and read the vendor installation
+                    doc previously referenced.
                 </BlogPostIndentedParagraph>
 
                 <BlogPostIndentedParagraph>
@@ -485,6 +440,12 @@ function TeleportSimpleSetup() {
                     <CodeBlock language={"bash"}>
                         CA pin        sha256:$hashValue
                     </CodeBlock>
+                </BlogPostIndentedParagraph>
+
+                <BlogPostIndentedParagraph>
+                    This is probably a good stopping point if you want to make this VM config a template Teleport Node.
+                    Refer to <Link to="/post/proxmox-templates">ProxMox Template</Link> to see how to turn this VM into
+                    a reusable VM to spin multiple instances easily in Proxmox.
                 </BlogPostIndentedParagraph>
 
                 <BlogPostIndentedParagraph>
