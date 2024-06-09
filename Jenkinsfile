@@ -5,11 +5,9 @@ pipeline {
         stage('Build') {
             steps {
                 script {
-                    // Print the current working directory
+                    sh 'cd react-app'
                     sh 'pwd'
                     sh 'ls -lahs'
-
-                    // Run the make command
                     sh 'make'
                 }
             }
