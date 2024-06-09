@@ -7,10 +7,7 @@ pipeline {
                 script {
                     sh '''
                         cd react-app
-                        curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
-                        nvm install 18
-                        nvm use 18
-                        npm install
+                        npm -v
                     '''
                 }
             }
