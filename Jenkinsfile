@@ -9,6 +9,7 @@ pipeline {
                         cd react-app
                         pwd
                         ls -lahs
+                        npm install
                         podman build --no-cache -t programmerq .
                     '''
                 }
