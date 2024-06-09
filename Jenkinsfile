@@ -5,10 +5,12 @@ pipeline {
         stage('Build') {
             steps {
                 script {
-                    sh 'cd react-app'
-                    sh 'pwd'
-                    sh 'ls -lahs'
-                    sh 'make'
+                    sh '''
+                        cd react-app
+                        pwd
+                        ls -lahs
+                        podman build --no-cache -t programmerq .
+                    '''
                 }
             }
         }
