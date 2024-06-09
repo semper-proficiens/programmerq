@@ -18,6 +18,7 @@ pipeline {
             steps {
                 script {
                     sh '''
+                        cd react-app
                         podman build --no-cache -t programmerq .
                     '''
                 }
