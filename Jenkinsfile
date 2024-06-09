@@ -7,8 +7,10 @@ pipeline {
                 script {
                     sh '''
                         cd react-app
-                        pwd
-                        ls -lahs
+                        export NVM_DIR="$HOME/.nvm"
+                        [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+                        nvm install 18
+                        nvm use 18
                         npm install
                         podman build --no-cache -t programmerq .
                     '''
