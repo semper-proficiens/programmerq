@@ -8,6 +8,7 @@ pipeline {
                     sh '''
                         cd react-app
                         npm -v
+                        npm install
                     '''
                 }
             }
