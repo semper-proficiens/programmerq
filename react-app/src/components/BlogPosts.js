@@ -1,11 +1,11 @@
 import ServerRack from "./posts/ServerRack";
 import WorkInProgress from "./WorkInProgress";
 import SecureHosting from "./posts/SecureHosting";
-import ServerK8s from "./posts/ServerK8s";
 import TeleportSimpleSetup from "./posts/TeleportSimpleSetup";
 import TroubleshootTeleportNodeJoinOnRhel9 from "./posts/TeleportNodeJoinOnRHEL9";
 import ProxMoxTemplates from "./posts/ProxmoxTemplates";
 import K8sClusterAndNode from "./posts/K8sClusterAndNode";
+import K8sTroubleshooting from "./posts/K8sTroubleshooting";
 
 const BlogPosts = {
     '3d Printing': [

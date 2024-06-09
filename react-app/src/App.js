@@ -1,7 +1,7 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './styles/navbar.css';
-import WelcomeMessage from './components/WelcomeMessage.js';
+// import WelcomeMessage from './components/WelcomeMessage.js';
 import HomeBlog from './components/HomeBlog';
 import QueuedSquares from './components/QueuedSquares';
 import NavbarComponent from "./components/NavbarComponent";
@@ -33,7 +33,7 @@ function MainPage() {
                         <Routes>
                             <Route path="/" element={
                                 <>
-                                    <WelcomeMessage/>
+                                    {/*<WelcomeMessage/>*/}
                                     <HomeApplications/>
                                     <HomeBlog/>
                                     <QueuedSquares width={20} height={20} color="#ff0000" speed={1} zIndex={2} />

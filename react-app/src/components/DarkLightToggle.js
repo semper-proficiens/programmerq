@@ -1,7 +1,6 @@
 import React, { useEffect, useContext } from 'react';
-import { Toggle } from 'react-toggle-component';
-import '../styles/toggle.css'
 import { DarkModeContext } from '../contexts/DarkModeContext';
+import '../styles/toggle.css';
 
 function DarkLightToggle() {
     const { isDarkMode, setIsDarkMode } = useContext(DarkModeContext);
@@ -15,19 +14,20 @@ function DarkLightToggle() {
         }
     }, [isDarkMode]);
 
+    const handleToggle = () => {
+        setIsDarkMode(!isDarkMode);
+    };
+
     return (
         <div className='toggle-container'>
-            <Toggle
-                leftKnobColor = "#f8f9fa"
-                leftBackgroundColor = "#343a40"
-                rightKnobColor= "#3b3b3b"
-                rightBackgroundColor="#fafafa"
-                leftBorderColor="#3B71CA"
-                rightBorderColor="#E4A11B"
-                name="dark-mode-toggle"
-                checked={isDarkMode}
-                onToggle={() => setIsDarkMode(!isDarkMode)}
-            />
+            <label className="toggle-switch">
+                <input
+                    type="checkbox"
+                    checked={isDarkMode}
+                    onChange={handleToggle}
+                />
+                <span className="switch-slider"></span>
+            </label>
             <span className={isDarkMode ? "toggle-message-dark" : "toggle-message-light"}>
                 {isDarkMode ? 'Try Light Mode!' : 'Try Dark Mode!'}
             </span>
