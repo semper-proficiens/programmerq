@@ -7,11 +7,7 @@ pipeline {
                 script {
                     // Use the credentials stored in Jenkins
                     withCredentials([usernamePassword(credentialsId: 'jfrog-non-admin-creds', usernameVariable: 'REGISTRY_USER', passwordVariable: 'REGISTRY_PASS')]) {
-                        withEnv(["REGISTRY_USER=$REGISTRY_USER", "REGISTRY_PASS=$REGISTRY_PASS"]) {
-                            sh """
-                            echo \$REGISTRY_PASS | podman login --username \$REGISTRY_USER --password-stdin my-registry.example.com
-                            """
-                        }
+                            sh 'podman login --tls-verify=false -u $REGISTRY_USER -p $REGISTRY_PASS 192.168.0.32:8082'
                     }
                 }
             }
