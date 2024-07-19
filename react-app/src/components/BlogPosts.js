@@ -8,29 +8,29 @@ import K8sClusterAndNode from "./posts/K8sClusterAndNode";
 import K8sTroubleshooting from "./posts/K8sTroubleshooting";
 
 const BlogPosts = {
-    '3d Printing': [
-        { title: 'How is your App performing? See what you should look after', slug: 'Measure your App ', component: WorkInProgress },
-    ],
-    'CICD': [
-        { title: 'Automate your FrontEnd Deployment', slug: 'frontend-release', component: WorkInProgress },
-    ],
-    'Hacking': [
-        { title: 'Bounty Hunting (~5min read)', slug: 'Server Rack', component: ServerRack },
-    ],
-    'Mobile Apps': [
-        { title: 'Go from Web to Mobile', slug: 'Mobile Apps', component: WorkInProgress },
-    ],
-    'Monetization': [
-        { title: 'Make some $ from your website', slug: 'Web Monetization', component: WorkInProgress },
-    ],
-    'Monitoring': [
-        { title: 'How is your App performing? See what you should look after', slug: 'monitoring', component: WorkInProgress },
-    ],
-    'NFT': [
-        { title: 'New to NFT? Hope on the next generation wagon', slug: 'NFT', component: WorkInProgress },
-    ],
+    // '3d Printing': [
+    //     { title: 'How is your App performing? See what you should look after', slug: 'Measure your App ', component: WorkInProgress },
+    // ],
+    // 'CICD': [
+    //     { title: 'Automate your FrontEnd Deployment', slug: 'frontend-release', component: WorkInProgress },
+    // ],
+    // 'Hacking': [
+    //     { title: 'Bounty Hunting (~5min read)', slug: 'Server Rack', component: ServerRack },
+    // ],
+    // 'Mobile Apps': [
+    //     { title: 'Go from Web to Mobile', slug: 'Mobile Apps', component: WorkInProgress },
+    // ],
+    // 'Monetization': [
+    //     { title: 'Make some $ from your website', slug: 'Web Monetization', component: WorkInProgress },
+    // ],
+    // 'Monitoring': [
+    //     { title: 'How is your App performing? See what you should look after', slug: 'monitoring', component: WorkInProgress },
+    // ],
+    // 'NFT': [
+    //     { title: 'New to NFT? Hope on the next generation wagon', slug: 'NFT', component: WorkInProgress },
+    // ],
     'Security': [
-        { title: 'Test your own website', slug: 'WebsiteSecurity', component: WorkInProgress },
+        // { title: 'Test your own website', slug: 'WebsiteSecurity', component: WorkInProgress },
         { title: 'How to connect securely to your Servers - Teleport', slug: 'server-ssh', component: TeleportSimpleSetup },
     ],
     'Self-Hosting': [
@@ -43,15 +43,15 @@ const BlogPosts = {
         { title: 'Making ProxMox Templates', slug: 'proxmox-templates', component: ProxMoxTemplates },
         { title: 'K8s Troubleshooting', slug: 'k8s-troubleshooting', component: K8sTroubleshooting },
     ],
-    'SEO': [
-        { title: 'Increase traffic to your website', slug: 'SEO', component: WorkInProgress },
-    ],
-    'Web Development': [
-        { title: 'Make some $ from your website', slug: 'Web Monetization', component: WorkInProgress },
-    ],
-    'Web3': [
-        { title: 'Web3 - What is it and why should you care', slug: 'Web3', component: WorkInProgress },
-    ]
+    // 'SEO': [
+    //     { title: 'Increase traffic to your website', slug: 'SEO', component: WorkInProgress },
+    // ],
+    // 'Web Development': [
+    //     { title: 'Make some $ from your website', slug: 'Web Monetization', component: WorkInProgress },
+    // ],
+    // 'Web3': [
+    //     { title: 'Web3 - What is it and why should you care', slug: 'Web3', component: WorkInProgress },
+    // ]
 };
 
 export default BlogPosts;

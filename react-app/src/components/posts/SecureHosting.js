@@ -46,7 +46,7 @@ function SecureHosting() {
             <CollapsibleSection title="Tools to use (~1min)">
                 <BlogPostIndentedParagraph>
                     There are many tools out there that can help you serve your web content. However, one tool I use and
-                    I personally recommend is Cloudflare's Zero Trust Tunnel (you can find more about it
+                    I recommend is Cloudflare's Zero Trust Tunnel (you can find more about it
                     <ExternalLink href="https://developers.cloudflare.com/cloudflare-one/connections/connect-networks/" />).
                 </BlogPostIndentedParagraph>
             </CollapsibleSection>
