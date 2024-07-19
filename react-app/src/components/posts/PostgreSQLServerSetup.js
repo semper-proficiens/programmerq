@@ -5,8 +5,6 @@ import SecureLock from '../../assets/images/secure-on-chalkboard-with-locks.jpg'
 import CollapsibleSection from '../CollapsibleSection';
 import BlogPostIndentedParagraph from "../BlogPostIndentedParagraph";
 import CodeBlock from "../CodeBlock";
-import ExternalLink from "../ExternalLink";
-import {Link} from "react-router-dom";
 
 function PostgreSQLServerSetup() {
     const { isDarkMode } = useContext(DarkModeContext);
