@@ -1,10 +1,6 @@
 pipeline {
     agent any
 
-    environment {
-        KUBECONFIG = credentials('k8s_node_kubeconfig.yaml')
-    }
-
     stages {
         stage('Podman Login') {
             steps {
