@@ -7,6 +7,7 @@ import ProxMoxTemplates from "./posts/ProxmoxTemplates";
 import K8sClusterAndNode from "./posts/K8sClusterAndNode";
 import K8sTroubleshooting from "./posts/K8sTroubleshooting";
 import PostgreSQLServerSetup from "./posts/PostgreSQLServerSetup";
+import JenkinsControllerServerSetup from "./posts/JenkinsControllerServer";
 
 const BlogPosts = {
     // '3d Printing': [
@@ -43,7 +44,8 @@ const BlogPosts = {
         { title: 'Troubleshoot Teleport Node Join on RHEL9', slug: 'teleport-simple-setup-node-join-rhel9', component: TroubleshootTeleportNodeJoinOnRhel9 },
         { title: 'Making ProxMox Templates', slug: 'proxmox-templates', component: ProxMoxTemplates },
         { title: 'K8s Troubleshooting', slug: 'k8s-troubleshooting', component: K8sTroubleshooting },
-        { title: 'PostgresSQL Server Setup for Artifactory', slug: 'postgresSQL-artifactory', component: PostgreSQLServerSetup },
+        { title: 'PostgresSQL Server Setup for Artifactory (~5mins read)', slug: 'postgresSQL-artifactory', component: PostgreSQLServerSetup },
+        { title: 'Jenkins Controller Server setup', slug: 'jenkins-controller-server', component: JenkinsControllerServerSetup },
     ],
     // 'SEO': [
     //     { title: 'Increase traffic to your website', slug: 'SEO', component: WorkInProgress },

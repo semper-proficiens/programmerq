@@ -15,7 +15,7 @@ function PostgreSQLServerSetup() {
 
             <img className="post-image" src={SecureLock} alt="SecureLock" />
 
-            <CollapsibleSection title="Setting a PostgresSQL Server (~5min)">
+            <CollapsibleSection title="Setting a PostgresSQL Server (~2mins)">
                 <BlogPostIndentedParagraph>
                     This installation runs on a RHEL9 server and is geared towards configuring a
                     self-hosted PostgresSQL backend for any application, but at some point it
@@ -67,7 +67,7 @@ function PostgreSQLServerSetup() {
 
             </CollapsibleSection>
 
-            <CollapsibleSection title="Configuring PostgresSQL DB with JFrog Artifactory (~5min)">
+            <CollapsibleSection title="Configuring PostgresSQL DB with JFrog Artifactory (~3min)">
                 <BlogPostIndentedParagraph>
                     In order for JFrog Artifactory to work, it needs a backend. The goal here is to configure our PostgresSQL
                     DB server into a backend Artifactory can use.

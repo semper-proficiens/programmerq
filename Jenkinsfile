@@ -40,8 +40,8 @@ pipeline {
                 script {
                     withCredentials([file(credentialsId: 'k8s_node_kubeconfig', variable: 'KUBECONFIG')]) {
                         sh '''
-                        kubectl config current-context
-                        kubectl get pods --all-namespaces
+                        kubectl get deployments --all-namespaces
+                        kubectl rollout restart deployment/programmerq-frontend-deployment
                         '''
                     }
                 }
