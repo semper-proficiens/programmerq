@@ -42,7 +42,6 @@ pipeline {
         stage('Deploy Kubernetes') {
             steps {
                 script {
-                    // Use the credentials stored in Jenkins
                     withCredentials([file(credentialsId: 'k8s_node_kubeconfig', variable: 'KUBECONFIG')]) {
                         sh 'kubectl get pods'
                     }
