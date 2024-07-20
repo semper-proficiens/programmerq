@@ -40,8 +40,10 @@ pipeline {
         }
 
         stage('Deploy Kubernetes') {
-            withCredentials([file(credentialsId: 'k8s_node_kubeconfig', variable: 'KUBECONFIG')]) {
-                sh 'kubectl get pods'
+            steps {
+                withCredentials([file(credentialsId: 'k8s_node_kubeconfig', variable: 'KUBECONFIG')]) {
+                    sh 'kubectl get pods'
+                }
             }
         }
     }
