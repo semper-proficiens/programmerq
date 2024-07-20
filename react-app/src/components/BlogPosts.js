@@ -6,6 +6,7 @@ import TroubleshootTeleportNodeJoinOnRhel9 from "./posts/TeleportNodeJoinOnRHEL9
 import ProxMoxTemplates from "./posts/ProxmoxTemplates";
 import K8sClusterAndNode from "./posts/K8sClusterAndNode";
 import K8sTroubleshooting from "./posts/K8sTroubleshooting";
+import PostgreSQLServerSetup from "./posts/PostgreSQLServerSetup";
 
 const BlogPosts = {
     // '3d Printing': [
@@ -42,6 +43,7 @@ const BlogPosts = {
         { title: 'Troubleshoot Teleport Node Join on RHEL9', slug: 'teleport-simple-setup-node-join-rhel9', component: TroubleshootTeleportNodeJoinOnRhel9 },
         { title: 'Making ProxMox Templates', slug: 'proxmox-templates', component: ProxMoxTemplates },
         { title: 'K8s Troubleshooting', slug: 'k8s-troubleshooting', component: K8sTroubleshooting },
+        { title: 'PostgresSQL Server Setup for Artifactory', slug: 'postgresSQL-artifactory', component: PostgreSQLServerSetup },
     ],
     // 'SEO': [
     //     { title: 'Increase traffic to your website', slug: 'SEO', component: WorkInProgress },

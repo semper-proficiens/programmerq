@@ -1,6 +1,10 @@
 pipeline {
     agent any
 
+    environment {
+        KUBECONFIG = credentials('k8s_node_kubeconfig.yaml')
+    }
+
     stages {
         stage('Podman Login') {
             steps {
@@ -32,6 +36,12 @@ pipeline {
                         podman push --tls-verify=false 192.168.0.32:8082/docker-local/programmerq
                     '''
                 }
+            }
+        }
+
+        stage('Deploy Kubernetes') {
+            withCredentials([file(credentialsId: 'k8s_node_kubeconfig', variable: 'KUBECONFIG')]) {
+                sh 'kubectl get pods'
             }
         }
     }
