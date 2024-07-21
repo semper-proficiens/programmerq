@@ -42,6 +42,7 @@ npm start
 - Web Traffic Monitoring
 - Donations
 - K8s not deploying the latest push from Pipeline, manual Podman pull fixes it
+- Repo IP and secrets scanning tool
 
 
 
