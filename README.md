@@ -29,5 +29,13 @@ node version manager software: nvm https://github.com/nvm-sh/nvm#installing-and-
 npm start
 ```
 
+## TOIL
+
+- Add Node workers to Jenkins Controller server
+- Better K8s CD from Artifactory image
+- Better folder/posts structure
+- Structure for secrets
+- 
+
 
 
