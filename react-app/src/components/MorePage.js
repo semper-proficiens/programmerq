@@ -12,7 +12,7 @@ function MorePage() {
             <section className="post-section">
                 <h1 className="post-subheading">Contact</h1>
                 <p className="post-content">
-                    You can reach me me through:
+                    You can reach me through:
                 </p>
             </section>
 

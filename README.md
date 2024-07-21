@@ -35,9 +35,12 @@ npm start
 - Better K8s CD from Artifactory image
 - Better folder/posts structure
 - Structure for secrets
-- PCAa all around
+- PCAs all around
 - Private DNS
 - IPs masking
+- Diagrams as functions
+- Web Traffic Monitoring
+- Donations
 
 
 

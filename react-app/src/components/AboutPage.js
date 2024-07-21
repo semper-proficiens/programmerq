@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import { DarkModeContext } from '../contexts/DarkModeContext';
 import '../styles/post.css';
 import CollapsibleSection from './CollapsibleSection';
+import ExternalLink from "./ExternalLink";
 
 function AboutPage() {
     const { isDarkMode } = useContext(DarkModeContext);
@@ -29,7 +30,20 @@ function AboutPage() {
                     code, so, I can't share artifacts of my work).
                     <br/>
                     <br/>
-                    On a side note, it would be amazing to gain an audience, build a community, and who knows, maybe even
+                    On a side note, it would be amazing to help someone out there, build a community, and who knows, maybe even
+                    earn a few bucks to pay for coffee <span role="img" aria-label="coffee">☕️</span> and keep my bad
+                    boy servers alive <span role="img" aria-label="smiling and sweating">😅</span>.
+                </p>
+            </CollapsibleSection>
+
+            <CollapsibleSection title="Contributors">
+                <p className="post-content">
+                    I work on this website after hours, depending on my mood and motivation. So, like any other project out there,
+                    if you feel like contributing please do so. If you feel like content has typos, errors, some commands need update,
+                    etc, feel free to raise in the github's repo <a href="https://github.com/semper-proficiens/programmerq">here</a>.
+                    <br/>
+                    <br/>
+                    On a side note, it would be amazing to help someone out there, build a community, and who knows, maybe even
                     earn a few bucks to pay for coffee <span role="img" aria-label="coffee">☕️</span> and keep my bad
                     boy servers alive <span role="img" aria-label="smiling and sweating">😅</span>.
                 </p>

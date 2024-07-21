@@ -14,7 +14,7 @@ const BlogPosts = {
     //     { title: 'How is your App performing? See what you should look after', slug: 'Measure your App ', component: WorkInProgress },
     // ],
     // 'CICD': [
-    //     { title: 'Automate your FrontEnd Deployment', slug: 'frontend-release', component: WorkInProgress },
+    //     { title: 'Automate your FrontEnd Deployment', slug: 'frontend-cicd', component: WorkInProgress },
     // ],
     // 'Hacking': [
     //     { title: 'Bounty Hunting (~5min read)', slug: 'Server Rack', component: ServerRack },
