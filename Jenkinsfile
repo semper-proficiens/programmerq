@@ -13,27 +13,27 @@ pipeline {
             }
         }
 
-//         stage('Podman Build') {
-//             steps {
-//                 script {
-//                     sh '''
-//                         cd react-app
-//                         podman build --no-cache -t programmerq .
-//                     '''
-//                 }
-//             }
-//         }
-//
-//         stage('Podman Push to Artifactory') {
-//             steps {
-//                 script {
-//                     sh '''
-//                         podman tag programmerq 192.168.0.32:8082/docker-local/programmerq
-//                         podman push --tls-verify=false 192.168.0.32:8082/docker-local/programmerq
-//                     '''
-//                 }
-//             }
-//         }
+        stage('Podman Build') {
+            steps {
+                script {
+                    sh '''
+                        cd react-app
+                        podman build --no-cache -t programmerq .
+                    '''
+                }
+            }
+        }
+
+        stage('Podman Push to Artifactory') {
+            steps {
+                script {
+                    sh '''
+                        podman tag programmerq 192.168.0.32:8082/docker-local/programmerq
+                        podman push --tls-verify=false 192.168.0.32:8082/docker-local/programmerq
+                    '''
+                }
+            }
+        }
 
         stage('Deploy Kubernetes') {
             steps {
