@@ -61,7 +61,7 @@ function K8sTroubleshooting() {
                 </BlogPostIndentedParagraph>
             </CollapsibleSection>
 
-            <CollapsibleSection title="K8s Errors Encountered (~5min)">
+            <CollapsibleSection title="K8s Error Encountered native OS Security (~5min)">
                 <BlogPostIndentedParagraph>
                     While setting up the K8s Cluster and Node, I encountered a few errors.
                     Both of the errors I encountered where caused by native OS security
@@ -132,6 +132,107 @@ function K8sTroubleshooting() {
                 </BlogPostIndentedParagraph>
             </CollapsibleSection>
 
+            <CollapsibleSection title="Rogue CNI plugin pod failing (~2mins)">
+                <BlogPostIndentedParagraph>
+                    In my deployments I was getting a rogue pod failing to properly start. So, I check my kubelet logs and I see:
+                    <CodeBlock language="bash">
+                        {`
+                     kubelet[989]: "failed to do request: dial tcp $ip: connect: connection refused"
+                    `}
+                    </CodeBlock>
+                    One way to check connectivity is to check how our CNI Plugin pods are doing. You can check those pods status like
+                    this:
+                    <CodeBlock language="bash">
+                        {`
+                         kubectl get pods -n kube-system
+                        `}
+                    </CodeBlock>
+                    Depending on which CNI Plugin you used (Flannel, Calico, etc...) you will see a pod in status other than <bold>running</bold>.
+                    One of my <bold>kube-proxy</bold> pods was failing:
+                    <CodeBlock language="bash">
+                        {`
+                         # check my pod logs
+                         kubectl logs kube-proxy-k9n64 -n kube-system
+                         
+                         # error msg
+                         Error from server: Get "https://$ip:10250/containerLogs/kube-system/kube-proxy-k9n64/kube-proxy": dial tcp $ip:10250: connect: no route to host
+                        `}
+                    </CodeBlock>
+                </BlogPostIndentedParagraph>
+
+                <BlogPostIndentedParagraph>
+                    I noticed the ip it was trying to reach no longer existed in my fleet, so, it was stuck in a failing state.
+                    I just deleted the pod and more faulty pods in <bold>kube-system</bold> namespace.
+
+                    However, this didn't solve the initial problem I had and how I came to notice the error message I saw in
+                    my kubelet logs. Check next section if curious about that other issue (root cause in title).
+                </BlogPostIndentedParagraph>
+            </CollapsibleSection>
+
+            <CollapsibleSection title="Pod deployed in misconfigured Node (~1min)">
+                <BlogPostIndentedParagraph>
+                    I initially searched kubelet logs in the previous search to understand why one of the pods running my
+                    frontend page was constantly failing to pull the Artifactory image (check the Artifactory setup blog to find
+                    out how that CD part of the frontend page works).
+                </BlogPostIndentedParagraph>
+
+                <BlogPostIndentedParagraph>
+                    What's interesting here, is that other pods are capable of pulling the private image from K8s just fine.
+                    So, what's different about this pod? Even killing the pod will result in another pod getting created with same result.
+                    Then, I proceeded to describe both pods to see what is different in their config.
+                </BlogPostIndentedParagraph>
+
+                <BlogPostIndentedParagraph>
+                    Everything was exactly the same (they all take from the same deployment yaml after all), except one thing:
+                    <bold>Node</bold>. Comparing the fault pod's Node to the healthy ones, I noticed the Node information was different.
+                    In fact, it was pointing to a totally different Node. That's when I realized my deployment configuration wa snot restrictive
+                    enough: it was deploying the pods to <bold>every node in the cluster</bold>. Ouch! I immediately knew what was wrong.
+                    I had a dedicated Node for Artifactory pulling and such, but not every node is setup this way.
+                </BlogPostIndentedParagraph>
+
+                <BlogPostIndentedParagraph>
+                    How can we fix this? Well, one way of doing this is by instructing our deployment to deploy those pods only to Nodes that match
+                    a criteria defined by us. There are more complex ways of establishing our criteria, but in my simple environment, Node labels are simple enough
+                    to fix the issue. So, this is how we do it:
+                    <CodeBlock language="bash">
+                        {`
+                         # on the Node you want the pods to deploy, run this
+                         kubectl label node $nodeName $yourFilterKey=$yourFilterValue
+                        `}
+                    </CodeBlock>
+                    You will now see that this Node has this label key/value pair if you describe it:
+                    <CodeBlock language="bash">
+                        {`
+                         Labels:            beta.kubernetes.io/arch=amd64
+                                            beta.kubernetes.io/os=linux
+                                            kubernetes.io/arch=amd64
+                                            kubernetes.io/hostname=$nodeName
+                                            kubernetes.io/os=linux
+                                            $yourKeyFilter=$yourKeyValue
+                        `}
+                    </CodeBlock>
+                    All that's left now is to add this filter in our deployment to make sure our desired pods deploy only there, and not in another Node.
+                    You can update your deployment yaml by adding this line in the spec (we only care <bold>nodeSelector</bold>, but added the rest so you see where it goes
+                    in the yaml):
+                    <CodeBlock language="yaml">
+                        {`
+                         spec:
+                            containers:
+                            - name: $name
+                              image: $image
+                              imagePullPolicy: $policy
+                              ports:
+                              - containerPort: $port
+                            imagePullSecrets:
+                            - name: $name
+                            nodeSelector:
+                              $yourKeyFilter: $yourValueFilter
+                        `}
+                    </CodeBlock>
+                    After edit your deployment with nodeSelector, you can just apply the deployment with the updated file, and it should deploy the pods in your
+                    defined Node. That fixed my Node config problem with the frontend pods.
+                </BlogPostIndentedParagraph>
+            </CollapsibleSection>
         </article>
     );
 }
