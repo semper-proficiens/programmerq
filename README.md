@@ -41,6 +41,7 @@ npm start
 - Diagrams as functions
 - Web Traffic Monitoring
 - Donations
+- K8s not deploying the latest push from Pipeline, manual Podman pull fixes it
 
 
 
