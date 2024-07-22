@@ -2,7 +2,6 @@ import React, { useContext } from 'react';
 import { DarkModeContext } from '../contexts/DarkModeContext';
 import '../styles/post.css';
 import CollapsibleSection from './CollapsibleSection';
-import ExternalLink from "./ExternalLink";
 
 function AboutPage() {
     const { isDarkMode } = useContext(DarkModeContext);

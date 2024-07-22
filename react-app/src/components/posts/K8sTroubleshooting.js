@@ -233,6 +233,68 @@ function K8sTroubleshooting() {
                     defined Node. That fixed my Node config problem with the frontend pods.
                 </BlogPostIndentedParagraph>
             </CollapsibleSection>
+
+            <CollapsibleSection title="Containerd and Kubelet in deprecated mode (~3min)">
+                <BlogPostIndentedParagraph>
+                    Here goes another error I recently encountered. I automated my Jenkins pipeline to update
+                    the K8s deployment to a given UUID image (generated during build). I check my pipeline status
+                    and is all good: no errors and the deployment logs show containers are getting rolled out. But, when I hit
+                    my webpage, I don't see the new commit changes. I thought, maybe it is the browser caching data? But no,
+                    an incognito session proved me wrong.
+                </BlogPostIndentedParagraph>
+
+                <BlogPostIndentedParagraph>
+                    I continue to describe my pods to make sure they're successfully retrieving the image UUID, and they are.
+                    I checked Artifactory and downloads count is incrementing. So, images are getting pulled, I thought routing within the cluster is
+                    incorrect. So, I checked my deployed service and I see that the service endpoints match my pods ips. So, that's not it.
+                    Then, I went the source of all k8s: kubelet logs.
+                </BlogPostIndentedParagraph>
+
+                <BlogPostIndentedParagraph>
+                    In kubelet logs is where I see finally some errors. I see <bold>containerd</bold> failing to delete a given image in a loop.
+                    I check containerd logs and I see same errors. So, I check containerd images and even try to delete a few manually:
+                    <CodeBlock language="bash">
+                        {`
+                        sudo crictl images
+                        
+                        #attempt to manually remove an image
+                        sudo crictl rmi $image
+                        `}
+                    </CodeBlock>
+                    But I couldn't delete it:
+                    <CodeBlock language="bash">
+                        {`
+                        WARN[0000] image connect using default endpoints: [unix:///run/containerd/containerd.sock unix:///run/crio/crio.sock unix:///var/run/cri-dockerd.sock]. 
+                        As the default settings are now deprecated, you should set the endpoint instead.
+                        ERRO[0000] no such image $image
+                        FATA[0000] unable to remove the image(s)
+                        `}
+                    </CodeBlock>
+                    So, I follow the advice of passing the endpoint in the command, but that didn't help:
+                    <CodeBlock language="bash">
+                        {`
+                        sudo crictl --runtime-endpoint unix:///run/containerd/containerd.sock rmi $image
+                        ERRO[0000] no such image $image
+                        FATA[0000] unable to remove the image(s)
+                        `}
+                    </CodeBlock>
+                    So, I'm really confused at this point as to what to do, and google search on github issues almost took me into
+                    the wrong rabbit hole path.
+                    <br/>
+                    Then, what fixed it? Restart containerd and kubelet services.....It seems like containerd, my container runtime
+                    for k8s, was stock trying to delete a corrupt old image (not sure why), and it was causing to not rollout containers in the pods,
+                    even when the new image was correctly being pulled.
+                </BlogPostIndentedParagraph>
+
+                <BlogPostIndentedParagraph>
+                    Sorry, maybe you were expecting something more exciting as the solution? Nope, sometimes systems run
+                    in an unhealthy loop.
+                    That's why the <bold>IT Crowd</bold> recording worked so well all the time: Have you tried turning
+                    it off and on again? <span role="img" aria-label="smiling and sweating">😅</span>
+                </BlogPostIndentedParagraph>
+
+            </CollapsibleSection>
+
         </article>
     );
 }
