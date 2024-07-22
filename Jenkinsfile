@@ -30,10 +30,7 @@ pipeline {
         stage('Podman Build') {
             steps {
                 script {
-                    sh '''
-                        cd react-app
-                        podman build --no-cache -t programmerq:${BUILD_UUID} .
-                    '''
+                    sh "cd react-app && podman build --no-cache -t programmerq:${BUILD_UUID} ."
                 }
             }
         }
@@ -42,10 +39,8 @@ pipeline {
             steps {
                 script {
                     withCredentials([string(credentialsId: 'private_artifactory_url', variable: 'ARTIFACTORY_URL')]) {
-                        sh '''
-                            podman tag programmerq:${BUILD_UUID} $ARTIFACTORY_URL/docker-local/programmerq:${BUILD_UUID}
-                            podman push --tls-verify=false $ARTIFACTORY_URL/docker-local/programmerq:${BUILD_UUID}
-                        '''
+                        sh "podman tag programmerq:${BUILD_UUID} $ARTIFACTORY_URL/docker-local/programmerq:${BUILD_UUID}"
+                        sh "podman push --tls-verify=false $ARTIFACTORY_URL/docker-local/programmerq:${BUILD_UUID}"
                     }
                 }
             }
@@ -55,11 +50,8 @@ pipeline {
             steps {
                 script {
                     withCredentials([file(credentialsId: 'k8s_node_kubeconfig', variable: 'KUBECONFIG')]) {
-                        sh '''
-                        # Update the Kubernetes deployment to use the new versioned image
-                        kubectl set image deployment/programmerq-frontend-deployment proq-fe=$ARTIFACTORY_URL/docker-local/programmerq:${BUILD_UUID}
-                        kubectl rollout status deployment/programmerq-frontend-deployment
-                        '''
+                        sh "kubectl set image deployment/programmerq-frontend-deployment proq-fe=$ARTIFACTORY_URL/docker-local/programmerq:${BUILD_UUID}"
+                        sh "kubectl rollout status deployment/programmerq-frontend-deployment"
                     }
                 }
             }
