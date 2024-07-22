@@ -49,9 +49,11 @@ pipeline {
         stage('Deploy Kubernetes') {
             steps {
                 script {
-                    withCredentials([file(credentialsId: 'k8s_node_kubeconfig', variable: 'KUBECONFIG')]) {
-                        sh "kubectl set image deployment/programmerq-frontend-deployment proq-fe=$ARTIFACTORY_URL/docker-local/programmerq:${BUILD_UUID}"
-                        sh "kubectl rollout status deployment/programmerq-frontend-deployment"
+                    withCredentials([string(credentialsId: 'private_artifactory_url', variable: 'ARTIFACTORY_URL')]) {
+                        withCredentials([file(credentialsId: 'k8s_node_kubeconfig', variable: 'KUBECONFIG')]) {
+                            sh "kubectl set image deployment/programmerq-frontend-deployment proq-fe=$ARTIFACTORY_URL/docker-local/programmerq:${BUILD_UUID}"
+                            sh "kubectl rollout status deployment/programmerq-frontend-deployment"
+                        }
                     }
                 }
             }
