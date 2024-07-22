@@ -31,17 +31,15 @@ npm start
 
 ## TOIL
 
-- Add Node workers to Jenkins Controller server
+- Add Node workers to Jenkins Controller server and Troubleshooting section
 - Better K8s CD from Artifactory image
 - Better folder/posts structure
 - Structure for secrets
 - PCAs all around
 - Private DNS
-- IPs masking
 - Diagrams as functions
 - Web Traffic Monitoring
 - Donations
-- K8s not deploying the latest push from Pipeline, manual Podman pull fixes it
 - Repo IP and secrets scanning tool
 
 

@@ -71,8 +71,31 @@ function JenkinsControllerServerSetup() {
                 </BlogPostIndentedParagraph>
 
                 <BlogPostIndentedParagraph>
-
+                    The service configuration is done at this point and service should be up and running.
+                    You should be able to access your application on your network on the ip of your server
+                    and your specified port above.
                 </BlogPostIndentedParagraph>
+
+                <BlogPostIndentedParagraph>
+                    Now you can proceed with creating the Admin user and add plugins.
+                    You can use the official Jenkins links for it:
+                    <ExternalLink href="https://www.jenkins.io/doc/book/installing/linux/#creating-the-first-administrator-user"/>
+                    <ExternalLink href="https://www.jenkins.io/doc/book/installing/linux/#customizing-jenkins-with-plugins"/>
+                    I like to have the Blue Ocean plugin. It tends to have regular updates, but the GUI offers a much better experience.
+                    THe Git plugins are a most if you plan to have any GitOps workflows.
+                </BlogPostIndentedParagraph>
+
+                <BlogPostIndentedParagraph>
+                    I plan to update this post with a Node workers setup section. But, for now you can follow this official Jenkins wiki:
+                    <ExternalLink href="https://wiki.jenkins-ci.org/display/JENKINS/Distributed+builds#Distributedbuilds-Havemasterlaunchslaveagentviassh"/>
+                </BlogPostIndentedParagraph>
+            </CollapsibleSection>
+
+            <CollapsibleSection title="Troubleshooting Jenkins (~2mins)">
+                <BlogPostIndentedParagraph>
+                    The goal of this section is to cover some common errors encountered while working with Jenkins.
+                </BlogPostIndentedParagraph>
+
             </CollapsibleSection>
 
         </article>
