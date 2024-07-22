@@ -48,7 +48,7 @@ function TeleportSimpleSetup() {
                         teleport:
                           nodename: teleport-cluster
                           data_dir: /var/lib/teleport
-                          advertise_ip: 192.168.0.199
+                          advertise_ip: $ip
                           log:
                             output: stderr
                             severity: INFO
@@ -56,7 +56,7 @@ function TeleportSimpleSetup() {
                               output: text
                         auth_service:
                           enabled: yes
-                          listen_addr: 192.168.0.199:3025
+                          listen_addr: $ip:3025
                           proxy_listener_mode: multiplex
                         ssh_service:
                           enabled: yes
@@ -282,9 +282,9 @@ function TeleportSimpleSetup() {
                         2024-05-27T18:40:40-04:00 DEBU [CLIENT]    Attempting to login with a new RSA private key. client/api.go:3873
                         Enter password for Teleport user $userName:
                         Enter your OTP token:
-                        2024-05-27T18:42:34-04:00 DEBU [CLIENT]    not using loopback pool for remote proxy addr: 192.168.0.199:3080 client/api.go:4522
-                        2024-05-27T18:42:34-04:00 DEBU [CLIENT]    HTTPS client init(proxyAddr=192.168.0.199:3080, insecure=true, extraHeaders=map[]) client/weblogin.go:338
-                        WARNING: You are using insecure connection to Teleport proxy https://192.168.0.199:3080
+                        2024-05-27T18:42:34-04:00 DEBU [CLIENT]    not using loopback pool for remote proxy addr: $ip:3080 client/api.go:4522
+                        2024-05-27T18:42:34-04:00 DEBU [CLIENT]    HTTPS client init(proxyAddr=$ip:3080, insecure=true, extraHeaders=map[]) client/weblogin.go:338
+                        WARNING: You are using insecure connection to Teleport proxy https://$ip:3080
                         `}
                     </CodeBlock>
                     It finds the server, recognizes the given user exists, prompts for password, for OTP, and establishes the local credentials.
