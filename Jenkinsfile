@@ -1,6 +1,11 @@
 pipeline {
     agent any
 
+    environment {
+        // Placeholder for the UUID, will be set dynamically
+        BUILD_UUID = ''
+    }
+
     stages {
 
         stage('Generate UUID') {
@@ -30,7 +35,7 @@ pipeline {
                 script {
                     sh '''
                         cd react-app
-                        podman build --no-cache -t programmerq:$BUILD_UUID .
+                        podman build --no-cache -t programmerq:${BUILD_UUID} .
                     '''
                 }
             }
@@ -41,8 +46,8 @@ pipeline {
                 script {
                     withCredentials([string(credentialsId: 'private_artifactory_url', variable: 'ARTIFACTORY_URL')]) {
                         sh '''
-                            podman tag programmerq:$BUILD_UUID $ARTIFACTORY_URL/docker-local/programmerq:$BUILD_UUID
-                            podman push --tls-verify=false $ARTIFACTORY_URL/docker-local/programmerq:$BUILD_UUID
+                            podman tag programmerq:${BUILD_UUID} $ARTIFACTORY_URL/docker-local/programmerq:${BUILD_UUID}
+                            podman push --tls-verify=false $ARTIFACTORY_URL/docker-local/programmerq:${BUILD_UUID}
                         '''
                     }
                 }
@@ -55,7 +60,7 @@ pipeline {
                     withCredentials([file(credentialsId: 'k8s_node_kubeconfig', variable: 'KUBECONFIG')]) {
                         sh '''
                         # Update the Kubernetes deployment to use the new versioned image
-                        kubectl set image deployment/programmerq-frontend-deployment proq-fe=$ARTIFACTORY_URL/docker-local/programmerq:$BUILD_UUID
+                        kubectl set image deployment/programmerq-frontend-deployment proq-fe=$ARTIFACTORY_URL/docker-local/programmerq:${BUILD_UUID}
                         kubectl rollout status deployment/programmerq-frontend-deployment
                         '''
                     }
