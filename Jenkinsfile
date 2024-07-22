@@ -1,3 +1,5 @@
+def BUILD_UUID
+
 pipeline {
     agent any
 
