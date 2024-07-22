@@ -3,11 +3,6 @@ def BUILD_UUID
 pipeline {
     agent any
 
-    environment {
-        // Placeholder for the UUID, will be set dynamically
-        BUILD_UUID = ''
-    }
-
     stages {
 
         stage('Generate UUID') {
