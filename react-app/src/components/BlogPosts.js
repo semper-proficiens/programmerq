@@ -1,21 +1,22 @@
-import ServerRack from "./posts/ServerRack";
+import ServerRack from "./posts/SELF-HOSTING/ServerRack";
 import WorkInProgress from "./WorkInProgress";
-import SecureHosting from "./posts/SecureHosting";
-import TeleportSimpleSetup from "./posts/TeleportSimpleSetup";
-import TroubleshootTeleportNodeJoinOnRhel9 from "./posts/TeleportNodeJoinOnRHEL9";
-import ProxMoxTemplates from "./posts/ProxmoxTemplates";
-import K8sClusterAndNode from "./posts/K8sClusterAndNode";
-import K8sTroubleshooting from "./posts/K8sTroubleshooting";
-import PostgreSQLServerSetup from "./posts/PostgreSQLServerSetup";
-import JenkinsControllerServerSetup from "./posts/JenkinsControllerServer";
+import SecureHosting from "./posts/SELF-HOSTING/SecureHosting";
+import TeleportSimpleSetup from "./posts/Security/TeleportSimpleSetup";
+import TroubleshootTeleportNodeJoinOnRhel9 from "./posts/SELF-HOSTING/TroubleshootTeleportNodeJoinOnRHEL9";
+import ProxMoxTemplates from "./posts/SELF-HOSTING/ProxmoxTemplates";
+import K8sClusterAndNode from "./posts/SELF-HOSTING/K8sClusterAndNode";
+import K8sTroubleshooting from "./posts/SELF-HOSTING/K8sTroubleshooting";
+import PostgresSQLServerSetup from "./posts/SELF-HOSTING/PostgresSQLServerSetup";
+import JenkinsControllerServerSetup from "./posts/SELF-HOSTING/JenkinsControllerServer";
+import AutomateFrontendDeployment from "./posts/CICD/AutomateFrontendDeployment";
 
 const BlogPosts = {
     // '3d Printing': [
     //     { title: 'How is your App performing? See what you should look after', slug: 'Measure your App ', component: WorkInProgress },
     // ],
-    // 'CICD': [
-    //     { title: 'Automate your FrontEnd Deployment', slug: 'frontend-cicd', component: WorkInProgress },
-    // ],
+    'CICD': [
+        { title: 'Automate your FrontEnd Deployment', slug: 'frontend-cicd', component: AutomateFrontendDeployment },
+    ],
     // 'Hacking': [
     //     { title: 'Bounty Hunting (~5min read)', slug: 'Server Rack', component: ServerRack },
     // ],
@@ -44,7 +45,7 @@ const BlogPosts = {
         { title: 'Troubleshoot Teleport Node Join on RHEL9', slug: 'teleport-simple-setup-node-join-rhel9', component: TroubleshootTeleportNodeJoinOnRhel9 },
         { title: 'Making ProxMox Templates', slug: 'proxmox-templates', component: ProxMoxTemplates },
         { title: 'K8s Troubleshooting', slug: 'k8s-troubleshooting', component: K8sTroubleshooting },
-        { title: 'PostgresSQL Server Setup for Artifactory (~5mins read)', slug: 'postgresSQL-artifactory', component: PostgreSQLServerSetup },
+        { title: 'PostgresSQL Server Setup for Artifactory (~5mins read)', slug: 'postgresSQL-artifactory', component: PostgresSQLServerSetup },
         { title: 'Jenkins Controller Server setup', slug: 'jenkins-controller-server', component: JenkinsControllerServerSetup },
     ],
     // 'SEO': [

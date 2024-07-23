@@ -1,10 +1,10 @@
 import React, { useContext } from 'react';
-import { DarkModeContext } from '../../contexts/DarkModeContext';
-import '../../styles/post.css';
-import SecureLock from '../../assets/images/secure-on-chalkboard-with-locks.jpg';
-import CollapsibleSection from '../CollapsibleSection';
-import BlogPostIndentedParagraph from "../BlogPostIndentedParagraph";
-import CodeBlock from "../CodeBlock";
+import { DarkModeContext } from '../../../contexts/DarkModeContext';
+import '../../../styles/post.css';
+import SecureLock from '../../../assets/images/secure-on-chalkboard-with-locks.jpg';
+import CollapsibleSection from '../../CollapsibleSection';
+import BlogPostIndentedParagraph from "../../BlogPostIndentedParagraph";
+import CodeBlock from "../../CodeBlock";
 import {Link} from "react-router-dom";
 
 function K8sClusterAndNode() {

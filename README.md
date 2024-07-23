@@ -33,7 +33,7 @@ npm start
 
 - Add Node workers to Jenkins Controller server and Troubleshooting section
 - Better K8s CD from Artifactory image
-- Better folder/posts structure
+- Dynamic folder/posts structure
 - Structure for secrets
 - PCAs all around
 - Private DNS
@@ -41,6 +41,10 @@ npm start
 - Web Traffic Monitoring
 - Donations
 - Repo IP and secrets scanning tool
+
+## WIP
+
+- CICD: [AutomateFrontendDeployment.js](react-app%2Fsrc%2Fcomponents%2Fposts%2FCICD%2FAutomateFrontendDeployment.js)
 
 
 

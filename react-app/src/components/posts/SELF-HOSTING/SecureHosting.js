@@ -1,11 +1,11 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
-import { DarkModeContext } from '../../contexts/DarkModeContext';
-import '../../styles/post.css';
-import SecureLock from '../../assets/images/secure-on-chalkboard-with-locks.jpg';
-import CollapsibleSection from '../CollapsibleSection';
-import BlogPostIndentedParagraph from "../BlogPostIndentedParagraph";
-import ExternalLink from "../ExternalLink";
+import { DarkModeContext } from '../../../contexts/DarkModeContext';
+import '../../../styles/post.css';
+import SecureLock from '../../../assets/images/secure-on-chalkboard-with-locks.jpg';
+import CollapsibleSection from '../../CollapsibleSection';
+import BlogPostIndentedParagraph from "../../BlogPostIndentedParagraph";
+import ExternalLink from "../../ExternalLink";
 
 function SecureHosting() {
     const { isDarkMode } = useContext(DarkModeContext);

@@ -1,11 +1,11 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
-import { DarkModeContext } from '../../contexts/DarkModeContext';
-import '../../styles/post.css';
-import ServerRackImage from '../../assets/images/server_rack_cables.jpeg';
-import ServerRackMess from '../../assets/images/server_rack_mess.jpeg';
-import CollapsibleSection from '../CollapsibleSection';
-import BlogPostIndentedParagraph from "../BlogPostIndentedParagraph";
+import { DarkModeContext } from '../../../contexts/DarkModeContext';
+import '../../../styles/post.css';
+import ServerRackImage from '../../../assets/images/server_rack_cables.jpeg';
+import ServerRackMess from '../../../assets/images/server_rack_mess.jpeg';
+import CollapsibleSection from '../../CollapsibleSection';
+import BlogPostIndentedParagraph from "../../BlogPostIndentedParagraph";
 
 function ServerRack() {
     const { isDarkMode } = useContext(DarkModeContext);
