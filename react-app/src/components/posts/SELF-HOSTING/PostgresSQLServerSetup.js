@@ -56,7 +56,7 @@ function PostgresSQLServerSetup() {
                         sudo -i -u postgres
                         psql
                         
-                        \password postgres
+                        \\password postgres
                         $otherPassword
                         `}
                     </CodeBlock>
@@ -85,7 +85,7 @@ function PostgresSQLServerSetup() {
                         GRANT ALL PRIVILEGES ON DATABASE artifactory TO $yourArtifactoryUser;
                         
                         # connects to artifactory database
-                        \c artifactory
+                        \\c artifactory
                         
                         # grants all privileges on the public schema to $yourArtifactoryUser.
                         # grants all privileges on all tables in the public schema to $yourArtifactoryUser.
@@ -95,7 +95,7 @@ function PostgresSQLServerSetup() {
                         GRANT ALL PRIVILEGES ON ALL SEQUENCES IN SCHEMA public TO $yourArtifactoryUser;
                         
                         # disconnects from artifactory database
-                        \q
+                        \\q
                         `}
                     </CodeBlock>
                 </BlogPostIndentedParagraph>

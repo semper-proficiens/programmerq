@@ -4,8 +4,6 @@ import '../../../styles/post.css';
 import SecureLock from '../../../assets/images/secure-on-chalkboard-with-locks.jpg';
 import CollapsibleSection from '../../CollapsibleSection';
 import BlogPostIndentedParagraph from "../../BlogPostIndentedParagraph";
-import CodeBlock from "../../CodeBlock";
-import ExternalLink from "../../ExternalLink";
 
 function AutomateFrontendDeployment() {
     const { isDarkMode } = useContext(DarkModeContext);
