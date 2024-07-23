@@ -32,6 +32,7 @@ npm start
 ## TOIL
 
 - Add Node workers to Jenkins Controller server and Troubleshooting section
+- Fix the Jenkins Commit status update feature from credential PAT
 - Better K8s CD from Artifactory image
 - Dynamic folder/posts structure
 - Structure for secrets
