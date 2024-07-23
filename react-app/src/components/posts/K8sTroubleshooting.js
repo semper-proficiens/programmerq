@@ -289,8 +289,8 @@ function K8sTroubleshooting() {
                 <BlogPostIndentedParagraph>
                     Sorry, maybe you were expecting something more exciting as the solution? Nope, sometimes systems run
                     in an unhealthy loop.
-                    That's why the <bold>IT Crowd</bold> recording worked so well all the time: Have you tried turning
-                    it off and on again? <span role="img" aria-label="smiling and sweating">😅</span>
+                    That's why the <bold>IT Crowd</bold> recording works so well: <i>"Have you tried turning
+                    it off and on again?"</i><span role="img" aria-label="smiling and sweating">😅</span>
                 </BlogPostIndentedParagraph>
 
             </CollapsibleSection>
