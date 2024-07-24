@@ -10,7 +10,7 @@ function HomeApplications() {
 
     return (
         <Container id="blog" className="my-5">
-            <h2 className={isDarkMode ? "text-warning" : "primary"}>Applications</h2>
+            <h2 className={isDarkMode ? "text-white" : "primary"}>Applications</h2>
             <div className={isDarkMode ? "blog-box-dark" : "blog-box-light"}>
                 <p className={`${isDarkMode ? "typewriter-dark" : "typewriter-light"} mb-custom`}>
                     Check some home-brewed <Link to="/applications">Applications</Link> !

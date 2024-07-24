@@ -11,7 +11,7 @@ function ApplicationCard({ service }) {
     };
 
     const titleStyle = {
-        color: isDarkMode ? '#ffc107' : '#28282B',
+        color: isDarkMode ? '#fff' : '#28282B',
         fontFamily: 'Georgia, serif',
         fontWeight: 'bold',
         fontSize: '1.5rem',

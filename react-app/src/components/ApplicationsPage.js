@@ -35,7 +35,7 @@ function ApplicationsPage() {
 
     return (
         <Container id="services">
-            <h2 class={isDarkMode ? "text-warning" : "primary"}>Applications</h2>
+            <h2 class={isDarkMode ? "text-white" : "primary"}>Applications</h2>
             <Row className="justify-content-center align-items-center">
                 <Col md={1} className="d-flex align-items-center justify-content-end">
                     <Button className="p-0" variant={isDarkMode ? "outline-warning" : "light"} onClick={handlePrevService}>
