@@ -1,39 +1,32 @@
-/*.toggle-container {*/
-/*    display: flex;*/
-/*    align-items: center;*/
-/*    margin-bottom: 1rem;*/
-/*    justify-content: center;*/
-/*}*/
+.toggle-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+    justify-content: center;
+}
 
-/*.toggle-container.dark {*/
-/*    background-color: #343a40;*/
-/*    margin-top: 1rem;*/
-/*}*/
+.toggle-container.dark {
+    background-color: #343a40;
+    margin-top: 1rem;
+}
 
-/*.dark-mode-toggle {*/
-/*    width: 60px;*/
-/*    height: 30px;*/
-/*    margin-right: 1rem;*/
-/*}*/
+.dark-mode-toggle {
+    width: 60px;
+    height: 30px;
+    margin-right: 1rem;
+}
 
-/*.toggle-message-light {*/
-/*    color: #343a40;*/
-/*    font-size: 1.2rem;*/
-/*    padding: 0.5rem;*/
-/*}*/
+.toggle-message-light {
+    color: #343a40;
+    font-size: 1.2rem;
+    padding: 0.5rem;
+}
 
-/*.toggle-message-dark {*/
-/*    color: #f8f9fa;*/
-/*    font-size: 1.2rem;*/
-/*    padding: 0.5rem;*/
-/*}*/
-
-
-
-
-
-
-
+.toggle-message-dark {
+    color: #f8f9fa;
+    font-size: 1.2rem;
+    padding: 0.5rem;
+}
 
 .toggle-switch {
     position: relative;
@@ -95,3 +88,7 @@ input:checked + .switch-slider:before {
     border-radius: 50%;
 }
 
+/* Add this rule for the body background color */
+body.bg-dark {
+    background-color: #343a40;
+}
