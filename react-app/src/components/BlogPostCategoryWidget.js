@@ -15,6 +15,8 @@ function BlogPostCategoryWidget({ category, onClick }) {
                 const currentWidth = currentElement.scrollWidth;
                 if (currentWidth > parentWidth) {
                     setFontSize((size) => size * (parentWidth / currentWidth));
+                } else {
+                    setFontSize(40); // Reset to max font size if it fits
                 }
             }
         };
@@ -31,7 +33,7 @@ function BlogPostCategoryWidget({ category, onClick }) {
                 <span
                     ref={textRef}
                     className="widget-title"
-                    style={{ fontSize: `${fontSize}px`, whiteSpace: 'nowrap', overflow: 'hidden' }}
+                    style={{ fontSize: `${fontSize}px` }}
                 >
                     {category}
                 </span>
