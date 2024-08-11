@@ -49,6 +49,17 @@ function SecureHosting() {
                     I recommend is Cloudflare's Zero Trust Tunnel (you can find more about it
                     <ExternalLink href="https://developers.cloudflare.com/cloudflare-one/connections/connect-networks/" />).
                 </BlogPostIndentedParagraph>
+
+                <BlogPostIndentedParagraph>
+                    I won't cover the configuration, because this is covered in CloudFlare's page. But, in general terms you
+                    register a public FQDN with CloudFlare's Zero trust, so users will hit CloudFlare's Public Ip servers, it auto generates
+                    a Let's Encrypt certificate for your FQDN, which is extremely cool and handy, and it uses a revers tunnel to the URI
+                    you configured, which is usually a connection back to your private infrastructure.
+                    <br/>
+                    All you have to do is install a CloudFlare package and run the <strong>cloudflared</strong> service on the server
+                    you want to do the reverse tunnel to. CloudFlare will give you all the commands needed to run on your server
+                    after you do the FQDN registration.
+                </BlogPostIndentedParagraph>
             </CollapsibleSection>
 
         </article>
