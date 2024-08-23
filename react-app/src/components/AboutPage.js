@@ -24,9 +24,9 @@ function AboutPage() {
             <CollapsibleSection title="Why this Website?">
                 <p className="post-content">
                     This website aims to inform, discuss, and challenge topics around SoftWare Engineering, Security,
-                    Development, and other trending topics. I use this website as a place to test concepts
-                    and broadcast some of my work publicly (most of my professional work has been proprietary
-                    code, so, I can't share artifacts of my work).
+                    Development, and other trending topics. I use this website as a place to test concepts,
+                    broadcast some of my work publicly (most of my professional work has been proprietary
+                    code, so, I can't share artifacts of my work), and promote Applications I'll build on other domains.
                     <br/>
                     <br/>
                     On a side note, it would be amazing to help someone out there, build a community, and who knows, maybe even

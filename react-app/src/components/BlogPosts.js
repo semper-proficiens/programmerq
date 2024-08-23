@@ -9,6 +9,7 @@ import K8sTroubleshooting from "./posts/SELF-HOSTING/K8sTroubleshooting";
 import PostgresSQLServerSetup from "./posts/SELF-HOSTING/PostgresSQLServerSetup";
 import JenkinsControllerServerSetup from "./posts/SELF-HOSTING/JenkinsControllerServer";
 import AutomateFrontendDeployment from "./posts/CICD/AutomateFrontendDeployment";
+import WebhookRelay from "./posts/CICD/WebhookRelay";
 
 const BlogPosts = {
     // '3d Printing': [
@@ -16,6 +17,7 @@ const BlogPosts = {
     // ],
     'CICD': [
         { title: 'Automate your FrontEnd Deployment', slug: 'frontend-cicd', component: AutomateFrontendDeployment },
+        { title: 'GitOps and Webhook Relay to Jenkins', slug: 'webhook-relay-jenkins', component: WebhookRelay },
     ],
     // 'Hacking': [
     //     { title: 'Bounty Hunting (~5min read)', slug: 'Server Rack', component: ServerRack },

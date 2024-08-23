@@ -101,7 +101,7 @@ function PostgresSQLServerSetup() {
                 </BlogPostIndentedParagraph>
 
                 <BlogPostIndentedParagraph>
-                    Now we need to configure our Database a bit further in order Artifactory to be able to talk with our DB:
+                    Now we need to configure our Database a bit further in order for Artifactory to talk to our DB:
                     <CodeBlock language={"bash"}>
                         {`
                         # open file and add this line to listen on all interfaces

@@ -29,6 +29,22 @@ node version manager software: nvm https://github.com/nvm-sh/nvm#installing-and-
 npm start
 ```
 
+## Blogs
+
+### Structure
+
+This is the workflow to create a new blog post:
+
+1. Create a JS component inside `/src/components/posts/$Category/$ComponentName.js`
+2. Copy the `/src/components/posts/$Category/$TemplatePost.js` for a new blog post
+3. After we create the new blog post component, we have to configure what the title will actually be, and under which category
+it will be shown:
+      - Head to `/src/components/BlogPosts.js`
+      - Add a line with the format `{ title: '$Title', slug: '$post_slug', component: $ComponentName }`:
+          - `slug`: refers to the path `/post/$slug` used to redirect to different posts internally
+          - Make sure to add post under category that matches `$Category` in step `1`
+          - `$ComponentName` should be easy to import, but, just in case, use same `$Component` name in step `1` and `3`
+
 ## TOIL
 
 - Add Node workers to Jenkins Controller server and Troubleshooting section

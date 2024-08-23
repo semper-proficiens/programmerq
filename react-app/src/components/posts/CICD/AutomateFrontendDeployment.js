@@ -4,6 +4,7 @@ import '../../../styles/post.css';
 import CICD_ProgrammerQ_Frontend from '../../../assets/images/CICD_ProgrammerQ_Frontend.drawio.png';
 import CollapsibleSection from '../../CollapsibleSection';
 import BlogPostIndentedParagraph from "../../BlogPostIndentedParagraph";
+import {Link} from "react-router-dom";
 
 function AutomateFrontendDeployment() {
     const { isDarkMode } = useContext(DarkModeContext);
@@ -12,7 +13,7 @@ function AutomateFrontendDeployment() {
 
         <article className={isDarkMode ? 'post dark-mode' : 'post'}>
 
-            <img className="post-image" src={CICD_ProgrammerQ_Frontend} alt="CICD_Diagram" />
+            <img className="post-image" src={CICD_ProgrammerQ_Frontend} alt="CD_Diagram" />
 
             <CollapsibleSection title="Why spend time automating this? (~1min)">
                 <BlogPostIndentedParagraph>
@@ -42,6 +43,10 @@ function AutomateFrontendDeployment() {
                 <BlogPostIndentedParagraph>
                     Hopefully, I got you hooked, and you want to do the same.
                     Well, you can see how I deployed each component here.
+                </BlogPostIndentedParagraph>
+
+                <BlogPostIndentedParagraph>
+                    My GitOps workflow from push to Webhook Relay to Jenkins here: <Link to="/post/webhook-relay-jenkins">GitOps and Webhook Relay to Jenkins</Link>
                 </BlogPostIndentedParagraph>
 
             </CollapsibleSection>
